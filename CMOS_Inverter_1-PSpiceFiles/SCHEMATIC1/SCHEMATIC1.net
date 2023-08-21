@@ -1,0 +1,21 @@
+* source CMOS_INVERTER_1
+X_M1         N15499 IN N15582 BS250/PLP
+X_M2         N15499 IN 0 2N7000/PLP
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND IN IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+V_V1         N15582 0 5Vdc
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND N15753 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+V_V2         N15824 0 5Vdc
+M_M3         N15783 N15753 0 0 MbreakN           
+M_M4         N15783 N15753 N15824 N15824 MbreakP           

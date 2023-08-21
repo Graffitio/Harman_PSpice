@@ -1,0 +1,113 @@
+(ExpressProject "NCS2200"
+  (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[06/26/03]")
+  (ProjectType "Analog or A/D Mixed Mode")
+  (Folder "Design Resources"
+    (Folder "Library"
+      (Sort User)
+      (File ".\ncs2200p.olb"
+        (Type "Schematic Library")
+        (DisplayName ".\ncs2200p.olb")))
+    (NoModify)
+    (File ".\ncs2200.dsn"
+      (Type "Schematic Design"))
+    (BuildFileAddedOrDeleted "x")
+    (CompileFileAddedOrDeleted "x")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59420"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\ncs2200-schematic1.net"
+      (Type "Report")))
+  (Folder "PSpice Resources"
+    (Folder "Simulation Profiles"
+      (ActiveProfile ".\ncs2200-schematic1-ncs2200.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\ncs2200-schematic1-ncs2200.sim"
+        (DisplayName "SCHEMATIC1-NCS2200")
+        (Type "PSpice Profile")))
+    (Folder "Model Libraries"
+      (Sort User)
+      (File "C:\ON-Semi\NCS2200\PSPICE\ncs2200p.lib"
+        (Type "PSpice Profile")))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User)))
+  (DefaultLibraryBrowseDirectory "library\PSpice")
+  (PartMRUSelector
+    (NCS2203
+      (FullPartName "NCS2203.Normal")
+      (LibraryName "C:\ON-SEMI\NCS2200\PSPICE\NCS2200P.OLB")
+      (DeviceIndex "0"))
+    (R
+      (FullPartName "R.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\PSPICE\ANALOG.OLB")
+      (DeviceIndex "0"))
+    (NCS2202
+      (FullPartName "NCS2202.Normal")
+      (LibraryName "C:\ON-SEMI\NCS2200\PSPICE\NCS2200P.OLB")
+      (DeviceIndex "0"))
+    (NCS2201
+      (FullPartName "NCS2201.Normal")
+      (LibraryName "C:\ON-SEMI\NCS2200\PSPICE\NCS2200P.OLB")
+      (DeviceIndex "0"))
+    (NCS2200
+      (FullPartName "NCS2200.Normal")
+      (LibraryName "C:\ON-SEMI\NCS2200\PSPICE\NCS2200P.OLB")
+      (DeviceIndex "0"))
+    (VSIN
+      (FullPartName "VSIN.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (VDC
+      (FullPartName "VDC.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (0
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\PSPICE\SOURCE.OLB")
+      (DeviceIndex "0"))
+    (AD648A
+      (FullPartName "AD648A.Normal")
+      (LibraryName "C:\PROGRAM FILES\ORCAD\CAPTURE\LIBRARY\PSPICE\OPAMP.OLB")
+      (DeviceIndex "0")))
+  (LastUsedLibraryBrowseDirectory
+     "C:\Program Files\Orcad\Capture\Library\PSpice")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources" "Library")
+      (Path "Design Resources" "Library"
+         "\\Desktop-v1obsna\공유폴더\파라미터 데이타 및 데이타 시트\NCS2200_SERIES_SIM_PSPICE\ncs2200p.olb")
+      (Path "Outputs")
+      (Path "PSpice Resources")
+      (Path "PSpice Resources" "Model Libraries")
+      (Path "PSpice Resources" "Simulation Profiles")
+      (Select "Design Resources" "Library"
+         "\\Desktop-v1obsna\공유폴더\파라미터 데이타 및 데이타 시트\NCS2200_SERIES_SIM_PSPICE\ncs2200p.olb"
+         "NCS2201"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -4 -23 0 200 0 702"))
+      (Tab 0))
+    (Doc
+      (Type "COrPrmBrowserDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 5 1397 24 743"))
+      (Path
+         "\\DESKTOP-V1OBSNA\공유폴더\파라미터 데이타 및 데이타 시트\NCS2200_SERIES_SIM_PSPICE\NCS2200P.OLB")
+      (Package "NCS2200")
+      (PartType "1"))
+    (Doc
+      (Type "COrPrmBrowserDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -8 -31 5 1397 24 743"))
+      (Path
+         "\\DESKTOP-V1OBSNA\공유폴더\파라미터 데이타 및 데이타 시트\NCS2200_SERIES_SIM_PSPICE\NCS2200P.OLB")
+      (Package "NCS2201")
+      (PartType "1")))
+  (Folder "Logs")
+  (MPSSessionName "USER"))

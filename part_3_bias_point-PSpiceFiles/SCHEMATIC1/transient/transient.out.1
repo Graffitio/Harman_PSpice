@@ -1,0 +1,52 @@
+
+**** 07/17/23 11:55:33 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-transient"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\transient.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "transient.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100 0 10M 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART_3_BIAS_POINT
+V_V1         N14717 0 5Vdc
+R_R1         N14724 OUT  100k TC=0,0 
+C_C1         0 OUT  100U  TC=0,0 
+X_U1         N14717 N14724 Sw_tOpen PARAMS: tOpen=TPOEN = 50 ttran=1u
+--------------------------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TPOEN' to double value. Token can be a constant or expression
++  Rclosed=0.01 Ropen=1Meg
+--------------------------$
+ERROR(ORPSIM-16368): Encountered an invalid double constant or expression in the input file
+X_U2         0 N14724 Sw_tClose PARAMS: tClose=TCLOSE = 50 ttran=1u
+-----------------------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TCLOSE' to double value. Token can be a constant or expression
++  Rclosed=0.01 Ropen=1Meg
+--------------------------$
+ERROR(ORPSIM-16368): Encountered an invalid double constant or expression in the input file
+
+**** RESUMING transient.cir ****
+.END
+

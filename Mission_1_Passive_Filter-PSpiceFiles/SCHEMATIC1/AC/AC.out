@@ -1,0 +1,103 @@
+
+**** 08/04/23 16:07:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\mission_1_passive_filter-pspicefiles\schematic1\ac.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 10Mega 80Mega
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MISSION_1_PASSIVE_FILTER
+R_R1         N14625 N14632  50 TC=0,0 
+R_R2         0 N14704  50 TC=0,0 
+C_C1         0 N14632  553.0pF  TC=0,0 
+C_C2         N143910 N14632  42.16pF  TC=0,0 
+C_C3         N14640 0  839.8pF  TC=0,0 
+C_C4         N14640 N144231  39.46pF  TC=0,0 
+C_C5         0 N14700  839.8pF  TC=0,0 
+C_C6         N144550 N14700  42.16pF  TC=0,0 
+C_C7         N14704 0  553.0pF  TC=0,0 
+L_L1         N14632 0  76.34nH  
+L_L2         N143910 N14640  1.001uH  
+L_L3         N14640 0  50.27nH  
+L_L4         N144231 N14700  1.070uH  
+L_L5         N14700 0  50.27nH  
+L_L6         N144550 N14704  1.010uH  
+L_L7         N14704 0  76.34nH  
+V_V1         N14625 0 DC 0Vdc AC 1Vac 
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/04/23 16:07:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\mission_1_passive_filter-pspicefiles\schematic1\ac.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14625)    0.0000 (N14632)    0.0000 (N14640)    0.0000 (N14700)    0.0000     
+
+(N14704)    0.0000 (N143910)    0.0000                   (N144231)    0.0000    
+
+(N144550)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/23 16:07:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\mission_1_passive_filter-pspicefiles\schematic1\ac.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .02
+

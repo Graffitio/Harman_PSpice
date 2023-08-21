@@ -1,0 +1,271 @@
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Switch.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10m 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SWITCH_CIRCUIT
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14516 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5mS 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+R_R1         N14516 N14520  1k TC=0,0 
+R_R2         N14524 N14528  1k TC=0,0 
+R_R3         0 N14646  1k TC=0,0 
+V_V3         N14528 0 5Vdc
+X_M2         N14524 N14520 0 2N7002/FAI
+X_M3         N14646 N14602 N14528 BS250/PLP
+R_R4         N14602 N14516  1k TC=0,0 
+
+**** RESUMING Switch.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14516
+*
+* Moving U_DSTM1:OUT1 from analog node N14516 to new digital node N14516$DtoA
+X$N14516_DtoA1
++ N14516$DtoA
++ N14516
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M2.DDS        X_M2.DBODY      X_M2.DGD        X_M3.Dbody      
+          IS   10.000000E-15  140.000000E-15   10.000000E-15   75.320000E-15 
+           N                                                    1.016        
+          BV   60.0864                                         45            
+         IBV                                                   10.000000E-06 
+          RS                     .04                            1.245        
+          TT                  100.000000E-09                   86.560000E-09 
+         CJO   23.000000E-12                   85.000000E-12   53.220000E-12 
+          VJ     .8                              .12             .5392       
+           M     .36                             .53             .3583       
+
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M2.DMOS       X_M2.INTER      X_M3.MOST1      X_M3.MOST2      
+               NMOS            NMOS            PMOS            PMOS            
+       LEVEL    3               1               3               1            
+           L  100.000000E-06  100.000000E-06    2.000000E-06    2.000000E-06 
+           W  100.000000E-06  100.000000E-06    7.600000E-03    7.600000E-03 
+         VTO    2.09328         0              -2.3             2.43         
+          KP     .35           10              10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD                                    4.014                        
+          RS                                     .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+        VMAX  220.000000E+03                                                 
+       THETA     .086                                                        
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14516)     .0025 (N14520)     .0030 (N14524)    4.9995 (N14528)    5.0000     
+
+(N14602)     .0025 (N14646)    4.9331 (X_M2.1)     .0030 (X_M2.2)    4.9995     
+
+(X_M2.3) 151.6E-15 (X_M2.4)    4.9995 (X_M2.5)-25.24E-30 (X_M2.6)     .0030     
+
+(X_M2.7)    4.9995 (X_M2.8)    9.9960 (X_M2.9)   -9.9900 (X_M3.4)    4.9331     
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N14516$DtoA) : 0  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V3        -4.934E-03
+    X$DIGIFPWR.VDPWR  -5.003E-03
+    X$DIGIFPWR.VDGND  -4.500E-06
+
+    TOTAL POWER DISSIPATION   4.97E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 15:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Switch"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit-PSpiceFiles\SCHEMATIC1\Switch.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        6.45
+  Total job time (using Solver 1)   =         .13
+

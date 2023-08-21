@@ -1,0 +1,239 @@
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SWITCH_CIRCUIT_3
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND IN IO_STM IO_LEVEL=0 
++ 0 0
++ +.5mS 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+R_R1         IN N14657  10k TC=0,0 
+R_RLoad         0 OUT  1k TC=0,0 
+Q_Q2         N14557 N14657 0 Q2N3904
+Q_Q1         OUT N14557 N14529 Q2N3906
+V_V1         N14529 0 12Vdc
+R_R2         N14529 N14557  100k TC=0,0 
+
+**** RESUMING Tran.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node IN
+*
+* Moving U_DSTM1:OUT1 from analog node IN to new digital node IN$DtoA
+X$IN_DtoA1
++ IN$DtoA
++ IN
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3904         Q2N3906         
+               NPN             PNP             
+       LEVEL    1               1            
+          IS    6.734000E-15    1.410000E-15 
+          BF  416.4           180.7          
+          NF    1               1            
+         VAF   74.03           18.7          
+         IKF     .06678          .08         
+         ISE    6.734000E-15                 
+          NE    1.259                        
+          BR     .7371          4.977        
+          NR    1               1            
+         ISS    0               0            
+          RB   10              10            
+          RE    0               0            
+          RC    1               2.5          
+         CJE    4.493000E-12    8.063000E-12 
+         VJE     .75             .75         
+         MJE     .2593           .3677       
+         CJC    3.638000E-12    9.728000E-12 
+         VJC     .75             .75         
+         MJC     .3085           .5776       
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  301.200000E-12  179.300000E-12 
+         XTF    2               6            
+         VTF    4               4            
+         ITF     .4              .4          
+          TR  239.500000E-09   33.420000E-09 
+         XTB    1.5             1.5          
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)     .0025  (  OUT) 22.11E-09  (N14529)   12.0000 (N14557)   12.0000     
+
+(N14657)     .0025 ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( IN$DtoA) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.236E-11
+    X$DIGIFPWR.VDPWR  -5.003E-03
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   2.50E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 15:56:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switch_circuit_3-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .09
+

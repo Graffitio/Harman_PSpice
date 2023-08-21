@@ -1,0 +1,78 @@
+
+**** 08/01/23 15:40:47 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Snubber.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN I_I1 0 1A 1m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SNUBBER_CIRCUIT
+V_V1         N14600 0 5V
+R_R1         N14612 N14600  100 TC=0,0 
+R_R2         N14708 HS  100 TC=0,0 
+R_R3         N14682 N14663  1k TC=0,0 
+R_R4         N14663 N14659  1k TC=0,0 
+L_L1         N14612 LS  1mH  
+L_L2         N14708 0  1mH  
+D_D2         LS N14600 D1N4148 
+Q_Q1         LS N14682 0 QMMBT3904TT1/ON 
+Q_Q2         N14600 N14659 HS QMMBT3904TT1/ON 
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14663 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+D_D1         0 HS D1N4148 
+
+**** RESUMING Snubber.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14663
+*
+* Moving U_DSTM1:OUT1 from analog node N14663 to new digital node N14663$DtoA
+X$N14663_DtoA1
++ N14663$DtoA
++ N14663
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+
+ERROR(ORPSIM-15090): DC device I_I1 is undefined
+

@@ -1,0 +1,148 @@
+
+**** 08/04/23 12:10:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\npn_1-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source NPN_1
+V_Vsig         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+R_R1         IN N14565  1k TC=0,0 
+R_RB1         N14569 N14624  49k TC=0,0 
+R_RB2         0 N14569  27k TC=0,0 
+R_RC         N14620 N14624  5k TC=0,0 
+R_RE         0 N14735  1.8k TC=0,0 
+R_RL         0 OUT  1k TC=0,0 
+C_C1         N14565 N14569  3u  TC=0,0 
+C_CC         N14620 OUT  4u  TC=0,0 
+V_VDC         N14624 0 5V
+Q_Q1         N14620 N14569 N14735 Q2N2222
+C_C2         0 N14735  75u  TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+**** 08/04/23 12:10:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\npn_1-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         
+               NPN             
+       LEVEL    1            
+          IS   14.340000E-15 
+          BF  255.9          
+          NF    1            
+         VAF   74.03         
+         IKF     .2847       
+         ISE   14.340000E-15 
+          NE    1.307        
+          BR    6.092        
+          NR    1            
+         ISS    0            
+          RB   10            
+          RE    0            
+          RC    1            
+         CJE   22.010000E-12 
+         VJE     .75         
+         MJE     .377        
+         CJC    7.306000E-12 
+         VJC     .75         
+         MJC     .3416       
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF  411.100000E-12 
+         XTF    3            
+         VTF    1.7          
+         ITF     .6          
+          TR   46.910000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/04/23 12:10:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\npn_1-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)    0.0000  (N14565)    0.0000 (N14569)    1.7033     
+
+(N14620)    2.0457 (N14624)    5.0000 (N14735)    1.0711 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vsig       0.000E+00
+    V_VDC       -6.581E-04
+
+    TOTAL POWER DISSIPATION   3.29E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/23 12:10:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\npn_1-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .63
+  Total job time (using Solver 1)   =         .02
+

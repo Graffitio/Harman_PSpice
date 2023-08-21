@@ -1,0 +1,183 @@
+("FILE_TYPE"	"PMAP File"
+    ("devices"
+        ("DigClock")
+        ("VDC")
+        ("CD4532B_0")
+    )
+    ("instances"
+        ("DSTM2"
+            ("device_name"	"DigClock")
+            ("pspice_path"	"U_DSTM2")
+            ("level"	"0")
+            ("model_params"
+                ("OFFTIME"
+                    ("value"	"2u")
+                    ("pspice_param"	"OFFTIME")
+                )
+                ("DELAY"
+                    ("value"	"0")
+                    ("pspice_param"	"DELAY")
+                )
+                ("ONTIME"
+                    ("value"	"2u")
+                    ("pspice_param"	"ONTIME")
+                )
+                ("STARTVAL"
+                    ("value"	"0")
+                    ("pspice_param"	"STARTVAL")
+                )
+                ("OPPVAL"
+                    ("value"	"1")
+                    ("pspice_param"	"OPPVAL")
+                )
+                ("IO_MODEL"
+                    ("value"	"IO_STM")
+                    ("pspice_param"	"IO_MODEL")
+                )
+                ("IO_LEVEL"
+                    ("value"	"0")
+                    ("pspice_param"	"IO_LEVEL")
+                )
+            )
+        )
+        ("DSTM3"
+            ("device_name"	"DigClock")
+            ("pspice_path"	"U_DSTM3")
+            ("level"	"0")
+            ("model_params"
+                ("OFFTIME"
+                    ("value"	"1u")
+                    ("pspice_param"	"OFFTIME")
+                )
+                ("DELAY"
+                    ("value"	"0")
+                    ("pspice_param"	"DELAY")
+                )
+                ("ONTIME"
+                    ("value"	"1u")
+                    ("pspice_param"	"ONTIME")
+                )
+                ("STARTVAL"
+                    ("value"	"0")
+                    ("pspice_param"	"STARTVAL")
+                )
+                ("OPPVAL"
+                    ("value"	"1")
+                    ("pspice_param"	"OPPVAL")
+                )
+                ("IO_MODEL"
+                    ("value"	"IO_STM")
+                    ("pspice_param"	"IO_MODEL")
+                )
+                ("IO_LEVEL"
+                    ("value"	"0")
+                    ("pspice_param"	"IO_LEVEL")
+                )
+            )
+        )
+        ("DSTM1"
+            ("device_name"	"DigClock")
+            ("pspice_path"	"U_DSTM1")
+            ("level"	"0")
+            ("model_params"
+                ("OFFTIME"
+                    ("value"	"4u")
+                    ("pspice_param"	"OFFTIME")
+                )
+                ("DELAY"
+                    ("value"	"0")
+                    ("pspice_param"	"DELAY")
+                )
+                ("ONTIME"
+                    ("value"	"4u")
+                    ("pspice_param"	"ONTIME")
+                )
+                ("STARTVAL"
+                    ("value"	"0")
+                    ("pspice_param"	"STARTVAL")
+                )
+                ("OPPVAL"
+                    ("value"	"1")
+                    ("pspice_param"	"OPPVAL")
+                )
+                ("IO_MODEL"
+                    ("value"	"IO_STM")
+                    ("pspice_param"	"IO_MODEL")
+                )
+                ("IO_LEVEL"
+                    ("value"	"0")
+                    ("pspice_param"	"IO_LEVEL")
+                )
+            )
+        )
+        ("DSTM4"
+            ("device_name"	"DigClock")
+            ("pspice_path"	"U_DSTM4")
+            ("level"	"0")
+            ("model_params"
+                ("OFFTIME"
+                    ("value"	".5uS")
+                    ("pspice_param"	"OFFTIME")
+                )
+                ("DELAY"
+                    ("value"	"0")
+                    ("pspice_param"	"DELAY")
+                )
+                ("ONTIME"
+                    ("value"	".5uS")
+                    ("pspice_param"	"ONTIME")
+                )
+                ("STARTVAL"
+                    ("value"	"0")
+                    ("pspice_param"	"STARTVAL")
+                )
+                ("OPPVAL"
+                    ("value"	"1")
+                    ("pspice_param"	"OPPVAL")
+                )
+                ("IO_MODEL"
+                    ("value"	"IO_STM")
+                    ("pspice_param"	"IO_MODEL")
+                )
+                ("IO_LEVEL"
+                    ("value"	"0")
+                    ("pspice_param"	"IO_LEVEL")
+                )
+            )
+        )
+        ("V1"
+            ("device_name"	"VDC")
+            ("pspice_path"	"V_V1")
+            ("level"	"0")
+            ("model_params"
+                ("DC"
+                    ("value"	"12Vdc")
+                    ("pspice_param"	"DC")
+                )
+                ("BiasValue Power"
+                    ("value"	"-7.201uW")
+                    ("pspice_param"	"BiasValue Power")
+                )
+                ("PSpice Model Type"
+                    ("value"	"0011")
+                    ("pspice_param"	"PSpice Model Type")
+                )
+            )
+        )
+        ("U1"
+            ("device_name"	"CD4532B_0")
+            ("pspice_path"	"X_U1")
+            ("level"	"0")
+            ("model_params"
+                ("IO_LEVEL"
+                    ("value"	"0")
+                    ("pspice_param"	"IO_LEVEL")
+                )
+                ("MNTYMXDLY"
+                    ("value"	"0")
+                    ("pspice_param"	"MNTYMXDLY")
+                )
+            )
+        )
+    )
+)

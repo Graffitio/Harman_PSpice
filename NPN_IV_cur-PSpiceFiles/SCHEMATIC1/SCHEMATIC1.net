@@ -1,0 +1,7 @@
+* source NPN_IV_CUR
+V_VBE         N14360 0 0Vdc
+V_V2         N14367 0 2Vdc
+Q_Q1         N14367 N14360 0 Q2N2222
+Q_Q2         N14627 N14657 0 Q2N2222
+V_V1         N14627 0 0Vdc
+I_I1         0 N14657 DC 0Adc  

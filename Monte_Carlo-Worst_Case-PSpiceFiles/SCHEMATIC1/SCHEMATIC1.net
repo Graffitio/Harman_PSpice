@@ -1,0 +1,11 @@
+* source MONTE_CARLO-WORST_CASE
+V_V1         IN 0  
++PULSE 0 10v 1m 1n 1n 10m 20m
+V_V2         N14719 0 {VDC}
+X_U1         N14530 N14684 N14719 0 OUT uA741
+C_C1         0 N14530 Cbreak 0.1u 
+R_R1         IN N14530 Rmonte 10k
+R_R2         0 N14684 Rmonte {Rdown}
+R_R3         N14684 N14719 Rmonte {Rup}
+R_R4         0 OUT Rmonte 100k
+.PARAM  rdown=6.3 vdc=10v rup=3.7

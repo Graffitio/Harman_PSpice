@@ -1,0 +1,9 @@
+* source AC_1
+V_V1         N14607 0 DC 0Vdc AC 1Vac 
+R_R1         N14607 N14614  33k TC=0,0 
+R_R2         N14638 N14672  5.6k TC=0,0 
+R_R3         0 N14638  10k TC=0,0 
+C_C1         0 N14614  1n  TC=0,0 
+X_U1         N14614 N14638 VCC VEE N14672 uA741
+V_V2         VCC 0 15Vdc
+V_V3         VEE 0 -15Vdc

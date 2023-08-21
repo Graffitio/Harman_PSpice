@@ -1,0 +1,22 @@
+** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+** Creating circuit file "MC_WC_Exam.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../monte_carlo-worst_case-pspicefiles/monte_carlo-worst_case.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 
+.MC 10 TRAN V([OUT]) YMAX OUTPUT ALL SEED=43 
+.STEP LIN V_V1 9.5 10.5 0.1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

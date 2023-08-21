@@ -1,0 +1,94 @@
+
+**** 07/24/23 10:39:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ D:\Ian_Jung\workplace\PSpice\Electric_2-PSpiceFiles\SCHEMATIC1\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_2
+V_V1         N14452 0 1Vdc
+R_R1         N14452 N14459  {R} TC=0,0 
+R_R2         N14463 N14459  {R} TC=0,0 
+R_R3         N14463 N14467  {R} TC=0,0 
+R_R4         N14467 N14471  {R} TC=0,0 
+R_R5         0 N14471  {R} TC=0,0 
+R_R6         0 N14467  {2*R} TC=0,0 
+R_R7         0 N14463  {2*R} TC=0,0 
+R_R8         0 N14459  {2*R} TC=0,0 
+.PARAM  r=1k
+
+**** RESUMING test.cir ****
+.END
+
+**** 07/24/23 10:39:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ D:\Ian_Jung\workplace\PSpice\Electric_2-PSpiceFiles\SCHEMATIC1\test.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14452)    1.0000 (N14459)     .5000 (N14463)     .2500 (N14467)     .1250     
+
+(N14471)     .0625 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.000E-04
+
+    TOTAL POWER DISSIPATION   5.00E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/24/23 10:39:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ D:\Ian_Jung\workplace\PSpice\Electric_2-PSpiceFiles\SCHEMATIC1\test.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .53
+  Total job time (using Solver 1)   =         .03
+

@@ -1,0 +1,86 @@
+
+**** 07/17/23 16:11:47 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\part_7-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC_sweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 1 1meg
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART_7
+V_V1         M_UN0001 N14827 0Vdc
+V_V2         M_UN0002 N14827 0Vdc
+V_V3         M_UN0003 N14827 0Vdc
+V_V4         M_UN0004 N14827 0Vdc
+R_R1         N14702 N14693  50 TC=0,0 
+R_R2         N14714 N14710  50 TC=0,0 
+R_R3         N14726 N14722  50 TC=0,0 
+R_R4         N14743 N14747  50 TC=0,0 
+L_L1         N14702 N14706  5m  
+L_L2         N14714 N14718  10m  
+L_L3         N14726 N14735  15m  
+L_L4         N14743 N14739  20m  
+C_C1         0 N14706  1u  TC=0,0 
+C_C2         0 N14718  1u  TC=0,0 
+C_C3         0 N14735  1u  TC=0,0 
+C_C4         0 N14739  1u  TC=0,0 
+V_V5         N14827 0 DC 0Vdc AC 1Vac 
+
+**** RESUMING AC_sweep.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14693.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14710.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14722.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node N14747.
+
+ERROR(ORPSIM-15142): Node N14702 is floating
+
+ERROR(ORPSIM-15142): Node N14693 is floating
+
+ERROR(ORPSIM-15142): Node N14714 is floating
+
+ERROR(ORPSIM-15142): Node N14710 is floating
+
+ERROR(ORPSIM-15142): Node N14726 is floating
+
+ERROR(ORPSIM-15142): Node N14722 is floating
+
+ERROR(ORPSIM-15142): Node N14743 is floating
+
+ERROR(ORPSIM-15142): Node N14747 is floating
+
+ERROR(ORPSIM-15142): Node N14706 is floating
+
+ERROR(ORPSIM-15142): Node N14718 is floating
+
+ERROR(ORPSIM-15142): Node N14735 is floating
+
+ERROR(ORPSIM-15142): Node N14739 is floating
+

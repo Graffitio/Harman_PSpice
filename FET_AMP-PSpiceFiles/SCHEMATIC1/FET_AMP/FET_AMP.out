@@ -1,0 +1,125 @@
+
+**** 08/02/23 10:27:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-FET_AMP"  [ D:\Ian_Jung\workplace\PSpice\FET_AMP-PSpiceFiles\SCHEMATIC1\FET_AMP.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "FET_AMP.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_VDS 0 5 0.01 
++ LIN V_VGS 0 2 0.05 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FET_AMP
+R_Rsi         IN N14527  0.1k TC=0,0 
+R_R1         N14560 N14611  4700k TC=0,0 
+R_R2         0 N14560  4700k TC=0,0 
+R_Rd         N14635 N14611  6k TC=0,0 
+R_Rs         0 N14639  0.2k TC=0,0 
+R_RL         0 N14672  10k TC=0,0 
+C_C1         N14527 N14560  3u  TC=0,0 
+C_C3         N14635 N14672  4u  TC=0,0 
+C_Cs         0 N14639  75u  TC=0,0 
+V_V2         N14611 0 5V
+V_V1         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+M_M1         N14635 N14560 N14639 N14639 M2N7000
+V_VGS         N15564 0 2Vdc
+V_VDS         N15603 0 5Vdc
+M_M2         N15603 N15564 0 0 M2N7000
+
+**** RESUMING FET_AMP.cir ****
+.END
+
+**** 08/02/23 10:27:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-FET_AMP"  [ D:\Ian_Jung\workplace\PSpice\FET_AMP-PSpiceFiles\SCHEMATIC1\FET_AMP.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               M2N7000         
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W     .12         
+         VTO    1.73         
+          KP    1.073000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .5489       
+          RS     .02         
+          RG  546.2          
+          RB    1.000000E-03 
+         RDS   48.000000E+06 
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD   74.460000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO   73.610000E-12 
+        CGDO    6.487000E-12 
+        CGBO    0            
+         TOX    2.000000E-06 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 10:27:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-FET_AMP"  [ D:\Ian_Jung\workplace\PSpice\FET_AMP-PSpiceFiles\SCHEMATIC1\FET_AMP.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        2.11
+  Total job time (using Solver 1)   =         .80
+

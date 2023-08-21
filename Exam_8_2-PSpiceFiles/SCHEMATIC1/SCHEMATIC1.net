@@ -1,0 +1,8 @@
+* source EXAM_8_2
+R_R16         N21399 N21413  100k TC=0,0 
+X_U2         N21389 N21399 Sw_tOpen PARAMS: tOpen=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+C_C1         0 N21413  100u  TC=0,0 
+V_V3         N21389 0 5Vdc
+X_U1         0 N21399 Sw_tClose PARAMS: tClose=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg

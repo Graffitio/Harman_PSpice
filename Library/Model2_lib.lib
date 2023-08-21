@@ -1,0 +1,11 @@
+* source MODEL2
+.SUBCKT Model2_lib IN MID OUT  
+R_R3         MID OFFPAGELEFT-R  3.3k TC=0,0 
+R_R2         0 MID  1k TC=0,0 
+R_R1         MID IN  1k TC=0,0 
+R_R4         OUT 0  1k TC=0,0 
+D_D1         0 MID D1N3940 
+D_D2         MID OFFPAGELEFT-R D1N3940 
+C_COUT         MID OUT  0.47U  TC=0,0 
+V_V1         OFFPAGELEFT-R 0 5Vdc
+.ENDS

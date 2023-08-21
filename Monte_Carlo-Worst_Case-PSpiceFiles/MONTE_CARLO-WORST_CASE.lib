@@ -1,0 +1,8 @@
+* PSpice Model Editor - Version 17.4.0
+*$
+.model Cbreak CAP C=1 DEV = 5%
+*$
+.model Rmonte RES R=1 DEV=10%
+*$
+.model Rbreak RES R=1 DEV=5%
+*$

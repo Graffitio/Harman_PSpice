@@ -1,0 +1,66 @@
+
+**** 07/21/23 12:41:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\Lib_check-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "D:\Ian_Jung\workplace\PSpice\Library\TestTest.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100 0 10 SKIPBP 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LIB_CHECK
+C_C3         N24669 DC_SEC2  220u  TC=0,0 
+C_C2         N24245 DC_SEC1  680u  TC=0,0 
+R_R19         N24245 DC_SEC1  1k TC=0,0 
+D_D1         N24245 AC_SEC1 D1N4004 
+D_D6         AC_SEC2 DC_SEC2 D1N4004 
+D_D2         AC_SEC1 DC_SEC1 D1N4004 
+V_V4         0 AC_IN  
++SIN 0 230 60 0 0 0
+D_D7         N24669 N24355 D1N4004 
+D_D3         N24245 N24355 D1N4004 
+D_D8         N24355 DC_SEC2 D1N4004 
+R_R20         N24669 DC_SEC2  1k TC=0,0 
+D_D4         N24355 DC_SEC1 D1N4004 
+D_D5         N24669 AC_SEC2 D1N4004 
+X_U1         AC_SEC1 AC_IN AC_SEC2 N24355 0 TESTTEST
+
+**** RESUMING bias.cir ****
+.END
+
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lpri is undefined
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lsec1 is undefined
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lsec2 is undefined
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lpri is undefined
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lsec1 is undefined
+
+ERROR(ORPSIM-15090):  device X_U1.L_Lsec2 is undefined
+

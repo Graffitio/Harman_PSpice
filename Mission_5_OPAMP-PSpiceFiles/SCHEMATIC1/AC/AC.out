@@ -1,0 +1,274 @@
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 1 100k
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MISSION_5_OPAMP
+X_U1A         N14720 LPF_OUT VCC 0 LPF_OUT TLC1078/101/TI
+V_V1         EI 0 DC 2.5Vdc AC 1Vac 
+R_R3         EI N14716  {R} TC=0,0 
+R_R1         N14716 N14720  {R} TC=0,0 
+C_C2         0 N14720  {C}  TC=0,0 
+C_C3         N14716 LPF_OUT  {2*C}  TC=0,0 
+V_V2         VCC 0 5Vdc
+R_R4         VCC REF  {R} TC=0,0 
+R_R5         REF 0  {R} TC=0,0 
+C_C4         0 REF  1u  TC=0,0 
+X_U1B         N15354 N15399 VCC 0 N15399 TLC1078/101/TI
+C_C5         LPF_OUT N15350  {C}  TC=0,0 
+C_C6         N15350 N15354  {C}  TC=0,0 
+R_R6         N15350 N15399  {R} TC=0,0 
+R_R7         REF N15354  {100*R} TC=0,0 
+X_U2A         N17201 N16440 VCC 0 N16482 LM324
+R_R8         REF N16440  10k TC=0,0 
+R_R9         N16440 N16482  90k TC=0,0 
+V_V3         VEE 0 -5Vdc
+C_C7         N15399 N17201  1u  TC=0,0 
+R_R10         REF N17201  10k TC=0,0 
+.PARAM  c=1500pf r=1k
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.DX        X_U1B.DX        X_U2A.dx        X_U2A.dy        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS                                    1               1.000000E-03 
+         CJO                                                   10.000000E-12 
+
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2A.qx        
+               PNP             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF  166.7          
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.2          
+           D     .52         
+
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U1B.JX        
+               PJF             PJF             
+         VTO     .039            .039        
+        BETA  340.000000E-06  340.000000E-06 
+          IS  350.000000E-15  350.000000E-15 
+
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Current Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2A.sw2       X_U2A.sw1       X_U2A.sw3       X_U2A.sw4       
+         RON    1               1               1               1            
+        ROFF   10.000000E+06   10.000000E+06   10.000000E+06   10.000000E+06 
+         ION    0              -1.000000E-06   -1.000000E-06    0            
+        IOFF   -1.000000E-06    0               0              -1.000000E-06 
+
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   EI)    2.5000  (  REF)    2.5000  (  VCC)    5.0000  (  VEE)   -5.0000      
+
+(N14716)    2.5000 (N14720)    2.5000 (N15350)    2.5000 (N15354)    2.5000     
+
+(N15399)    2.5000 (N16440)    2.5003 (N16482)    2.4985 (N17201)    2.5005     
+
+(LPF_OUT)    2.5000                   (X_U1A.6)-101.4E-09                       
+
+(X_U1A.7)    2.5000                   (X_U1A.8)    2.5000                       
+
+(X_U1A.9)    0.0000                   (X_U1B.6)-101.5E-09                       
+
+(X_U1B.7)    2.5000                   (X_U1B.8)    2.5000                       
+
+(X_U1B.9)    0.0000                   (X_U2A.6) 275.8E-09                       
+
+(X_U2A.7)    2.4985                   (X_U2A.8)    2.4985                       
+
+(X_U2A.9)    0.0000                   (X_U2A.a)    5.0000                       
+
+(X_U2A.b) 19.84E-09                   (X_U1A.10)    2.5712                      
+
+(X_U1A.11)    -.4837                  (X_U1A.12)    -.4837                      
+
+(X_U1A.53)    3.4000                  (X_U1A.54)     .5400                      
+
+(X_U1A.60)    -.5000                  (X_U1A.90)-249.2E-12                      
+
+(X_U1A.91)   25.0000                  (X_U1A.92)  -25.0000                      
+
+(X_U1A.99)    2.5000                  (X_U1B.10)    2.5712                      
+
+(X_U1B.11)    -.4837                  (X_U1B.12)    -.4837                      
+
+(X_U1B.53)    3.4000                  (X_U1B.54)     .5400                      
+
+(X_U1B.60)    -.5000                  (X_U1B.90)-816.5E-12                      
+
+(X_U1B.91)   25.0000                  (X_U1B.92)  -25.0000                      
+
+(X_U1B.99)    2.5000                  (X_U2A.10)    3.1081                      
+
+(X_U2A.11)     .0398                  (X_U2A.12)     .0396                      
+
+(X_U2A.13)    3.0942                  (X_U2A.14)    3.0942                      
+
+(X_U2A.53)    3.5000                  (X_U2A.54)     .8220                      
+
+(X_U2A.90)-19.48E-06                  (X_U2A.91)   40.0000                      
+
+(X_U2A.92)  -40.0000                  (X_U2A.99)    2.5000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.876E-12
+    V_V2        -3.082E-03
+    V_V3         0.000E+00
+    X_U1A.VAD    7.047E-07
+    X_U1A.VB    -1.014E-12
+    X_U1A.VC     9.008E-13
+    X_U1A.VE     1.961E-12
+    X_U1A.VLIM  -2.492E-13
+    X_U1A.VLP   -2.500E-11
+    X_U1A.VLN   -2.500E-11
+    X_U1B.VAD    7.047E-07
+    X_U1B.VB    -1.015E-12
+    X_U1B.VC     9.008E-13
+    X_U1B.VE     1.961E-12
+    X_U1B.VLIM  -8.165E-13
+    X_U1B.VLP   -2.500E-11
+    X_U1B.VLN   -2.500E-11
+    X_U2A.vb     2.758E-12
+    X_U2A.vc     1.002E-12
+    X_U2A.ve     1.565E-12
+    X_U2A.vlim  -1.948E-08
+    X_U2A.vlp   -4.000E-11
+    X_U2A.vln   -4.000E-11
+
+    TOTAL POWER DISSIPATION   1.54E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/23 16:18:56 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        1.70
+  Total job time (using Solver 1)   =         .05
+

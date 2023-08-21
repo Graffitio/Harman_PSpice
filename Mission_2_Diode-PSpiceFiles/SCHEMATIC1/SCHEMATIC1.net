@@ -1,0 +1,4 @@
+* source MISSION_2_DIODE
+I_I1         0 N14403 DC 0Adc  
+Q_Q1         N14419 N14403 0 Q2N2222
+V_V1         N14419 0 0Vdc

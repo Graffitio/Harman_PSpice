@@ -1,0 +1,14 @@
+* source NPN_1
+V_Vsig         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+R_R1         IN N14565  1k TC=0,0 
+R_RB1         N14569 N14624  49k TC=0,0 
+R_RB2         0 N14569  27k TC=0,0 
+R_RC         N14620 N14624  5k TC=0,0 
+R_RE         0 N14735  1.8k TC=0,0 
+R_RL         0 OUT  1k TC=0,0 
+C_C1         N14565 N14569  3u  TC=0,0 
+C_CC         N14620 OUT  4u  TC=0,0 
+V_VDC         N14624 0 5V
+Q_Q1         N14620 N14569 N14735 Q2N2222
+C_C2         0 N14735  75u  TC=0,0 

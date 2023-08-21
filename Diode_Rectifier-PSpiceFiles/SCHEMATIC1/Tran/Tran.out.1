@@ -1,0 +1,49 @@
+
+**** 08/04/23 15:53:17 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Diode_Rectifier-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 10u 
+.STEP LIN C_C1 0 100uF 10uF 
+----------$
+ERROR(ORPSIM-16063): Must be 'I' or 'V'
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE_RECTIFIER
+V_V1         N14490 N14530  
++SIN 0 220*1.414 60Hz 0 0 0
+D_D1         0 N14490 D1N4004 
+D_D2         N14490 N14518 D1N4004 
+D_D3         0 N14530 D1N4004 
+D_D4         N14530 N14518 D1N4004 
+R_R1         0 N14518  {R} TC=0,0 
+C_C1         0 N14518  {C}  TC=0,0 
+.PARAM  c=100uf r=1k
+
+**** RESUMING Tran.cir ****
+.END
+

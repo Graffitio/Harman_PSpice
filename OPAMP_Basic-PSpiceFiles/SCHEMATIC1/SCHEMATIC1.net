@@ -1,0 +1,12 @@
+* source OPAMP_BASIC
+X_U1A         0 N14387 VCC VEE IN_V LM324
+R_R1         EI N14387  {R} TC=0,0 
+R_R2         N14387 IN_V  {R} TC=0,0 
+R_R3         0 N14730  {R} TC=0,0 
+X_U1B         EI N14730 VCC VEE NON LM324
+R_R4         N14730 NON  {R} TC=0,0 
+V_V1         EI 0  
++SIN 0 0.5 1k 0 0 0
+V_V2         VCC 0 12V
+V_V3         VEE 0 -12Vdc
+.PARAM  r=10k

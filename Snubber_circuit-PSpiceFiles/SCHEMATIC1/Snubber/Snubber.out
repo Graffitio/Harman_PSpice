@@ -1,0 +1,255 @@
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Snubber.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10m 0 0.01m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SNUBBER_CIRCUIT
+V_V1         N14600 0 5V
+R_R1         N14612 N14600  100 TC=0,0 
+R_R2         N14708 HS  100 TC=0,0 
+R_R3         N14682 N14663  1k TC=0,0 
+R_R4         N14663 N14659  1k TC=0,0 
+L_L1         N14612 LS  1mH  
+L_L2         N14708 0  1mH  
+Q_Q1         LS N14682 0 QMMBT3904TT1/ON 
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14663 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5mS 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+Q_Q2         HS N14659 N14600 QMMBT3906/PLP 
+
+**** RESUMING Snubber.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14663
+*
+* Moving U_DSTM1:OUT1 from analog node N14663 to new digital node N14663$DtoA
+X$N14663_DtoA1
++ N14663$DtoA
++ N14663
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QMMBT3904TT1/ON QMMBT3906/PLP   
+               NPN             PNP             
+       LEVEL    1               1            
+          IS  126.532000E-12    9.273000E-15 
+          EG    1.05                         
+          BF  206.302         153.6          
+          NF    1.5             1.012        
+         VAF    1.000000E+03   30.8          
+         IKF     .027222         .09         
+         ISE    2.307710E-09  101.000000E-15 
+          NE    3.31052         1.6          
+          BR   20.6302          6.25         
+          NR    2.89609          .9988       
+         VAR    9.39809        10.97         
+         IKR     .272221         .09         
+         ISC    2.307710E-09    1.117000E-12 
+          NC    1.9876          1.43         
+         ISS    0               0            
+          RB    5.8376          1            
+         RBM     .634251        1            
+         IRB   50.3624          1.000000E-06 
+          RE  100.000000E-06     .1244       
+          RC    2.65711         1.375        
+         CJE    4.642140E-12    7.897000E-12 
+         VJE     .4              .69         
+         MJE     .256227         .3628       
+         CJC    3.769610E-12    6.755000E-12 
+         VJC     .4              .37         
+         MJC     .238109         .2096       
+        XCJC     .8              .864        
+         CJS    0               0            
+         VJS     .75             .75         
+         MJS     .5              .333        
+          FC     .512134                     
+          TF  419.578000E-12  590.000000E-12 
+         XTF     .906167        2.5          
+         VTF    8.75418         3.8          
+         ITF     .010582         .07         
+          TR   68.202300E-09   47.000000E-09 
+         XTB     .1                          
+         XTI    1                            
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   HS)    4.8665  (   LS)    5.0000  (N14600)    5.0000 (N14612)    5.0000     
+
+(N14659)    4.1979 (N14663)     .0046 (N14682)     .0046 (N14708)    0.0000     
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N14663$DtoA) : 0  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.286E-02
+    X$DIGIFPWR.VDPWR  -5.000E-03
+    X$DIGIFPWR.VDGND   4.188E-03
+
+    TOTAL POWER DISSIPATION   2.89E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/01/23 15:49:20 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Snubber"  [ D:\Ian_Jung\workplace\PSpice\Snubber_circuit-PSpiceFiles\SCHEMATIC1\Snubber.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       16.70
+  Total job time (using Solver 1)   =         .13
+

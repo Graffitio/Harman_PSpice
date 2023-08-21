@@ -1,0 +1,45 @@
+
+**** 07/17/23 15:33:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_sweep"  [ D:\Ian_Jung\workplace\PSpice\DC_sweep-PSpiceFiles\SCHEMATIC1\DC_sweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DC_sweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V1 0 10 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DC_SWEEP
+D_D4         0 N17113 D1N750 
+R_R11         0 OUT  1k TC=0,0 
+Q_Q4         IN N17113 OUT Q2N3904
+V_V4         IN 0 0Vdc
+R_R10         N17113 IN  1k TC=0,0 
+
+**** RESUMING DC_sweep.cir ****
+.END
+
+
+ERROR(ORPSIM-15090): DC device V1 is undefined
+

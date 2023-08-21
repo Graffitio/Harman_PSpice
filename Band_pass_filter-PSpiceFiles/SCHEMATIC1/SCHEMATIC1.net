@@ -1,0 +1,17 @@
+* source BAND_PASS_FILTER
+X_U3A         N17855 LOW_PASS VCC 0 LOW_PASS TLC1078/101/TI
+C_C3         0 REF  1u  TC=0,0 
+R_R5         REF N17867  {2*R} TC=0,0 
+R_R6         VCC REF  {R} TC=0,0 
+V_V2         VCC 0 5Vdc
+X_U4B         N17867 HIGH_PASS VCC 0 HIGH_PASS TLC1078/101/TI
+R_R7         REF 0  {R} TC=0,0 
+C_C2         N18755 N17867  {C}  TC=0,0 
+R_R1         N18531 N17855  {R} TC=0,0 
+C_C4         0 N17855  {C}  TC=0,0 
+R_R8         EI N18531  {R} TC=0,0 
+C_C5         N18531 LOW_PASS  {2*C}  TC=0,0 
+C_C6         EI N18755  {C}  TC=0,0 
+R_R9         N18755 HIGH_PASS  {R} TC=0,0 
+V_V3         EI 0 DC 2.5Vdc AC 1Vac 
+.PARAM  c=1500pf r=7.5k

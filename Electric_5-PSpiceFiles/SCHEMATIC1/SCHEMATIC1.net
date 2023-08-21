@@ -1,0 +1,9 @@
+* source ELECTRIC_5
+V_V1         N14458 0 4Vdc
+V_V2         N14477 0 8Vdc
+V_V3         N14512 0 16Vdc
+R_R1         N14458 A  3k TC=0,0 
+R_R2         N14477 A  3k TC=0,0 
+R_R3         N14512 A  3k TC=0,0 
+R_R4         0 A  3k TC=0,0 
+V_CONST1         CAL 0 DC {1+2+4}

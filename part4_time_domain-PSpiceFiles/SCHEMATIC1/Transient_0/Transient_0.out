@@ -1,0 +1,81 @@
+
+**** 07/17/23 19:04:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient_0"  [ D:\Ian_Jung\workplace\PSpice\part4_time_domain-PSpiceFiles\SCHEMATIC1\Transient_0.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Transient_0.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 100 0 10m SKIPBP 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART4_TIME_DOMAIN
+V_V1         N15176 0 5Vdc
+R_R1         N15186 OUT  100k TC=0,0 
+X_U1         N15176 N15186 Sw_tOpen PARAMS: tOpen=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+C_C1         0 OUT  100U  TC=0,0 
+X_U2         0 N15186 Sw_tClose PARAMS: tClose=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+
+**** RESUMING Transient_0.cir ****
+.END
+
+**** 07/17/23 19:04:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient_0"  [ D:\Ian_Jung\workplace\PSpice\part4_time_domain-PSpiceFiles\SCHEMATIC1\Transient_0.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.Smod       X_U2.Smod       
+         RON     .01             .01         
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    1               1            
+        VOFF    0               0            
+
+
+
+          JOB CONCLUDED
+
+**** 07/17/23 19:04:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Transient_0"  [ D:\Ian_Jung\workplace\PSpice\part4_time_domain-PSpiceFiles\SCHEMATIC1\Transient_0.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+

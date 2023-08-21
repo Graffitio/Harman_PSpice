@@ -1,0 +1,10 @@
+* source XFRMMODEL_EX
+.SUBCKT Subcircuit AC_CT AC_IN AC_SEC AC_SEC1 GND  
+Kn_K1         L_Lpri L_Lsec1 
++ L_Lsec2    0.85 K1041T060_3E2A
+R_R1         AC_IN N14421  0.01 TC=0,0 
+L_Lpri         N14421 GND  5200  
+L_Lsec2         AC_SEC AC_CT  271  
+L_Lsec1         AC_SEC1 AC_CT  356  
+R_R2         GND AC_CT  1G TC=0,0 
+.ENDS

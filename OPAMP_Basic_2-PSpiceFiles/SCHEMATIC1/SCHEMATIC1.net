@@ -1,0 +1,17 @@
+* source OPAMP_BASIC_2
+V_V2         VCC 0 5Vdc
+R_R1         N16239 N15690  {R} TC=0,0 
+V_V1         EI 0  
++SIN 0 0.25 1k 0 0 0
+R_R3         REF N15732  {R} TC=0,0 
+R_R4         N15732 OUT_2  {R} TC=0,0 
+R_R2         N15690 OUT_1  {R} TC=0,0 
+C_C1         EI N16239  1u  TC=0,0 
+C_C2         EI N16450  1u  TC=0,0 
+R_R5         REF N16450  {R} TC=0,0 
+X_U3A         REF N15690 VCC 0 OUT_1 TLC1078/101/TI
+X_U3B         N16450 N15732 VCC 0 OUT_2 TLC1078/101/TI
+C_C3         0 REF  1u  TC=0,0 
+R_R6         VCC REF  {R} TC=0,0 
+R_R7         REF 0  {R} TC=0,0 
+.PARAM  r=10k

@@ -1,0 +1,4 @@
+* source FET_AMP_2
+M_M2         N15821 N15879 0 0 M2N7000
+V_VGS         N15879 0 2Vdc
+V_VDS         N15821 0 5Vdc

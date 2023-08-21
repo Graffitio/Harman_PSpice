@@ -1,0 +1,182 @@
+
+**** 08/03/23 15:29:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Band_pass_filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 1k 100k
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source BAND_PASS_FILTER
+X_U3A         N17855 LOW_PASS VCC 0 LOW_PASS TLC1078/101/TI
+C_C3         0 REF  1u  TC=0,0 
+R_R5         REF N17867  {2*R} TC=0,0 
+R_R6         VCC REF  {R} TC=0,0 
+V_V2         VCC 0 5Vdc
+X_U4B         N17867 HIGH_PASS VCC 0 HIGH_PASS TLC1078/101/TI
+R_R7         REF 0  {R} TC=0,0 
+C_C2         N18755 N17867  {C}  TC=0,0 
+R_R1         N18531 N17855  {R} TC=0,0 
+C_C4         0 N17855  {C}  TC=0,0 
+R_R8         EI N18531  {R} TC=0,0 
+C_C5         N18531 LOW_PASS  {2*C}  TC=0,0 
+C_C6         EI N18755  {C}  TC=0,0 
+R_R9         N18755 HIGH_PASS  {R} TC=0,0 
+V_V3         EI 0 DC 2.5Vdc AC 1Vac 
+.PARAM  c=1500pf r=7.5k
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/03/23 15:29:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Band_pass_filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3A.DX        X_U4B.DX        
+          IS  800.000000E-18  800.000000E-18 
+
+
+**** 08/03/23 15:29:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Band_pass_filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3A.JX        X_U4B.JX        
+               PJF             PJF             
+         VTO     .039            .039        
+        BETA  340.000000E-06  340.000000E-06 
+          IS  350.000000E-15  350.000000E-15 
+
+
+**** 08/03/23 15:29:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Band_pass_filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   EI)    2.5000  (  REF)    2.5000  (  VCC)    5.0000  (N17855)    2.5000     
+
+(N17867)    2.5000 (N18531)    2.5000 (N18755)    2.5000 (X_U3A.6)-101.4E-09    
+
+(X_U3A.7)    2.5000                   (X_U3A.8)    2.5000                       
+
+(X_U3A.9)    0.0000                   (X_U4B.6)-101.4E-09                       
+
+(X_U4B.7)    2.5000                   (X_U4B.8)    2.5000                       
+
+(X_U4B.9)    0.0000                   (LOW_PASS)    2.5000                      
+
+(X_U3A.10)    2.5712                  (X_U3A.11)    -.4837                      
+
+(X_U3A.12)    -.4837                  (X_U3A.53)    3.4000                      
+
+(X_U3A.54)     .5400                  (X_U3A.60)    -.5000                      
+
+(X_U3A.90)-816.6E-12                  (X_U3A.91)   25.0000                      
+
+(X_U3A.92)  -25.0000                  (X_U3A.99)    2.5000                      
+
+(X_U4B.10)    2.5712                  (X_U4B.11)    -.4837                      
+
+(X_U4B.12)    -.4837                  (X_U4B.53)    3.4000                      
+
+(X_U4B.54)     .5400                  (X_U4B.60)    -.5000                      
+
+(X_U4B.90)-816.6E-12                  (X_U4B.91)   25.0000                      
+
+(X_U4B.92)  -25.0000                  (X_U4B.99)    2.5000                      
+
+(HIGH_PASS)    2.5000                 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -3.492E-04
+    V_V3         1.876E-12
+    X_U3A.VAD    7.047E-07
+    X_U3A.VB    -1.014E-12
+    X_U3A.VC     9.008E-13
+    X_U3A.VE     1.961E-12
+    X_U3A.VLIM  -8.166E-13
+    X_U3A.VLP   -2.500E-11
+    X_U3A.VLN   -2.500E-11
+    X_U4B.VAD    7.047E-07
+    X_U4B.VB    -1.014E-12
+    X_U4B.VC     9.008E-13
+    X_U4B.VE     1.961E-12
+    X_U4B.VLIM  -8.166E-13
+    X_U4B.VLP   -2.500E-11
+    X_U4B.VLN   -2.500E-11
+
+    TOTAL POWER DISSIPATION   1.75E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/03/23 15:29:57 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Band_pass_filter-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

@@ -1,0 +1,228 @@
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 3m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OPAMP_BASIC
+X_U1A         0 N14387 VCC VEE IN_V LM324
+R_R1         EI N14387  {R} TC=0,0 
+R_R2         N14387 IN_V  {R} TC=0,0 
+R_R3         0 N14730  {R} TC=0,0 
+X_U1B         EI N14730 VCC VEE NON LM324
+R_R4         N14730 NON  {R} TC=0,0 
+V_V1         EI 0  
++SIN 0 0.5 1k 0 0 0
+V_V2         VCC 0 12V
+V_V3         VEE 0 -12Vdc
+.PARAM  r=10k
+
+**** RESUMING Tran.cir ****
+.END
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.dx        X_U1A.dy        X_U1B.dx        X_U1B.dy        
+          IS  800.000000E-18  800.000000E-18  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03    1               1.000000E-03 
+         CJO                   10.000000E-12                   10.000000E-12 
+
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.qx        X_U1B.qx        
+               PNP             PNP             
+       LEVEL    1               1            
+          IS  800.000000E-18  800.000000E-18 
+          BF  166.7           166.7          
+          NF    1               1            
+          BR    1               1            
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    0               0            
+         CJE    0               0            
+         VJE     .75             .75         
+         CJC    0               0            
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          KF    0               0            
+          AF    1               1            
+          CN    2.2             2.2          
+           D     .52             .52         
+
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Current Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.sw2       X_U1A.sw1       X_U1A.sw3       X_U1A.sw4       
+         RON    1               1               1               1            
+        ROFF   10.000000E+06   10.000000E+06   10.000000E+06   10.000000E+06 
+         ION    0              -1.000000E-06   -1.000000E-06    0            
+        IOFF   -1.000000E-06    0               0              -1.000000E-06 
+
+
+               X_U1B.sw2       X_U1B.sw1       X_U1B.sw3       X_U1B.sw4       
+         RON    1               1               1               1            
+        ROFF   10.000000E+06   10.000000E+06   10.000000E+06   10.000000E+06 
+         ION    0              -1.000000E-06   -1.000000E-06    0            
+        IOFF   -1.000000E-06    0               0              -1.000000E-06 
+
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   EI)    0.0000  (  NON)-834.5E-06  (  VCC)   12.0000  (  VEE)  -12.0000      
+
+( IN_V)-834.5E-06  (N14387)-192.5E-06 (N14730)-192.5E-06 (X_U1A.6) 158.0E-09    
+
+(X_U1A.7)-837.7E-06                   (X_U1A.8)-837.7E-06                       
+
+(X_U1A.9)    0.0000                   (X_U1A.a)   12.0000                       
+
+(X_U1A.b)-1.680E-06                   (X_U1B.6) 158.0E-09                       
+
+(X_U1B.7)-837.7E-06                   (X_U1B.8)-837.7E-06                       
+
+(X_U1B.9)    0.0000                   (X_U1B.a)   12.0000                       
+
+(X_U1B.b)-1.680E-06                   (X_U1A.10)     .6076                      
+
+(X_U1A.11)  -11.9600                  (X_U1A.12)  -11.9600                      
+
+(X_U1A.13)     .5937                  (X_U1A.14)     .5937                      
+
+(X_U1A.53)   10.5000                  (X_U1A.54)  -11.1780                      
+
+(X_U1A.90)-64.20E-06                  (X_U1A.91)   40.0000                      
+
+(X_U1A.92)  -40.0000                  (X_U1A.99)    0.0000                      
+
+(X_U1B.10)     .6076                  (X_U1B.11)  -11.9600                      
+
+(X_U1B.12)  -11.9600                  (X_U1B.13)     .5937                      
+
+(X_U1B.14)     .5937                  (X_U1B.53)   10.5000                      
+
+(X_U1B.54)  -11.1780                  (X_U1B.90)-64.20E-06                      
+
+(X_U1B.91)   40.0000                  (X_U1B.92)  -40.0000                      
+
+(X_U1B.99)    0.0000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.548E-08
+    V_V2        -5.318E-03
+    V_V3         5.318E-03
+    X_U1A.vb     1.580E-12
+    X_U1A.vc     1.050E-11
+    X_U1A.ve     1.271E-11
+    X_U1A.vlim  -6.420E-08
+    X_U1A.vlp   -4.000E-11
+    X_U1A.vln   -4.000E-11
+    X_U1B.vb     1.580E-12
+    X_U1B.vc     1.050E-11
+    X_U1B.ve     1.271E-11
+    X_U1B.vlim  -6.420E-08
+    X_U1B.vlp   -4.000E-11
+    X_U1B.vln   -4.000E-11
+
+    TOTAL POWER DISSIPATION   1.28E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/03/23 12:51:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .59
+  Total job time (using Solver 1)   =         .22
+

@@ -1,0 +1,44 @@
+
+**** 07/31/23 16:00:48 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Test"  [ D:\Ian_Jung\workplace\PSpice\Diode_Exam_3-PSpiceFiles\SCHEMATIC1\Test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V 0 10 1 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE_EXAM_3
+V_V1         EIN 0 12Vdc
+R_R1         EIN EOUT  1k TC=0,0 
+D_D1         0 EOUT D1N751 
+I_I1         EOUT 0 DC 0.1A  
+
+**** RESUMING Test.cir ****
+.END
+
+
+ERROR(ORPSIM-15090): DC device V is undefined
+

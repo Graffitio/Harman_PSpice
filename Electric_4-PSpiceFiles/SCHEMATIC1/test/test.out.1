@@ -1,0 +1,56 @@
+
+**** 07/24/23 11:41:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ D:\Ian_Jung\workplace\PSpice\Electric_4-PSpiceFiles\SCHEMATIC1\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_4
+V_V1         N14445 N14503 6Vdc
+R_R1         N14445 N14452  4k TC=0,0 
+R_R2         N14452 N14456  1k TC=0,0 
+R_R3         N14503 N14452  4k TC=0,0 
+R_R4         N14479 N14456  2k TC=0,0 
+R_R5         N14479 N14503  1k TC=0,0 
+R_R6         N14472 N14479  4k TC=0,0 
+I_I1         N14472 N14456 DC 6mAdc  
+
+**** RESUMING test.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N14445 is floating
+
+ERROR(ORPSIM-15142): Node N14503 is floating
+
+ERROR(ORPSIM-15142): Node N14452 is floating
+
+ERROR(ORPSIM-15142): Node N14456 is floating
+
+ERROR(ORPSIM-15142): Node N14479 is floating
+
+ERROR(ORPSIM-15142): Node N14472 is floating
+

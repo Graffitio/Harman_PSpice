@@ -1,0 +1,9 @@
+* source ELECTRIC_4
+V_V1         N14445 0 6Vdc
+R_R1         N14445 N14452  4k TC=0,0 
+R_R2         N14452 N14456  1k TC=0,0 
+R_R3         0 N14452  4k TC=0,0 
+R_R4         N14479 N14456  2k TC=0,0 
+R_R5         N14479 0  1k TC=0,0 
+R_R6         N14472 N14479  4k TC=0,0 
+I_I1         N14472 N14456 DC 6mAdc  

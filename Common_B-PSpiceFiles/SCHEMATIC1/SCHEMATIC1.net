@@ -1,0 +1,14 @@
+* source COMMON_B
+Q_Q1         N18738 N18326 N18424 Q2N2222
+R_R2         N18276 N18326  56k TC=0,0 
+R_R4         0 N18326  12k TC=0,0 
+C_C1         0 N18326  75u  TC=0,0 
+V_V2         N18276 0 10Vdc
+R_R5         0 N18424  1k TC=0,0 
+R_R7         N18276 N18738  2.2k TC=0,0 
+R_R6         0 V0  0.1k TC=0,0 
+C_C2         N18738 V0  10u  TC=0,0 
+C_C3         N18424 N19649  10u  TC=0,0 
+I_I2         N19649 0 DC 0Adc AC 0Aac
++SIN 0 100u 10k 0 0 0
+R_R8         0 N19649  99999999M TC=0,0 

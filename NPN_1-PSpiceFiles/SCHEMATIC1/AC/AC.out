@@ -1,0 +1,4621 @@
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 100 1 10meg
+.NOISE V([OUT]) V_Vsig 10
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source NPN_1
+V_Vsig         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+R_R1         IN N14565  1k TC=0,0 
+R_RB1         N14569 N14624  49k TC=0,0 
+R_RB2         0 N14569  27k TC=0,0 
+R_RC         N14620 N14624  5k TC=0,0 
+R_RE         0 0  1.8k TC=0,0 
+R_RL         0 OUT  1k TC=0,0 
+C_C1         N14565 N14569  3u  TC=0,0 
+C_CC         N14620 OUT  4u  TC=0,0 
+V_VDC         N14624 0 5V
+Q_Q1         N14620 N14569 0 Q2N2222
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N2222         
+               NPN             
+       LEVEL    1            
+          IS   14.340000E-15 
+          BF  255.9          
+          NF    1            
+         VAF   74.03         
+         IKF     .2847       
+         ISE   14.340000E-15 
+          NE    1.307        
+          BR    6.092        
+          NR    1            
+         ISS    0            
+          RB   10            
+          RE    0            
+          RC    1            
+         CJE   22.010000E-12 
+         VJE     .75         
+         MJE     .377        
+         CJC    7.306000E-12 
+         VJC     .75         
+         MJC     .3416       
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          TF  411.100000E-12 
+         XTF    3            
+         VTF    1.7          
+         ITF     .6          
+          TR   46.910000E-09 
+         XTB    1.5          
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)    0.0000  (N14565)    0.0000 (N14569)     .6551     
+
+(N14620)     .0378 (N14624)    5.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_Vsig       0.000E+00
+    V_VDC       -1.081E-03
+
+    TOTAL POWER DISSIPATION   5.41E-03  WATTS
+
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.919E-26
+
+ RC       1.037E-23
+
+ RE       0.000E+00
+
+ IBSN     1.322E-21
+
+ IC       8.845E-23
+
+ IBFN     0.000E+00
+
+ TOTAL    1.421E-21
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    3.766E-25  2.164E-23  3.927E-23  1.012E-24  0.000E+00  1.656E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.657E-17 SQ V/HZ
+
+                                         =  4.070E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.507E-04
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  2.700E-05 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       6.598E-26
+
+ RC       1.643E-23
+
+ RE       0.000E+00
+
+ IBSN     2.094E-21
+
+ IC       1.402E-22
+
+ IBFN     0.000E+00
+
+ TOTAL    2.251E-21
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    9.454E-25  3.428E-23  6.222E-23  1.603E-24  0.000E+00  1.656E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.656E-17 SQ V/HZ
+
+                                         =  4.070E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.388E-04
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.704E-05 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.142E-25
+
+ RC       2.603E-23
+
+ RE       0.000E+00
+
+ IBSN     3.317E-21
+
+ IC       2.220E-22
+
+ IBFN     0.000E+00
+
+ TOTAL    3.565E-21
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    2.372E-24  5.430E-23  9.854E-23  2.539E-24  0.000E+00  1.655E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.655E-17 SQ V/HZ
+
+                                         =  4.068E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  3.783E-04
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.075E-05 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       2.053E-25
+
+ RC       4.121E-23
+
+ RE       0.000E+00
+
+ IBSN     5.251E-21
+
+ IC       3.517E-22
+
+ IBFN     0.000E+00
+
+ TOTAL    5.644E-21
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    5.949E-24  8.596E-23  1.560E-22  4.022E-24  0.000E+00  1.653E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.654E-17 SQ V/HZ
+
+                                         =  4.067E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  5.991E-04
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.788E-06 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.861E-25
+
+ RC       6.521E-23
+
+ RE       0.000E+00
+
+ IBSN     8.307E-21
+
+ IC       5.569E-22
+
+ IBFN     0.000E+00
+
+ TOTAL    8.930E-21
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.491E-23  1.360E-22  2.468E-22  6.369E-24  0.000E+00  1.651E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.652E-17 SQ V/HZ
+
+                                         =  4.064E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  9.483E-04
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  4.286E-06 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       7.633E-25
+
+ RC       1.031E-22
+
+ RE       0.000E+00
+
+ IBSN     1.313E-20
+
+ IC       8.813E-22
+
+ IBFN     0.000E+00
+
+ TOTAL    1.412E-20
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    3.729E-23  2.149E-22  3.901E-22  1.008E-23  0.000E+00  1.647E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.648E-17 SQ V/HZ
+
+                                         =  4.060E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.500E-03
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  2.707E-06 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.586E-24
+
+ RC       1.628E-22
+
+ RE       0.000E+00
+
+ IBSN     2.072E-20
+
+ IC       1.393E-21
+
+ IBFN     0.000E+00
+
+ TOTAL    2.228E-20
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    9.306E-23  3.392E-22  6.155E-22  1.593E-23  0.000E+00  1.640E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.643E-17 SQ V/HZ
+
+                                         =  4.053E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.369E-03
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.711E-06 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.443E-24
+
+ RC       2.565E-22
+
+ RE       0.000E+00
+
+ IBSN     3.261E-20
+
+ IC       2.200E-21
+
+ IBFN     0.000E+00
+
+ TOTAL    3.507E-20
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    2.314E-22  5.338E-22  9.688E-22  2.515E-23  0.000E+00  1.631E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.634E-17 SQ V/HZ
+
+                                         =  4.043E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  3.736E-03
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.082E-06 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       7.730E-24
+
+ RC       4.027E-22
+
+ RE       0.000E+00
+
+ IBSN     5.113E-20
+
+ IC       3.466E-21
+
+ IBFN     0.000E+00
+
+ TOTAL    5.501E-20
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    5.719E-22  8.369E-22  1.519E-21  3.962E-23  0.000E+00  1.615E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.621E-17 SQ V/HZ
+
+                                         =  4.026E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  5.874E-03
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.854E-07 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+00 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.773E-23
+
+ RC       6.288E-22
+
+ RE       0.000E+00
+
+ IBSN     7.968E-20
+
+ IC       5.442E-21
+
+ IBFN     0.000E+00
+
+ TOTAL    8.577E-20
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.401E-21  1.304E-21  2.366E-21  6.220E-23  0.000E+00  1.591E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.600E-17 SQ V/HZ
+
+                                         =  4.001E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  9.193E-03
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  4.352E-07 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       4.098E-23
+
+ RC       9.740E-22
+
+ RE       0.000E+00
+
+ IBSN     1.230E-19
+
+ IC       8.499E-21
+
+ IBFN     0.000E+00
+
+ TOTAL    1.325E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    3.383E-21  2.012E-21  3.652E-21  9.709E-23  0.000E+00  1.555E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.569E-17 SQ V/HZ
+
+                                         =  3.961E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.429E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  2.773E-07 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       9.412E-23
+
+ RC       1.490E-21
+
+ RE       0.000E+00
+
+ IBSN     1.872E-19
+
+ IC       1.316E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    2.020E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    7.998E-21  3.062E-21  5.557E-21  1.503E-22  0.000E+00  1.501E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.522E-17 SQ V/HZ
+
+                                         =  3.902E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.197E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.776E-07 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       2.116E-22
+
+ RC       2.238E-21
+
+ RE       0.000E+00
+
+ IBSN     2.791E-19
+
+ IC       2.014E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    3.017E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.831E-20  4.562E-21  8.278E-21  2.297E-22  0.000E+00  1.422E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.455E-17 SQ V/HZ
+
+                                         =  3.814E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  3.324E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.148E-07 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       4.573E-22
+
+ RC       3.275E-21
+
+ RE       0.000E+00
+
+ IBSN     4.040E-19
+
+ IC       3.023E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    4.379E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    4.006E-20  6.597E-21  1.197E-20  3.444E-22  0.000E+00  1.312E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.362E-17 SQ V/HZ
+
+                                         =  3.690E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  4.916E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.506E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       9.322E-22
+
+ RC       4.627E-21
+
+ RE       0.000E+00
+
+ IBSN     5.621E-19
+
+ IC       4.419E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    6.119E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    8.228E-20  9.169E-21  1.664E-20  5.027E-22  0.000E+00  1.169E-17
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.241E-17 SQ V/HZ
+
+                                         =  3.523E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  7.045E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  5.000E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.757E-21
+
+ RC       6.255E-21
+
+ RE       0.000E+00
+
+ IBSN     7.449E-19
+
+ IC       6.231E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    8.153E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.558E-19  1.213E-20  2.202E-20  7.075E-22  0.000E+00  9.964E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.097E-17 SQ V/HZ
+
+                                         =  3.312E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  9.696E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  3.416E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.013E-21
+
+ RC       8.037E-21
+
+ RE       0.000E+00
+
+ IBSN     9.343E-19
+
+ IC       8.396E-20
+
+ IBFN     0.000E+00
+
+ TOTAL    1.029E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    2.681E-19  1.519E-20  2.756E-20  9.515E-22  0.000E+00  8.070E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  9.411E-18 SQ V/HZ
+
+                                         =  3.068E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.272E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  2.412E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       4.660E-21
+
+ RC       9.791E-21
+
+ RE       0.000E+00
+
+ IBSN     1.108E-18
+
+ IC       1.074E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.230E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    4.154E-19  1.798E-20  3.262E-20  1.215E-21  0.000E+00  6.199E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  7.897E-18 SQ V/HZ
+
+                                         =  2.810E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.583E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.775E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       6.513E-21
+
+ RC       1.135E-20
+
+ RE       0.000E+00
+
+ IBSN     1.251E-18
+
+ IC       1.303E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.400E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    5.813E-19  2.025E-20  3.675E-20  1.471E-21  0.000E+00  4.532E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  6.572E-18 SQ V/HZ
+
+                                         =  2.564E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.873E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.369E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+01 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       8.319E-21
+
+ RC       1.261E-20
+
+ RE       0.000E+00
+
+ IBSN     1.358E-18
+
+ IC       1.503E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.529E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    7.430E-19  2.193E-20  3.979E-20  1.695E-21  0.000E+00  3.178E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  5.514E-18 SQ V/HZ
+
+                                         =  2.348E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.117E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.109E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       9.877E-21
+
+ RC       1.356E-20
+
+ RE       0.000E+00
+
+ IBSN     1.432E-18
+
+ IC       1.665E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.622E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    8.826E-19  2.308E-20  4.189E-20  1.875E-21  0.000E+00  2.158E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  4.729E-18 SQ V/HZ
+
+                                         =  2.175E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.307E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  9.424E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.110E-20
+
+ RC       1.423E-20
+
+ RE       0.000E+00
+
+ IBSN     1.481E-18
+
+ IC       1.785E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.685E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    9.919E-19  2.384E-20  4.326E-20  2.009E-21  0.000E+00  1.432E-18
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  4.178E-18 SQ V/HZ
+
+                                         =  2.044E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.446E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  8.356E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.199E-20
+
+ RC       1.469E-20
+
+ RE       0.000E+00
+
+ IBSN     1.513E-18
+
+ IC       1.870E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.726E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.072E-18  2.432E-20  4.414E-20  2.104E-21  0.000E+00  9.364E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.805E-18 SQ V/HZ
+
+                                         =  1.951E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.543E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.671E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.261E-20
+
+ RC       1.500E-20
+
+ RE       0.000E+00
+
+ IBSN     1.533E-18
+
+ IC       1.928E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.753E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.127E-18  2.463E-20  4.470E-20  2.168E-21  0.000E+00  6.070E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.559E-18 SQ V/HZ
+
+                                         =  1.887E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.608E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.234E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.302E-20
+
+ RC       1.520E-20
+
+ RE       0.000E+00
+
+ IBSN     1.546E-18
+
+ IC       1.966E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.770E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.165E-18  2.483E-20  4.506E-20  2.211E-21  0.000E+00  3.921E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.399E-18 SQ V/HZ
+
+                                         =  1.844E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.651E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.956E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.330E-20
+
+ RC       1.532E-20
+
+ RE       0.000E+00
+
+ IBSN     1.554E-18
+
+ IC       1.991E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.781E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.189E-18  2.495E-20  4.528E-20  2.239E-21  0.000E+00  2.536E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.297E-18 SQ V/HZ
+
+                                         =  1.816E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.678E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.779E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.347E-20
+
+ RC       1.541E-20
+
+ RE       0.000E+00
+
+ IBSN     1.559E-18
+
+ IC       2.008E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.788E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.205E-18  2.503E-20  4.542E-20  2.256E-21  0.000E+00  1.651E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.231E-18 SQ V/HZ
+
+                                         =  1.798E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.696E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.667E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.359E-20
+
+ RC       1.546E-20
+
+ RE       0.000E+00
+
+ IBSN     1.562E-18
+
+ IC       2.018E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.793E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.215E-18  2.507E-20  4.550E-20  2.268E-21  0.000E+00  1.087E-19
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.189E-18 SQ V/HZ
+
+                                         =  1.786E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.707E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.596E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.366E-20
+
+ RC       1.549E-20
+
+ RE       0.000E+00
+
+ IBSN     1.564E-18
+
+ IC       2.024E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.796E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.221E-18  2.510E-20  4.556E-20  2.275E-21  0.000E+00  7.293E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.163E-18 SQ V/HZ
+
+                                         =  1.778E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.715E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.551E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+02 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.370E-20
+
+ RC       1.551E-20
+
+ RE       0.000E+00
+
+ IBSN     1.565E-18
+
+ IC       2.029E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.797E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.226E-18  2.512E-20  4.560E-20  2.280E-21  0.000E+00  5.030E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.146E-18 SQ V/HZ
+
+                                         =  1.774E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.719E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.523E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.373E-20
+
+ RC       1.552E-20
+
+ RE       0.000E+00
+
+ IBSN     1.566E-18
+
+ IC       2.031E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.798E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.228E-18  2.514E-20  4.562E-20  2.283E-21  0.000E+00  3.598E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.136E-18 SQ V/HZ
+
+                                         =  1.771E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.722E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.505E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.375E-20
+
+ RC       1.553E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.033E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.799E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.230E-18  2.514E-20  4.563E-20  2.285E-21  0.000E+00  2.694E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.129E-18 SQ V/HZ
+
+                                         =  1.769E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.724E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.494E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.376E-20
+
+ RC       1.554E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.034E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.231E-18  2.515E-20  4.564E-20  2.286E-21  0.000E+00  2.123E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.125E-18 SQ V/HZ
+
+                                         =  1.768E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.725E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.487E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.377E-20
+
+ RC       1.554E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.286E-21  0.000E+00  1.762E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.122E-18 SQ V/HZ
+
+                                         =  1.767E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.726E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.482E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.554E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.534E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.120E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.726E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.480E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.554E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.391E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.119E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.478E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.300E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.119E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.477E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.243E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.118E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.476E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.207E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.118E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.476E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+03 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.565E-20  2.287E-21  0.000E+00  1.184E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.117E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.564E-20  2.287E-21  0.000E+00  1.170E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.117E-18 SQ V/HZ
+
+                                         =  1.766E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.727E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.378E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.567E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.800E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.515E-20  4.564E-20  2.287E-21  0.000E+00  1.160E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.117E-18 SQ V/HZ
+
+                                         =  1.765E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.726E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.377E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.566E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.799E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.232E-18  2.514E-20  4.563E-20  2.287E-21  0.000E+00  1.155E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.116E-18 SQ V/HZ
+
+                                         =  1.765E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.726E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.377E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.566E-18
+
+ IC       2.035E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.799E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.231E-18  2.513E-20  4.561E-20  2.287E-21  0.000E+00  1.151E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.115E-18 SQ V/HZ
+
+                                         =  1.765E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.726E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.376E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.565E-18
+
+ IC       2.034E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.798E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.231E-18  2.512E-20  4.558E-20  2.286E-21  0.000E+00  1.148E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.113E-18 SQ V/HZ
+
+                                         =  1.764E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.725E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.375E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.563E-18
+
+ IC       2.033E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.796E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.230E-18  2.509E-20  4.554E-20  2.285E-21  0.000E+00  1.146E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.110E-18 SQ V/HZ
+
+                                         =  1.764E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.724E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.373E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.561E-18
+
+ IC       2.032E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.794E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.228E-18  2.505E-20  4.547E-20  2.284E-21  0.000E+00  1.145E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.105E-18 SQ V/HZ
+
+                                         =  1.762E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.721E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.475E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.369E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.557E-18
+
+ IC       2.030E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.790E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.225E-18  2.499E-20  4.536E-20  2.282E-21  0.000E+00  1.143E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.098E-18 SQ V/HZ
+
+                                         =  1.760E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.718E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.476E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.364E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.552E-18
+
+ IC       2.027E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.783E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.220E-18  2.490E-20  4.519E-20  2.278E-21  0.000E+00  1.141E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.087E-18 SQ V/HZ
+
+                                         =  1.757E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.713E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.476E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+04 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.356E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.542E-18
+
+ IC       2.022E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.774E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.213E-18  2.475E-20  4.492E-20  2.272E-21  0.000E+00  1.138E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.070E-18 SQ V/HZ
+
+                                         =  1.752E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.705E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.477E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.344E-20
+
+ RC       1.555E-20
+
+ RE       0.000E+00
+
+ IBSN     1.528E-18
+
+ IC       2.014E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.758E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.202E-18  2.452E-20  4.450E-20  2.264E-21  0.000E+00  1.133E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.043E-18 SQ V/HZ
+
+                                         =  1.744E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.692E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.479E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.324E-20
+
+ RC       1.556E-20
+
+ RE       0.000E+00
+
+ IBSN     1.506E-18
+
+ IC       2.001E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.735E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.184E-18  2.417E-20  4.386E-20  2.250E-21  0.000E+00  1.127E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.000E-18 SQ V/HZ
+
+                                         =  1.732E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.673E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.481E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.294E-20
+
+ RC       1.556E-20
+
+ RE       0.000E+00
+
+ IBSN     1.472E-18
+
+ IC       1.983E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.699E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.158E-18  2.362E-20  4.287E-20  2.230E-21  0.000E+00  1.116E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.936E-18 SQ V/HZ
+
+                                         =  1.714E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.643E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.484E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.250E-20
+
+ RC       1.557E-20
+
+ RE       0.000E+00
+
+ IBSN     1.421E-18
+
+ IC       1.954E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.645E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.118E-18  2.281E-20  4.140E-20  2.199E-21  0.000E+00  1.101E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.840E-18 SQ V/HZ
+
+                                         =  1.685E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.597E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.490E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.185E-20
+
+ RC       1.558E-20
+
+ RE       0.000E+00
+
+ IBSN     1.348E-18
+
+ IC       1.914E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.567E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.060E-18  2.163E-20  3.925E-20  2.155E-21  0.000E+00  1.079E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.700E-18 SQ V/HZ
+
+                                         =  1.643E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.529E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.498E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.095E-20
+
+ RC       1.560E-20
+
+ RE       0.000E+00
+
+ IBSN     1.246E-18
+
+ IC       1.857E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.458E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    9.796E-19  1.999E-20  3.628E-20  2.093E-21  0.000E+00  1.048E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.506E-18 SQ V/HZ
+
+                                         =  1.583E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.431E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.512E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       9.782E-21
+
+ RC       1.562E-20
+
+ RE       0.000E+00
+
+ IBSN     1.112E-18
+
+ IC       1.783E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.316E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    8.748E-19  1.785E-20  3.240E-20  2.013E-21  0.000E+00  1.007E-20
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.253E-18 SQ V/HZ
+
+                                         =  1.501E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.297E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.534E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       8.365E-21
+
+ RC       1.564E-20
+
+ RE       0.000E+00
+
+ IBSN     9.512E-19
+
+ IC       1.693E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.145E-18
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    7.481E-19  1.527E-20  2.771E-20  1.915E-21  0.000E+00  9.585E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.947E-18 SQ V/HZ
+
+                                         =  1.395E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.124E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.568E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       6.806E-21
+
+ RC       1.567E-20
+
+ RE       0.000E+00
+
+ IBSN     7.740E-19
+
+ IC       1.595E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    9.559E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    6.087E-19  1.242E-20  2.254E-20  1.808E-21  0.000E+00  9.048E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.610E-18 SQ V/HZ
+
+                                         =  1.269E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.916E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.622E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+05 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       5.259E-21
+
+ RC       1.570E-20
+
+ RE       0.000E+00
+
+ IBSN     5.981E-19
+
+ IC       1.497E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    7.687E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    4.703E-19  9.598E-21  1.742E-20  1.702E-21  0.000E+00  8.514E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.276E-18 SQ V/HZ
+
+                                         =  1.130E-09 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.684E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.707E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.873E-21
+
+ RC       1.572E-20
+
+ RE       0.000E+00
+
+ IBSN     4.404E-19
+
+ IC       1.409E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    6.009E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    3.463E-19  7.068E-21  1.283E-20  1.607E-21  0.000E+00  8.037E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  9.768E-19 SQ V/HZ
+
+                                         =  9.883E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.445E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  6.837E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.259E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       2.739E-21
+
+ RC       1.574E-20
+
+ RE       0.000E+00
+
+ IBSN     3.115E-19
+
+ IC       1.337E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    4.637E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    2.450E-19  5.000E-21  9.074E-21  1.529E-21  0.000E+00  7.646E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  7.320E-19 SQ V/HZ
+
+                                         =  8.556E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.216E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.037E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.585E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.881E-21
+
+ RC       1.575E-20
+
+ RE       0.000E+00
+
+ IBSN     2.139E-19
+
+ IC       1.283E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    3.598E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.682E-19  3.432E-21  6.229E-21  1.470E-21  0.000E+00  7.350E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  5.465E-19 SQ V/HZ
+
+                                         =  7.392E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  1.007E-01
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.339E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.995E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.266E-21
+
+ RC       1.576E-20
+
+ RE       0.000E+00
+
+ IBSN     1.440E-19
+
+ IC       1.244E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    2.855E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.133E-19  2.311E-21  4.195E-21  1.427E-21  0.000E+00  7.138E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  4.138E-19 SQ V/HZ
+
+                                         =  6.433E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  8.266E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  7.782E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  2.512E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       8.453E-22
+
+ RC       1.577E-20
+
+ RE       0.000E+00
+
+ IBSN     9.612E-20
+
+ IC       1.217E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    2.345E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    7.559E-20  1.543E-21  2.800E-21  1.398E-21  0.000E+00  6.992E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  3.228E-19 SQ V/HZ
+
+                                         =  5.682E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  6.753E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  8.413E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.162E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       5.646E-22
+
+ RC       1.578E-20
+
+ RE       0.000E+00
+
+ IBSN     6.420E-20
+
+ IC       1.199E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    2.005E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    5.049E-20  1.030E-21  1.870E-21  1.379E-21  0.000E+00  6.894E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.622E-19 SQ V/HZ
+
+                                         =  5.120E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  5.519E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  9.277E-09 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  3.981E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       3.811E-22
+
+ RC       1.578E-20
+
+ RE       0.000E+00
+
+ IBSN     4.334E-20
+
+ IC       1.188E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.783E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    3.409E-20  6.956E-22  1.262E-21  1.366E-21  0.000E+00  6.830E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  2.225E-19 SQ V/HZ
+
+                                         =  4.717E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  4.535E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.040E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  5.012E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       2.627E-22
+
+ RC       1.578E-20
+
+ RE       0.000E+00
+
+ IBSN     2.988E-20
+
+ IC       1.180E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.639E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    2.350E-20  4.795E-22  8.702E-22  1.357E-21  0.000E+00  6.786E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.969E-19 SQ V/HZ
+
+                                         =  4.437E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  3.765E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.179E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  6.310E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.869E-22
+
+ RC       1.578E-20
+
+ RE       0.000E+00
+
+ IBSN     2.126E-20
+
+ IC       1.174E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.546E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.672E-20  3.412E-22  6.191E-22  1.351E-21  0.000E+00  6.756E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.804E-19 SQ V/HZ
+
+                                         =  4.248E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  3.176E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.338E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  7.943E+06 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.386E-22
+
+ RC       1.579E-20
+
+ RE       0.000E+00
+
+ IBSN     1.576E-20
+
+ IC       1.170E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.487E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    1.240E-20  2.530E-22  4.591E-22  1.347E-21  0.000E+00  6.733E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.699E-19 SQ V/HZ
+
+                                         =  4.122E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.735E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.507E-08 V/RT HZ
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     NOISE ANALYSIS                   TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+     FREQUENCY =  1.000E+07 HZ
+
+
+
+
+ **** TRANSISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          Q_Q1       
+
+ RB       1.079E-22
+
+ RC       1.579E-20
+
+ RE       0.000E+00
+
+ IBSN     1.227E-20
+
+ IC       1.166E-19
+
+ IBFN     0.000E+00
+
+ TOTAL    1.448E-19
+
+
+
+ **** RESISTOR SQUARED NOISE VOLTAGES (SQ V/HZ)
+
+
+
+
+          R_R1       R_RB1      R_RB2      R_RC       R_RE       R_RL       
+
+ TOTAL    9.651E-21  1.970E-22  3.574E-22  1.342E-21  0.000E+00  6.712E-21
+
+
+
+
+
+ **** TOTAL OUTPUT NOISE VOLTAGE         =  1.631E-19 SQ V/HZ
+
+                                         =  4.038E-10 V/RT HZ
+
+      TRANSFER FUNCTION VALUE:
+
+        V(OUT)/V_Vsig                    =  2.413E-02
+
+      EQUIVALENT INPUT NOISE AT V_Vsig =  1.673E-08 V/RT HZ
+
+
+          JOB CONCLUDED
+
+**** 08/01/23 10:50:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

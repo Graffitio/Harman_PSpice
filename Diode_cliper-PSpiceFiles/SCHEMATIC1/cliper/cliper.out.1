@@ -1,0 +1,47 @@
+
+**** 07/31/23 12:52:33 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-cliper"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\cliper.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "cliper.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE_CLIPER
+V_V2         N14371 GND  
++SIN 0 {100*1.414} 60Hz 0 0 0
+D_D2         N14378 GND D1N4148 
+R_R1         N14371 N14378  1k TC=0,0 
+
+**** RESUMING cliper.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N14371 is floating
+
+ERROR(ORPSIM-15142): Node GND is floating
+
+ERROR(ORPSIM-15142): Node N14378 is floating
+

@@ -1,0 +1,20 @@
+** Profile: "SCHEMATIC1-Diode-Exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_Exam_2-PSpiceFiles\SCHEMATIC1\Diode-Exam.sim ] 
+
+** Creating circuit file "Diode-Exam.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 
+.STEP PARAM C LIST 0 100uF 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+.END

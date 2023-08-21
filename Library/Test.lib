@@ -1,0 +1,80 @@
+* source TTEST
+.SUBCKT SCHEMATIC1   
+U_DSTM4         STIM(1,1)
++ $G_DPWR $G_DGND
++ N14530 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+R_R4         0 N14530  1k TC=0,0 
+V_V1         P12V 0 12V
+V_V2         0 N12V 12V
+R_R6         0 N17207  1k TC=0,0 
+U_DSTM6         STIM(1,1)
++ P12V $G_DGND
++ N17207 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+U_DSTM7         STIM(1,1)
++ P12V N12V
++ N17317 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+R_R7         0 N17317  1k TC=0,0 
+U_DSTM8         STIM(8,11111111)
++ $G_DPWR $G_DGND
++ D7 D6 D5 D4 D3 D2 D1 D0 
++ IO_STM
++ IO_LEVEL=0
++  0s 00000000  
++ 1s 00011100  
++ 2s 00101111  
++ 3s 01001100 
+R_R8         0 D0  1k TC=0,0 
+R_R9         0 D1  1k TC=0,0 
+R_R10         0 D2  1k TC=0,0 
+R_R11         0 D3  1k TC=0,0 
+R_R12         0 D4  1k TC=0,0 
+R_R13         0 D5  1k TC=0,0 
+R_R14         0 D6  1k TC=0,0 
+R_R15         0 D7  1k TC=0,0 
+V_V3         N20958 0 5Vdc
+X_U1         0 N20965 Sw_tClose PARAMS: tClose=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+X_U2         N20958 N20965 Sw_tOpen PARAMS: tOpen=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+R_R16         N20965 N21206  100k TC=0,0 
+C_C1         0 N21206  100u  TC=0,0 
+V_V4         0 AC_IN  
++SIN 0 230 60 0 0 0
+R_R17         AC_IN N22126  0.01 TC=0,0 
+R_R18         0 N22162  1g TC=0,0 
+R_R19         N22180 DC_SEC1  1k TC=0,0 
+R_R20         N22256 DC_SEC2  1k TC=0,0 
+L_Lpri         N22126 0  5200  
+L_Lsec1         AC_SEC1 N22162  356  
+L_Lsec2         AC_SEC2 N22162  271  
+D_D1         N22180 AC_SEC1 D1N4004 
+D_D2         AC_SEC1 DC_SEC1 D1N4004 
+D_D3         N22180 N22162 D1N4004 
+D_D4         N22162 DC_SEC1 D1N4004 
+D_D5         N22256 AC_SEC2 D1N4004 
+D_D6         AC_SEC2 DC_SEC2 D1N4004 
+D_D7         N22256 N22162 D1N4004 
+D_D8         N22162 DC_SEC2 D1N4004 
+C_C2         N22180 DC_SEC1  680u  TC=0,0 
+C_C3         N22256 DC_SEC2  220u  TC=0,0 
+Kn_K1         L_Lpri L_Lsec1 
++ L_Lsec2    0.85 K1041T060_3E2A
+.ENDS

@@ -1,0 +1,14 @@
+* source ELECTRIC_3
+R_R1         N14615 A  {2*R} TC=0,0 
+R_R2         N14615 A  {2*R} TC=0,0 
+R_R3         A N14677  {3*R} TC=0,0 
+R_R4         A N14677  {3*R} TC=0,0 
+R_R5         A N14677  {3*R} TC=0,0 
+R_R6         B A  {2*R} TC=0,0 
+R_R7         C A  {2*R} TC=0,0 
+V_V1         N14615 0 0
+V_V2         N14677 0 0
+I_I1         0 B DC 4mAdc  
+I_I2         0 C DC 2mAdc  
+V_CONST1         CAL 0 DC {2+1}
+.PARAM  r=1k

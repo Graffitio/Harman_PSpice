@@ -1,0 +1,159 @@
+
+**** 08/03/23 10:56:42 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\TSMC-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../tsmc-pspicefiles/tsmc.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 10 10mega
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TSMC
+V_V1         IN_1ST+ 0 DC 0Vdc AC 0.1Vac 
+M_M13         N14648 N14648 N14838 N14838 TC407P           
+M_M14         N14786 N14786 N14838 N14838 TC407P           
+M_M15         IN_2ND N14786 N14838 N14838 TC407P           
+M_M16         OUT IN_2ND N14838 N14838 TC407P           
+M_M17         OUT IN_2ND N14838 N14838 TC407P           
+M_M18         IN_2ND IN_1ST+ N14762 N14762 TC407N           
+M_M19         N14786 IN_1ST- N14762 N14762 TC407N           
+M_M20         N14648 N14648 N15717 N15717 TC407N           
+M_M21         N14762 N14648 N15717 N15717 TC407N           
+M_M22         OUT N14648 N15717 N15717 TC407N           
+C_C1         IN_2ND OUT  1n  TC=0,0 
+V_V2         N14838 0 5Vdc
+V_V3         0 N15717 5Vdc
+R_R2         IN_1ST- OUT  100k TC=0,0 
+R_R1         0 IN_1ST-  1k TC=0,0 
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/03/23 10:56:42 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\TSMC-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               TC407P          TC407N          
+               PMOS            NMOS            
+       LEVEL    3               3            
+         TPG    0               0            
+           L    8.000000E-06    8.000000E-06 
+           W  480.000000E-06  290.000000E-06 
+          LD    1.200000E-06    1.200000E-06 
+          WD    1.400000E-06    1.400000E-06 
+         VTO    -.6              .7          
+          KP    6.900000E-06   17.300000E-06 
+       GAMMA     .9             1            
+         PHI     .61218          .659578     
+      LAMBDA    0               0            
+          RD    2               2            
+          RS    2               2            
+          RG    2               2            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ  144.039000E-06  227.745700E-06 
+        CJSW    0               0            
+          TT   80.000000E-09  100.000000E-09 
+        CGSO  414.000000E-12  414.000000E-12 
+        CGDO  414.000000E-12  414.000000E-12 
+        CGBO  161.000000E-12  161.000000E-12 
+        NSUB    2.000000E+15    5.000000E+15 
+         TOX  100.000000E-09  100.000000E-09 
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 08/03/23 10:56:42 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\TSMC-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)   -1.3015  (IN_2ND)    1.1629 (N14648)    -.3418 (N14762)   -3.1815     
+
+(N14786)    1.4018 (N14838)    5.0000 (N15717)   -5.0000 (IN_1ST+)    0.0000    
+
+(IN_1ST-)    -.0129                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V2        -1.543E-02
+    V_V3        -1.544E-02
+
+    TOTAL POWER DISSIPATION   1.54E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/03/23 10:56:42 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\TSMC-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .91
+  Total job time (using Solver 1)   =         .03
+

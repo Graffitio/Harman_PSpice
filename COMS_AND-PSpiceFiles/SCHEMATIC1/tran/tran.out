@@ -1,0 +1,367 @@
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10m 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source COMS_AND
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND N15333 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+X_M4         N15479 N15333 0 2N7000/PLP
+V_V1         N15255 0 5Vdc
+X_M1         OUT N15325 N15255 BS250/PLP
+X_M3         OUT N15325 N15479 2N7000/PLP
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N15325 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+X_M2         OUT N15333 N15255 BS250/PLP
+X_M5         OUT3 OUT N15255 BS250/PLP
+X_M6         OUT3 OUT 0 2N7000/PLP
+C_C1         OUT3 0  1n  TC=0,0 
+
+**** RESUMING tran.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N15333
+*
+* Moving U_DSTM2:OUT1 from analog node N15333 to new digital node N15333$DtoA
+X$N15333_DtoA1
++ N15333$DtoA
++ N15333
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N15325
+*
+* Moving U_DSTM1:OUT1 from analog node N15325 to new digital node N15325$DtoA
+X$N15325_DtoA1
++ N15325$DtoA
++ N15325
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M4.Dbody      X_M1.Dbody      X_M3.Dbody      X_M2.Dbody      
+          IS  125.000000E-15   75.320000E-15  125.000000E-15   75.320000E-15 
+           N    1.023           1.016           1.023           1.016        
+         IKF   18.01                           18.01                         
+          BV   60              45              60              45            
+         IBV   10.000000E-06   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    1.281           1.245           1.281           1.245        
+          TT  161.600000E-09   86.560000E-09  161.600000E-09   86.560000E-09 
+         CJO   46.300000E-12   53.220000E-12   46.300000E-12   53.220000E-12 
+          VJ     .4519           .5392           .4519           .5392       
+           M     .3423           .3583           .3423           .3583       
+
+
+               X_M5.Dbody      X_M6.Dbody      
+          IS   75.320000E-15  125.000000E-15 
+           N    1.016           1.023        
+         IKF                   18.01         
+          BV   45              60            
+         IBV   10.000000E-06   10.000000E-06 
+          RS    1.245           1.281        
+          TT   86.560000E-09  161.600000E-09 
+         CJO   53.220000E-12   46.300000E-12 
+          VJ     .5392           .4519       
+           M     .3583           .3423       
+
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M4.MOST1      X_M4.MOST2      X_M1.MOST1      X_M1.MOST2      
+               NMOS            NMOS            PMOS            PMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    9.700000E-03    9.700000E-03    7.600000E-03    7.600000E-03 
+         VTO    2              -4.73           -2.3             2.43         
+          KP   20.780000E-06   20.780000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    1.186                           4.014                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_M3.MOST1      X_M3.MOST2      X_M2.MOST1      X_M2.MOST2      
+               NMOS            NMOS            PMOS            PMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    9.700000E-03    9.700000E-03    7.600000E-03    7.600000E-03 
+         VTO    2              -4.73           -2.3             2.43         
+          KP   20.780000E-06   20.780000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    1.186                           4.014                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_M5.MOST1      X_M5.MOST2      X_M6.MOST1      X_M6.MOST2      
+               PMOS            PMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    9.700000E-03    9.700000E-03 
+         VTO   -2.3             2.43            2              -4.73         
+          KP   10.330000E-06   10.330000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT) 316.8E-12  ( OUT3)    5.0000  (N15255)    5.0000 (N15325)    4.9975     
+
+(N15333)    4.9975 (N15479) 158.4E-12 (X_M1.4)    2.5675 (X_M2.4)    2.5675     
+
+(X_M3.4) 316.8E-12 (X_M4.4) 158.4E-12 (X_M5.4)    5.0000 (X_M6.4)    4.7300     
+
+($G_DGND)    0.0000                   ($G_DPWR)    5.0000                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N15333$DtoA) : 1  (N15325$DtoA) : 1  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.535E-11
+    X$DIGIFPWR.VDPWR  -1.000E-02
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   5.00E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/23 09:38:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-tran"  [ D:\Ian_Jung\workplace\PSpice\COMS_AND-PSpiceFiles\SCHEMATIC1\tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .19
+

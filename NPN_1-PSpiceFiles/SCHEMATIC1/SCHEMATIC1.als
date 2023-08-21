@@ -1,0 +1,16 @@
+.ALIASES
+V_Vsig          Vsig(+=IN -=0 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14305@SOURCE.VSIN.Normal(chips)
+R_R1            R1(1=IN 2=N14565 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14342@ANALOG.R.Normal(chips)
+R_RB1           RB1(1=N14569 2=N14624 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14358@ANALOG.R.Normal(chips)
+R_RB2           RB2(1=0 2=N14569 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14374@ANALOG.R.Normal(chips)
+R_RC            RC(1=N14620 2=N14624 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14390@ANALOG.R.Normal(chips)
+R_RE            RE(1=0 2=N14735 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14406@ANALOG.R.Normal(chips)
+R_RL            RL(1=0 2=OUT ) CN @NPN_1.SCHEMATIC1(sch_1):INS14422@ANALOG.R.Normal(chips)
+C_C1            C1(1=N14565 2=N14569 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14456@ANALOG.C.Normal(chips)
+C_CC            CC(1=N14620 2=OUT ) CN @NPN_1.SCHEMATIC1(sch_1):INS14472@ANALOG.C.Normal(chips)
+V_VDC           VDC(+=N14624 -=0 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14513@SOURCE.VDC.Normal(chips)
+Q_Q1            Q1(c=N14620 b=N14569 e=N14735 ) CN @NPN_1.SCHEMATIC1(sch_1):INS14540@BIPOLAR.Q2N2222.Normal(chips)
+C_C2            C2(1=0 2=N14735 ) CN @NPN_1.SCHEMATIC1(sch_1):INS15460@ANALOG.C.Normal(chips)
+_    _(in=IN)
+_    _(out=OUT)
+.ENDALIASES

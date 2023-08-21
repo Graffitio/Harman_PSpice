@@ -1,0 +1,5 @@
+ lib=D:\Ian_Jung\workplace\PSpice\Library\TTTTTEST.lib, offset=23, size=314
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\diode.lib, offset=17984, size=69
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\diode.lib, offset=13913, size=211
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\magnetic.lib, offset=269083, size=65
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\magnetic.lib, offset=263664, size=58

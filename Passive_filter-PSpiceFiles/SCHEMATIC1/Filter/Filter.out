@@ -1,0 +1,100 @@
+
+**** 07/31/23 10:28:13 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter"  [ D:\Ian_Jung\workplace\PSpice\Passive_filter-PSpiceFiles\SCHEMATIC1\Filter.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Filter.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 50 10 100k
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PASSIVE_FILTER
+R_R1         EI 1ST_LPF  {R} TC=0,0 
+R_R2         EI N14523  {R} TC=0,0 
+R_R3         N14523 2ND_LPF  {R} TC=0,0 
+C_C1         0 1ST_LPF  {C}  TC=0,0 
+C_C2         N14523 0  {C}  TC=0,0 
+C_C3         0 2ND_LPF  {C}  TC=0,0 
+V_V1         EI 0 DC 0Vdc AC 1Vac 
+C_C4         1ST_HPF EI  {C}  TC=0,0 
+C_C5         N15064 EI  {C}  TC=0,0 
+C_C6         2ND_HPF N15064  {C}  TC=0,0 
+R_R4         0 1ST_HPF  {R} TC=0,0 
+R_R5         0 N15064  {R} TC=0,0 
+R_R6         0 2ND_HPF  {R} TC=0,0 
+.PARAM  c=0.15uf r=1k
+
+**** RESUMING Filter.cir ****
+.END
+
+**** 07/31/23 10:28:13 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter"  [ D:\Ian_Jung\workplace\PSpice\Passive_filter-PSpiceFiles\SCHEMATIC1\Filter.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   EI)    0.0000  (N14523)    0.0000 (N15064)    0.0000 (1ST_HPF)    0.0000    
+
+(1ST_LPF)    0.0000                   (2ND_HPF)    0.0000                       
+
+(2ND_LPF)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/31/23 10:28:13 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Filter"  [ D:\Ian_Jung\workplace\PSpice\Passive_filter-PSpiceFiles\SCHEMATIC1\Filter.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

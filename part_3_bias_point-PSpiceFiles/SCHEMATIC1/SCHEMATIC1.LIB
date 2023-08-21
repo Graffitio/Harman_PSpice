@@ -1,0 +1,7 @@
+* source PART_3_BIAS_POINT
+.SUBCKT SCHEMATIC1   
+V_V1         IN 0 10Vdc
+R_R1         IN OUT  1k TC=0,0 
+R_R2         0 OUT  1k TC=0,0 
+C_C1         0 OUT  1n  TC=0,0 
+.ENDS

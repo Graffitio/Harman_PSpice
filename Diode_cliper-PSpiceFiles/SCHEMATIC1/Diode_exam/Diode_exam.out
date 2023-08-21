@@ -1,0 +1,179 @@
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Diode_exam.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 
+.STEP PARAM R LIST 100 1k 10k 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE_CLIPER
+V_V1         IN 0  
++SIN 0 {100*1.414} 60Hz 0 0 0
+D_D1         IN OUT D1N4004 
+R_R1         0 OUT  {R} TC=0,0 
+C_C1         0 OUT  {C}  TC=0,0 
+.PARAM  c=100uf r=1k
+
+**** RESUMING Diode_exam.cir ****
+.END
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4004         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV  600              75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM R =  100   
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)-151.3E-24  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.513E-24
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM R =    1.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)-24.23E-21  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         2.423E-23
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM R =   10.0000E+03
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)-15.52E-21  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.552E-24
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/31/23 15:11:28 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM R =   10.0000E+03
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

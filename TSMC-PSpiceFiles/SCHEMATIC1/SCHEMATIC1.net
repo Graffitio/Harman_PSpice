@@ -1,0 +1,17 @@
+* source TSMC
+V_V1         IN_1ST+ 0 DC 0Vdc AC 0.1Vac 
+M_M13         N14648 N14648 N14838 N14838 TC407P           
+M_M14         N14786 N14786 N14838 N14838 TC407P           
+M_M15         IN_2ND N14786 N14838 N14838 TC407P           
+M_M16         OUT IN_2ND N14838 N14838 TC407P           
+M_M17         OUT IN_2ND N14838 N14838 TC407P           
+M_M18         IN_2ND IN_1ST+ N14762 N14762 TC407N           
+M_M19         N14786 IN_1ST- N14762 N14762 TC407N           
+M_M20         N14648 N14648 N15717 N15717 TC407N           
+M_M21         N14762 N14648 N15717 N15717 TC407N           
+M_M22         OUT N14648 N15717 N15717 TC407N           
+C_C1         IN_2ND OUT  1n  TC=0,0 
+V_V2         N14838 0 5Vdc
+V_V3         0 N15717 5Vdc
+R_R2         IN_1ST- OUT  100k TC=0,0 
+R_R1         0 IN_1ST-  1k TC=0,0 

@@ -1,0 +1,46 @@
+
+**** 07/31/23 15:08:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode_exam"  [ D:\Ian_Jung\workplace\PSpice\Diode_cliper-PSpiceFiles\SCHEMATIC1\Diode_exam.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Diode_exam.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 40m 0 
+.STEP C LIST 47u 100u 470u 
+------$
+ERROR(ORPSIM-16063): Must be 'I' or 'V'
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE_CLIPER
+V_V1         IN 0  
++SIN 0 {100*1.414} 60Hz 0 0 0
+D_D1         IN OUT D1N4004 
+R_R1         0 OUT  {R} TC=0,0 
+C_C1         0 OUT  {C}  TC=0,0 
+.PARAM  c=100uf r=1k
+
+**** RESUMING Diode_exam.cir ****
+.END
+

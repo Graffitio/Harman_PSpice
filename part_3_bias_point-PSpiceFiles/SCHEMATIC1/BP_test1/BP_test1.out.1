@@ -1,0 +1,122 @@
+
+**** 07/17/23 11:37:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-BP_test1"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\BP_test1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "BP_test1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.SENS V([OUT]) 
+.TF V(R_R2) V_V1
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART_3_BIAS_POINT
+V_V1         IN 0 0Vdc
+R_R1         IN OUT  1k TC=0,0 
+R_R2         0 OUT  1k TC=0,0 
+C_C1         0 OUT  1n  TC=0,0 
+
+**** RESUMING BP_test1.cir ****
+.END
+
+**** 07/17/23 11:37:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-BP_test1"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\BP_test1.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)    0.0000  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+
+
+
+ ****     SMALL-SIGNAL CHARACTERISTICS
+
+
+      V(R_R2)/V_V1 = -5.000E-01
+
+      INPUT RESISTANCE AT V_V1 =  2.000E+03
+
+      OUTPUT RESISTANCE AT V(R_R2) =  5.000E+02
+
+**** 07/17/23 11:37:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-BP_test1"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\BP_test1.sim ] 
+
+
+ ****     DC SENSITIVITY ANALYSIS          TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+DC SENSITIVITIES OF OUTPUT V(OUT)
+
+         ELEMENT         ELEMENT         ELEMENT       NORMALIZED
+          NAME            VALUE       SENSITIVITY     SENSITIVITY
+                                      (VOLTS/UNIT) (VOLTS/PERCENT)
+
+          R_R1          1.000E+03       0.000E+00       0.000E+00
+          R_R2          1.000E+03       0.000E+00       0.000E+00
+          V_V1          0.000E+00       5.000E-01       0.000E+00
+
+
+          JOB CONCLUDED
+
+**** 07/17/23 11:37:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-BP_test1"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\BP_test1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        0.00
+

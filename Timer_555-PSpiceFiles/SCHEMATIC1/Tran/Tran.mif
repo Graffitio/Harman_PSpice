@@ -1,0 +1,6 @@
+ lib=D:\Ian_Jung\workplace\PSpice\library\ncs2200p.lib, offset=4419, size=1239
+ lib=, offset=29, size=222
+ lib=, offset=23, size=106
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\bipolar.lib, offset=200861, size=315
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\phil_fet.lib, offset=45382, size=502
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\phil_fet.lib, offset=204213, size=472

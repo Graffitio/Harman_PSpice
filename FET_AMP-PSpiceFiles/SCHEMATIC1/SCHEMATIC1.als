@@ -1,0 +1,18 @@
+.ALIASES
+R_Rsi           Rsi(1=IN 2=N14527 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14299@ANALOG.R.Normal(chips)
+R_R1            R1(1=N14560 2=N14611 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14315@ANALOG.R.Normal(chips)
+R_R2            R2(1=0 2=N14560 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14331@ANALOG.R.Normal(chips)
+R_Rd            Rd(1=N14635 2=N14611 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14347@ANALOG.R.Normal(chips)
+R_Rs            Rs(1=0 2=N14639 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14363@ANALOG.R.Normal(chips)
+R_RL            RL(1=0 2=OUT ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14379@ANALOG.R.Normal(chips)
+C_C1            C1(1=N14527 2=N14560 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14404@ANALOG.C.Normal(chips)
+C_C3            C3(1=N14635 2=OUT ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14420@ANALOG.C.Normal(chips)
+C_Cs            Cs(1=0 2=N14639 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14436@ANALOG.C.Normal(chips)
+V_V2            V2(+=N14611 -=0 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14461@SOURCE.VDC.Normal(chips)
+V_V1            V1(+=IN -=0 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14492@SOURCE.VSIN.Normal(chips)
+M_M1            M1(d=N14635 g=N14560 s=N14639 s=N14639 ) CN @FET_AMP.SCHEMATIC1(sch_1):INS14542@PWRMOS.M2N7000.Normal(chips)
+V_CONST1          CONST1(OUT=VGS ) CN @FET_AMP.SCHEMATIC1(sch_1):INS16609@ABM.CONST.Normal(chips)
+_    _(in=IN)
+_    _(out=OUT)
+_    _(Vgs=VGS)
+.ENDALIASES

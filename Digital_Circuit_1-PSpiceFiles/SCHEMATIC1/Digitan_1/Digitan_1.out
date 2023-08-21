@@ -1,0 +1,321 @@
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Digitan_1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50u 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIGITAL_CIRCUIT_1
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND N15569 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +2u 0
++  +2u 1
++ ENDREPEAT
+U_DSTM3         STIM(1,1) $G_DPWR $G_DGND N15595 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +1u 0
++  +1u 1
++ ENDREPEAT
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N15493 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +4u 0
++  +4u 1
++ ENDREPEAT
+U_DSTM4         STIM(1,1) $G_DPWR $G_DGND N15603 IO_STM IO_LEVEL=0 
++ 0 0
++ +0 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+V_V1         VDD 0 12Vdc
+X_U1         VDD VDD N15603 N15595 N15569 N15493 0 0 0 Q0 Q1 Q2 M_UN0001
++  M_UN0002 VDD 0 CD4532B PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING Digitan_1.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node 0
+*
+* Moving X_U1.UCD4532BLOG:IN9 from analog node 0 to new digital node 0$AtoD
+X$0_AtoD1
++ 0
++ 0$AtoD
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.UCD4532BLOG:IN8 from analog node 0 to new digital node 0$AtoD2
+X$0_AtoD2
++ 0
++ 0$AtoD2
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.UCD4532BLOG:IN7 from analog node 0 to new digital node 0$AtoD3
+X$0_AtoD3
++ 0
++ 0$AtoD3
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface for node VDD
+*
+* Moving X_U1.UCD4532BLOG:IN2 from analog node VDD to new digital node VDD$AtoD
+X$VDD_AtoD1
++ VDD
++ VDD$AtoD
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1.UCD4532BLOG:IN1 from analog node VDD to new digital node VDD$AtoD2
+X$VDD_AtoD2
++ VDD
++ VDD$AtoD2
++ VDD
++ 0
++ AtoD_4000B
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$CD4000_PWR 0 CD4000_PWR
+
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         
+          IS    1.000000E-15 
+          RS    2            
+         CJO    2.000000E-12 
+
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO4000B         
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI     .5          
+       S0VLO    -.5          
+      S1NAME 0               
+       S1VHI    -.5          
+       S1VLO   -3            
+      S2NAME R               
+       S2VHI     .05         
+       S2VLO    -.5          
+      S3NAME R               
+       S3VHI     .5          
+       S3VLO    -.05         
+      S4NAME X               
+       S4VHI     .5          
+       S4VLO    -.5          
+      S5NAME 1               
+       S5VHI    3            
+       S5VLO     .5          
+      S6NAME F               
+       S6VHI     .5          
+       S6VLO    -.05         
+      S7NAME F               
+       S7VHI     .05         
+       S7VLO    -.5          
+
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         
+      TPLHMN    0            
+      TPLHTY    0            
+      TPLHMX    0            
+      TPHLMN    0            
+      TPHLTY    0            
+      TPHLMX    0            
+
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_4000B        
+        DRVL    0               1.443000E+03 
+        DRVH    0               1.443000E+03 
+       AtoD1                 AtoD_4000B      
+       AtoD2                 AtoD_4000B_NX   
+       AtoD3                 AtoD_4000B      
+       AtoD4                 AtoD_4000B_NX   
+       DtoA1 DtoA_STM        DtoA_4000B      
+       DtoA2 DtoA_STM        DtoA_4000B      
+       DtoA3 DtoA_STM        DtoA_4000B      
+       DtoA4 DtoA_STM        DtoA_4000B      
+    DIGPOWER                 CD4000_PWR      
+      TSWHL1                    7.720000E-09 
+      TSWHL2                    7.860000E-09 
+      TSWHL3                    9.710000E-09 
+      TSWHL4                    9.630000E-09 
+      TSWLH1                    7.560000E-09 
+      TSWLH2                    7.400000E-09 
+      TSWLH3                    9.410000E-09 
+      TSWLH4                    9.240000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VDD)   12.0000  ($G_CD4000_VDD)    5.0000                                    
+
+($G_CD4000_VSS)    0.0000             (X$0_AtoD1.NORM)   -1.1538                
+
+(X$0_AtoD2.NORM)   -1.1538            (X$0_AtoD3.NORM)   -1.1538                
+
+(X$VDD_AtoD1.NORM)    1.1538          (X$VDD_AtoD2.NORM)    1.1538              
+
+(X$0_AtoD1.XNORM.THRESHOLD)    3.4000 (X$0_AtoD2.XNORM.THRESHOLD)    3.4000     
+
+(X$0_AtoD3.XNORM.THRESHOLD)    3.4000 (X$VDD_AtoD1.XNORM.THRESHOLD)    3.4000   
+
+(X$VDD_AtoD2.XNORM.THRESHOLD)    3.4000                  
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( X_U1.GS) : 1     (      Q1) : 0     ( X_U1.Q0) : 0     ( X_U1.D5) : 0         
+
+( X_U1.D6) : 0     (VDD$AtoD) : 1     ( X_U1.D3) : 1     ( 0$AtoD3) : 0         
+
+( X_U1.EO) : 0     (  N15603) : 1     (      Q2) : 1     ( X_U1.Q1) : 0         
+
+(M_UN0001) : 1     (  N15569) : 1     ( X_U1.Q2) : 1     ( X_U1.D7) : 0         
+
+( X_U1.D0) : 1     (  N15493) : 1     (  0$AtoD) : 0     ( X_U1.EI) : 1         
+
+(M_UN0002) : 0     (      Q0) : 0     (VDD$AtoD2) : 1    ( X_U1.D4) : 1         
+
+( X_U1.D1) : 1     (  N15595) : 1     ( X_U1.D2) : 1     ( 0$AtoD2) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -6.001E-07
+    X$CD4000_PWR.VVDD  -5.000E-06
+    X$CD4000_PWR.VVSS  -5.000E-06
+
+    TOTAL POWER DISSIPATION   3.22E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/21/23 18:50:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Digitan_1"  [ D:\Ian_Jung\workplace\PSpice\Digital_Circuit_1-PSpiceFiles\SCHEMATIC1\Digitan_1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .53
+  Total job time (using Solver 1)   =         .05
+

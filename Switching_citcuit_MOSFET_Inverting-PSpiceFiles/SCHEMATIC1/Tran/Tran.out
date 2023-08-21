@@ -1,0 +1,423 @@
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SWITCHING_CITCUIT_MOSFET_INVERTING
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND IN IO_STM IO_LEVEL=0 
++ 0 0
++ +.5mS 1
++REPEAT FOREVER
++ +.5mS 0
++  +.5mS 1
++ ENDREPEAT
+R_R1         IN N14475  10k TC=0,0 
+R_R2         7405 N14618  1k TC=0,0 
+V_V1         N14618 0 5Vdc
+X_M1         OUT N14475 N14618 BS250/PLP
+X_M2         OUT N14475 0 2N7000/PLP
+X_U1A         IN 7404 $G_DPWR $G_DGND 7404 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         IN 7405 $G_DPWR $G_DGND 7405 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+
+**** RESUMING Tran.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node IN
+*
+* Moving X_U2A.U1:IN1 from analog node IN to new digital node IN$AtoD
+X$IN_AtoD1
++ IN
++ IN$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.U1:IN1 from analog node IN to new digital node IN$AtoD2
+X$IN_AtoD2
++ IN
++ IN$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving U_DSTM1:OUT1 from analog node IN to new digital node IN$DtoA
+X$IN_DtoA1
++ IN$DtoA
++ IN
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node 7405
+*
+* Moving X_U2A.U1:OUT1 from analog node 7405 to new digital node 7405$DtoA
+X$7405_DtoA1
++ 7405$DtoA
++ 7405
++ $G_DPWR
++ $G_DGND
++ DtoA_STD_OC
++       PARAMS: DRVH=   1.0000E+06 DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.Dbody      X_M2.Dbody      D74CLMP         D74             
+          IS   75.320000E-15  125.000000E-15    1.000000E-15  100.000000E-18 
+           N    1.016           1.023                                        
+         IKF                   18.01                                         
+          BV   45              60                                            
+         IBV   10.000000E-06   10.000000E-06                                 
+          RS    1.245           1.281           2              25            
+          TT   86.560000E-09  161.600000E-09                                 
+         CJO   53.220000E-12   46.300000E-12    2.000000E-12    2.000000E-12 
+          VJ     .5392           .4519                                       
+           M     .3583           .3423                                       
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q74             
+               NPN             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF   49            
+          NF    1            
+         ISE  100.000000E-18 
+          BR     .03         
+          NR    1            
+         ISC  400.000000E-18 
+         ISS    0            
+          RB   50            
+          RE    0            
+          RC   20            
+         CJE    1.000000E-12 
+         VJE     .9          
+         MJE     .5          
+         CJC  500.000000E-15 
+         VJC     .8          
+         MJC     .33         
+        XCJC    1            
+         CJS    3.000000E-12 
+         VJS     .7          
+         MJS     .33         
+          TF  200.000000E-12 
+          TR   10.000000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.MOST1      X_M1.MOST2      X_M2.MOST1      X_M2.MOST2      
+               PMOS            PMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    9.700000E-03    9.700000E-03 
+         VTO   -2.3             2.43            2              -4.73         
+          KP   10.330000E-06   10.330000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          DIN74_OC        
+      S0NAME 0               0               
+       S0TSW  500.000000E-12    3.500000E-09 
+       S0RLO     .5             7.13         
+       S0RHI    1.000000E+03  389            
+      S1NAME 1               1               
+       S1TSW  500.000000E-12    5.500000E-09 
+       S1RLO    1.000000E+03  200.000000E+03 
+       S1RHI     .5           200.000000E+03 
+      S2NAME X               X               
+       S2TSW  500.000000E-12    3.500000E-09 
+       S2RLO     .429          42.9          
+       S2RHI    1.16          116            
+      S3NAME R               R               
+       S3TSW  500.000000E-12    3.500000E-09 
+       S3RLO     .429          42.9          
+       S3RHI    1.16          116            
+      S4NAME F               F               
+       S4TSW  500.000000E-12    3.500000E-09 
+       S4RLO     .429          42.9          
+       S4RHI    1.16          116            
+      S5NAME Z               Z               
+       S5TSW  500.000000E-12    5.500000E-09 
+       S5RLO    1.000000E+06  200.000000E+03 
+       S5RHI    1.000000E+06  200.000000E+03 
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_04            D_05            
+      TPLHMN    4.800000E-09   16.000000E-09 
+      TPLHTY   12.000000E-09   40.000000E-09 
+      TPLHMX   22.000000E-09   55.000000E-09 
+      TPHLMN    3.200000E-09    3.200000E-09 
+      TPHLTY    8.000000E-09    8.000000E-09 
+      TPHLMX   15.000000E-09   15.000000E-09 
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          IO_STD_OC       
+        DRVL    0             104             104            
+        DRVH    0              96.4             1.000000E+06 
+       AtoD1                 AtoD_STD        AtoD_STD        
+       AtoD2                 AtoD_STD_NX     AtoD_STD_NX     
+       AtoD3                 AtoD_STD        AtoD_STD        
+       AtoD4                 AtoD_STD_NX     AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA2 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA3 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+       DtoA4 DtoA_STM        DtoA_STD        DtoA_STD_OC     
+      TSWHL1                    1.511000E-09    2.747000E-09 
+      TSWHL2                    1.487000E-09    2.732000E-09 
+      TSWHL3                    1.511000E-09    2.747000E-09 
+      TSWHL4                    1.487000E-09    2.732000E-09 
+      TSWLH1                    3.517000E-09    1.589000E-09 
+      TSWLH2                    3.564000E-09    1.615000E-09 
+      TSWLH3                    3.517000E-09    1.589000E-09 
+      TSWLH4                    3.564000E-09    1.615000E-09 
+       TPWRT  100.000000E+03  100.000000E+03  100.000000E+03 
+
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)     .0035  (  OUT)    5.0000  ( 7405)    4.9752  (N14475)     .0035     
+
+(N14618)    5.0000 (X_M1.4)    5.0000 (X_M2.4)    4.7335 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (X$IN_AtoD1.1)     .0950                  
+
+(X$IN_AtoD1.2)     .0475              (X$IN_AtoD1.3)     .8312                  
+
+(X$IN_AtoD2.1)     .0950              (X$IN_AtoD2.2)     .0475                  
+
+(X$IN_AtoD2.3)     .8312              
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( IN$AtoD) : 0     (7405$DtoA) : Z    (    7404) : 1     ( IN$DtoA) : 0         
+
+(IN$AtoD2) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -2.475E-05
+    X$DIGIFPWR.VDPWR  -7.086E-03
+    X$DIGIFPWR.VDGND   1.975E-05
+
+    TOTAL POWER DISSIPATION   3.56E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 16:50:24 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switching_citcuit_MOSFET_Inverting-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        1.78
+  Total job time (using Solver 1)   =         .33
+

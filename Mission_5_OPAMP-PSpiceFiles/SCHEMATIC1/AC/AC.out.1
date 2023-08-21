@@ -1,0 +1,158 @@
+
+**** 08/04/23 14:52:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 101 1 100k
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MISSION_5_OPAMP
+X_U1A         LPF_OUT N14720 0 VCC LPF_OUT TLC1078/101/TI
+V_V1         EI 0 DC 2.5Vdc AC 1Vac 
+R_R3         EI N14716  {R} TC=0,0 
+R_R1         N14716 N14720  {R} TC=0,0 
+C_C2         0 N14720  {C}  TC=0,0 
+C_C3         N14716 LPF_OUT  {2*C}  TC=0,0 
+V_V2         VCC 0 5Vdc
+R_R4         VCC REF  {R} TC=0,0 
+R_R5         REF 0  {R} TC=0,0 
+C_C4         0 REF  1u  TC=0,0 
+X_U1B         HPF_OUT N15354 0 VCC HPF_OUT TLC1078/101/TI
+C_C5         LPF_OUT N15350  {C}  TC=0,0 
+C_C6         N15350 N15354  {C}  TC=0,0 
+R_R6         N15350 HPF_OUT  {R} TC=0,0 
+R_R7         REF N15354  {2*R} TC=0,0 
+.PARAM  c=1500pf r=7.5k
+
+**** RESUMING AC.cir ****
+.END
+
+**** 08/04/23 14:52:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.DX        X_U1B.DX        
+          IS  800.000000E-18  800.000000E-18 
+
+
+**** 08/04/23 14:52:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.JX        X_U1B.JX        
+               PJF             PJF             
+         VTO     .039            .039        
+        BETA  340.000000E-06  340.000000E-06 
+          IS  350.000000E-15  350.000000E-15 
+
+
+ERROR(ORPSIM-16550): Floating point computation failed during matrix solution. Possible solutions: 1)Ensure that all device parameters are in valid range. 2)Try using .options LIMIT
+
+INTERNAL ERROR -- Overflow, Multiply
+
+ABORTING SIMULATION
+**** 08/04/23 14:52:27 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =          10
+  External (NCNODS)                 =          38
+  Total (NUMNOD)                    =          38
+
+Total device count (NUMEL)          =          71
+  Capacitors (C)                    =           9
+  Diodes (D)                        =          10
+  VCVS (E)                          =           2
+  CCCS (F)                          =           2
+  VCCS (G)                          =           4
+  CCVS (H)                          =           2
+  Current Sources (I)               =           2
+  JFETs (J)                         =           4
+  Resistors (R)                     =          20
+  Voltage Sources (V)               =          16
+
+Number of subcircuits (X)           =           2
+
+Matrix statistics:
+  Matrix size (NSTOP)               =          58
+  Initial no. elements (NTTAR)      =         209
+  No. elements w/ fillin (NTTBR)    =         353
+  No. fillins (IFILL)               =         144
+  No. overflows (NTTOV)             =         140
+  No. LU operations (IOPS)          =        5163
+  Percent sparsity (PERSPA)         =      89.507
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Load Threads                        =           7
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =        0.00
+  Matrix solution                   =        0.00               2
+  Readin                            =         .03
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .13
+  License check-out time            =         .55
+  Total job time (using Solver 1)   =         .03
+

@@ -1,0 +1,12 @@
+* source COMMON_B_AND_C
+R_R1         IN N16616  1k TC=0,0 
+C_C2         N16654 V0  4u  TC=0,0 
+Q_Q1         N16424 N16494 N16654 Q2N2222
+C_C1         N16616 N16494  3u  TC=0,0 
+R_R2         N16494 N16424  22k TC=0,0 
+R_R6         0 V0  3k TC=0,0 
+R_R5         0 N16654  1.8k TC=0,0 
+R_R4         0 N16494  22k TC=0,0 
+V_V1         IN 0  
++SIN 0 1mV 10k 0 0 0
+V_V2         N16424 0 12Vdc

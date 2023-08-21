@@ -1,0 +1,8 @@
+* source PART4_TIME_DOMAIN
+V_V1         N15176 0 5Vdc
+R_R1         N15186 OUT  100k TC=0,0 
+X_U1         N15176 N15186 Sw_tOpen PARAMS: tOpen=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+C_C1         0 OUT  100U  TC=0,0 
+X_U2         0 N15186 Sw_tClose PARAMS: tClose=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg

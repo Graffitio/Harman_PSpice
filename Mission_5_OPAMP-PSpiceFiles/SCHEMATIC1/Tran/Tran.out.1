@@ -1,0 +1,69 @@
+
+**** 08/04/23 16:21:17 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MISSION_5_OPAMP
+X_U1A         N14720 LPF_OUT VCC 0 LPF_OUT TLC1078/101/TI
+R_R3         EI N14716  {R} TC=0,0 
+R_R1         N14716 N14720  {R} TC=0,0 
+C_C2         0 N14720  {C}  TC=0,0 
+C_C3         N14716 LPF_OUT  {2*C}  TC=0,0 
+V_V2         VCC 0 5Vdc
+R_R4         VCC REF  {R} TC=0,0 
+R_R5         REF 0  {R} TC=0,0 
+C_C4         0 REF  1u  TC=0,0 
+X_U1B         N15354 N15399 VCC 0 N15399 TLC1078/101/TI
+C_C5         LPF_OUT N15350  {C}  TC=0,0 
+C_C6         N15350 N15354  {C}  TC=0,0 
+R_R6         N15350 N15399  {R} TC=0,0 
+R_R7         REF N15354  {100*R} TC=0,0 
+X_U2A         N17201 N16440 VCC 0 N16482 LM324
+R_R8         REF N16440  10k TC=0,0 
+R_R9         N16440 N16482  90k TC=0,0 
+V_V3         VEE 0 -5Vdc
+C_C7         N15399 N17201  1u  TC=0,0 
+R_R10         REF N17201  10k TC=0,0 
+V_V4         EI 0  
++SIN 0 0.25 1k 0 0 0
+V_V1         M_UN0001 M_UN0002 DC 2.5Vdc AC 1Vac 
+.PARAM  c=1500pf r=1k
+
+**** RESUMING Tran.cir ****
+.END
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0001.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node M_UN0002.
+
+ERROR(ORPSIM-15142): Node M_UN0001 is floating
+
+ERROR(ORPSIM-15142): Node M_UN0002 is floating
+

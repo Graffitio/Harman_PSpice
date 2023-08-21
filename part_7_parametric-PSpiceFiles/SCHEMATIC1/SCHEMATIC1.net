@@ -1,0 +1,7 @@
+* source PART_7_PARAMETRIC
+D_D1         N14416 N14423 D1N914 
+R_R1         0 N14423  1k TC=0,0 
+C_C1         0 N14423  {Cvar}  TC=0,0 
+V_V2         N14416 0  
++SIN 0 30v 1khz 0 0 0
+.PARAM  cvar=1u

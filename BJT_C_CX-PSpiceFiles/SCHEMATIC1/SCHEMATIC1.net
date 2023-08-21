@@ -1,0 +1,14 @@
+* source BJT_C_CX
+R_Rs         0 N15294  1.8k TC=0,0 
+C_C1         N15276 N15154  3u  TC=0,0 
+R_Rsi         IN N15276  1k TC=0,0 
+R_Rd         N15160 N15064  5k TC=0,0 
+R_RL         0 OUT  1k TC=0,0 
+V_V1         IN 0  AC 0
++SIN 0 0.01mV 10k 0 0 0
+R_R2         0 N15154  27k TC=0,0 
+R_R1         N15154 N15064  49k TC=0,0 
+V_V2         N15064 0 5V
+C_C3         N15160 OUT  4u  TC=0,0 
+Q_Q1         N15160 N15154 N15294 Q2N2222
+C_C4         0 N15294  75u  TC=0,0 

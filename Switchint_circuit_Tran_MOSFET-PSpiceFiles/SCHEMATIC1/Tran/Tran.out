@@ -1,0 +1,252 @@
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source SWITCHINT_CIRCUIT_TRAN_MOSFET
+V_V1         VCC 0 5Vdc
+X_U1         VCC N14553 Sw_tClose PARAMS: tClose=1m ttran=1u Rclosed=0.01
++  Ropen=1Meg
+R_R1         0 N14553  100 TC=0,0 
+R_R2         0 N14574  1k TC=0,0 
+R_R3         VCC NPN  1meg TC=0,0 
+R_R4         VCC NMOS  1k TC=0,0 
+R_R5         N14603 0  560 TC=0,0 
+C_C1         N14553 N14574  1u  TC=0,0 
+C_C2         N14553 N14603  1u  TC=0,0 
+X_M1         NMOS N14603 0 2N7002/FAI
+Q_Q1         NPN N14574 0 QMMBT3904TT1/ON 
+
+**** RESUMING Tran.cir ****
+.END
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.DDS        X_M1.DBODY      X_M1.DGD        
+          IS   10.000000E-15  140.000000E-15   10.000000E-15 
+          BV   60.0864                                       
+          RS                     .04                         
+          TT                  100.000000E-09                 
+         CJO   23.000000E-12                   85.000000E-12 
+          VJ     .8                              .12         
+           M     .36                             .53         
+
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               QMMBT3904TT1/ON 
+               NPN             
+       LEVEL    1            
+          IS  126.532000E-12 
+          EG    1.05         
+          BF  206.302        
+          NF    1.5          
+         VAF    1.000000E+03 
+         IKF     .027222     
+         ISE    2.307710E-09 
+          NE    3.31052      
+          BR   20.6302       
+          NR    2.89609      
+         VAR    9.39809      
+         IKR     .272221     
+         ISC    2.307710E-09 
+          NC    1.9876       
+         ISS    0            
+          RB    5.8376       
+         RBM     .634251     
+         IRB   50.3624       
+          RE  100.000000E-06 
+          RC    2.65711      
+         CJE    4.642140E-12 
+         VJE     .4          
+         MJE     .256227     
+         CJC    3.769610E-12 
+         VJC     .4          
+         MJC     .238109     
+        XCJC     .8          
+         CJS    0            
+         VJS     .75         
+         MJS     .5          
+          FC     .512134     
+          TF  419.578000E-12 
+         XTF     .906167     
+         VTF    8.75418      
+         ITF     .010582     
+          TR   68.202300E-09 
+         XTB     .1          
+         XTI    1            
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.DMOS       X_M1.INTER      
+               NMOS            NMOS            
+       LEVEL    3               1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO    2.09328         0            
+          KP     .35           10            
+       GAMMA    0               0            
+         PHI     .6              .6          
+      LAMBDA    0               0            
+          IS   10.000000E-15   10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ    0               0            
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+         TOX  100.000000E-09    0            
+          XJ    0               0            
+       UCRIT   10.000000E+03   10.000000E+03 
+        VMAX  220.000000E+03                 
+       THETA     .086                        
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.Smod       
+         RON     .01         
+        ROFF    1.000000E+06 
+         VON    1            
+        VOFF    0            
+
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  NPN)    4.9976  (  VCC)    5.0000  ( NMOS)    4.9995  (N14553) 500.0E-06     
+
+(N14574) 2.314E-06 (N14603) 280.0E-06 (X_M1.1) 280.5E-06 (X_M1.2)    4.9995     
+
+(X_M1.3) 151.6E-15 (X_M1.4)    4.9995 (X_M1.5)    0.0000 (X_M1.6) 280.5E-06     
+
+(X_M1.7)    4.9995 (X_M1.8)    9.9987 (X_M1.9)   -9.9982 (X_U1.3)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -5.502E-06
+    X_U1.V1      0.000E+00
+
+    TOTAL POWER DISSIPATION   2.75E-05  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 16:18:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Switchint_circuit_Tran_MOSFET-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .56
+  Total job time (using Solver 1)   =         .22
+

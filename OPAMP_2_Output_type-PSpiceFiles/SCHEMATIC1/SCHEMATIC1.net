@@ -1,0 +1,11 @@
+* source OPAMP_2_OUTPUT_TYPE
+X_U1         REF IN N14714 VCC 0 NCS2202 
+X_U2         REF IN N143582 VCC 0 NCS2200 
+V_V1         IN 0  
++SIN 2 1 1k 0 0 0
+V_V2         VCC 0 5Vdc
+R_R1         VCC REF  {R} TC=0,0 
+R_R2         0 REF  {R} TC=0,0 
+R_R3         N14714 VCC  10k TC=0,0 
+R_R4         0 N143582  10k TC=0,0 
+.PARAM  r=100k

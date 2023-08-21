@@ -1,0 +1,65 @@
+
+**** 08/01/23 11:30:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-BJT_Amp"  [ D:\Ian_Jung\workplace\PSpice\NPN_1-PSpiceFiles\SCHEMATIC1\BJT_Amp.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "BJT_Amp.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 100 1 10meg
+.NOISE V([OUT]) V_Vsig 10
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source NPN_1
+V_Vsig         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+R_R1         IN N14565  1k TC=0,0 
+R_RB1         N14569 N14624  49k TC=0,0 
+R_RB2         0 N14569  27k TC=0,0 
+R_RC         N14620 N14624  5k TC=0,0 
+R_RE         0 N14735  1.8k TC=0,0 
+R_RL         0 OUT  1k TC=0,0 
+C_C1         N14565 N14569  3u  TC=0,0 
+C_CC         N14620 OUT  4u  TC=0,0 
+V_VDC         N14624 0 5V
+Q_Q1         N14620 N14569 N14735 Q2N2222
+C_C2         0 N14735  75u  TC=0,0 
+R_RL1         0 OUT  1k TC=0,0 
+R_RB3         N16235 N16181  49k TC=0,0 
+V_VDC1         N16181 0 5V
+R_RB4         0 N16235  27k TC=0,0 
+R_RE1         0 0  1.8k TC=0,0 
+R_RC1         N16239 N16181  5k TC=0,0 
+Q_Q2         N16239 N16235 0 Q2N2222
+R_R2         IN N16395  1k TC=0,0 
+C_C3         N16395 N16235  3u  TC=0,0 
+V_Vsig1         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+C_CC1         N16239 OUT  4u  TC=0,0 
+
+**** RESUMING BJT_Amp.cir ****
+.END
+
+ERROR(ORPSIM-15143): Voltage source and/or inductor loop involving V_Vsig1. You may break the loop by adding a series resistance
+

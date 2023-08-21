@@ -1,0 +1,15 @@
+* source ELECTRIC
+R_R1         N14833 N14815  {R} TC=0,0 
+R_R2         N14837 N14833  {R} TC=0,0 
+R_R3         N14862 N14876  {R} TC=0,0 
+R_R4         N14876 N14844  {R} TC=0,0 
+R_R11         N14862 N14815  {R} TC=0,0 
+R_R9         N14911 N14833  {R} TC=0,0 
+R_R7         N14844 N14837  {R} TC=0,0 
+R_R12         0 N14862  {R} TC=0,0 
+R_R8         N14846 N14844  {R} TC=0,0 
+R_R10         N14851 N14911  {R} TC=0,0 
+R_R5         N14851 0  {R} TC=0,0 
+R_R6         N14846 N14851  {R} TC=0,0 
+I_I1         0 N14815 DC 1Adc  
+.PARAM  r=1k

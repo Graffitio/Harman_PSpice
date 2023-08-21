@@ -1,0 +1,15 @@
+.ALIASES
+R_R1            R1(2=N145040 ) CN @TEST.SCHEMATIC1(sch_1):INS14494@ANALOG.R.Normal(chips)
+R_R2            R2() CN @TEST.SCHEMATIC1(sch_1):INS14510@ANALOG.R.Normal(chips)
+R_R3            R3() CN @TEST.SCHEMATIC1(sch_1):INS14526@ANALOG.R.Normal(chips)
+R_R4            R4() CN @TEST.SCHEMATIC1(sch_1):INS14542@ANALOG.R.Normal(chips)
+R_R5            R5() CN @TEST.SCHEMATIC1(sch_1):INS14558@ANALOG.R.Normal(chips)
+R_R6            R6() CN @TEST.SCHEMATIC1(sch_1):INS14574@ANALOG.R.Normal(chips)
+R_R7            R7() CN @TEST.SCHEMATIC1(sch_1):INS14590@ANALOG.R.Normal(chips)
+R_R8            R8() CN @TEST.SCHEMATIC1(sch_1):INS14606@ANALOG.R.Normal(chips)
+R_R9            R9() CN @TEST.SCHEMATIC1(sch_1):INS14622@ANALOG.R.Normal(chips)
+R_R10           R10() CN @TEST.SCHEMATIC1(sch_1):INS14638@ANALOG.R.Normal(chips)
+R_R11           R11(1=N145040 ) CN @TEST.SCHEMATIC1(sch_1):INS14654@ANALOG.R.Normal(chips)
+R_R12           R12() CN @TEST.SCHEMATIC1(sch_1):INS14672@ANALOG.R.Normal(chips)
+_    _(GND_0=0)
+.ENDALIASES

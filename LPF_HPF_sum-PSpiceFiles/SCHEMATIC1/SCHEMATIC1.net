@@ -1,0 +1,23 @@
+* source LPF_HPF_SUM
+V_V2         VCC 0 5Vdc
+V_V3         EI 0 DC 2.5Vdc AC 1Vac 
+C_C3         0 REF  1u  TC=0,0 
+R_R7         REF 0  {R} TC=0,0 
+R_R6         VCC REF  {R} TC=0,0 
+X_U5A         REF N20993 VCC 0 LOW_HIGH TLC1078/101/TI
+C_C7         EI N20997  360n  TC=0,0 
+R_R10         N20993 LOW_HIGH  3k TC=0,0 
+R_R11         N20997 N20993  3k TC=0,0 
+X_U3A         N21804 LOW_PASS_1 VCC 0 LOW_PASS_1 TLC1078/101/TI
+C_C5         N21706 LOW_PASS_1  330n  TC=0,0 
+R_R8         LOW_HIGH N21706  560 TC=0,0 
+C_C4         0 N21804  1n  TC=0,0 
+R_R1         N21706 N21804  39k TC=0,0 
+C_C9         VCC 0  10n  TC=0,0 
+C_C12         VCC 0  10n  TC=0,0 
+C_C11         0 N23228  1n  TC=0,0 
+X_U5B         N23228 LOW_PASS_2 VCC 0 LOW_PASS_2 TLC1078/101/TI
+R_R12         LOW_PASS_1 N23122  2.4h TC=0,0 
+R_R13         N23122 N23228  39k TC=0,0 
+C_C10         N23122 LOW_PASS_2  330n  TC=0,0 
+.PARAM  c=1500pf r=7.5k

@@ -1,0 +1,15 @@
+.ALIASES
+CN @MODEL2.SCHEMATIC1(sch_1)
+R_R3            R3(1=MID 2=OFFPAGELEFT-R ) CN INS14299@ANALOG.R.Normal(chips)
+R_R2            R2(1=0 2=MID ) CN INS14315@ANALOG.R.Normal(chips)
+R_R1            R1(1=MID 2=IN ) CN INS14331@ANALOG.R.Normal(chips)
+R_R4            R4(1=OUT 2=0 ) CN INS14347@ANALOG.R.Normal(chips)
+D_D1            D1(1=0 2=MID ) CN INS14372@DIODE.D1N3940.Normal(chips)
+D_D2            D2(1=MID 2=OFFPAGELEFT-R ) CN INS14388@DIODE.D1N3940.Normal(chips)
+C_COUT          COUT(1=MID 2=OUT ) CN INS14413@ANALOG.C.Normal(chips)
+V_V1            V1(+=OFFPAGELEFT-R -=0 ) CN INS14438@SOURCE.VDC.Normal(chips)
+_    _(IN=IN)
+_    _(MID=MID)
+_    _(OFFPAGELEFT-R=OFFPAGELEFT-R)
+_    _(OUT=OUT)
+.ENDALIASES

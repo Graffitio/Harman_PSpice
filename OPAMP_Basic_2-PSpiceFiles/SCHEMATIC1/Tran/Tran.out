@@ -1,0 +1,180 @@
+
+**** 08/03/23 14:48:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 6m 0 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OPAMP_BASIC_2
+V_V2         VCC 0 5Vdc
+R_R1         N16239 N15690  {R} TC=0,0 
+V_V1         EI 0  
++SIN 0 0.25 1k 0 0 0
+R_R3         REF N15732  {R} TC=0,0 
+R_R4         N15732 OUT_2  {R} TC=0,0 
+R_R2         N15690 OUT_1  {R} TC=0,0 
+C_C1         EI N16239  1u  TC=0,0 
+C_C2         EI N16450  1u  TC=0,0 
+R_R5         REF N16450  {R} TC=0,0 
+X_U3A         REF N15690 VCC 0 OUT_1 TLC1078/101/TI
+X_U3B         N16450 N15732 VCC 0 OUT_2 TLC1078/101/TI
+C_C3         0 REF  1u  TC=0,0 
+R_R6         VCC REF  {R} TC=0,0 
+R_R7         REF 0  {R} TC=0,0 
+.PARAM  r=10k
+
+**** RESUMING Tran.cir ****
+.END
+
+**** 08/03/23 14:48:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3A.DX        X_U3B.DX        
+          IS  800.000000E-18  800.000000E-18 
+
+
+**** 08/03/23 14:48:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U3A.JX        X_U3B.JX        
+               PJF             PJF             
+         VTO     .039            .039        
+        BETA  340.000000E-06  340.000000E-06 
+          IS  350.000000E-15  350.000000E-15 
+
+
+**** 08/03/23 14:48:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   EI)    0.0000  (  REF)    2.5000  (  VCC)    5.0000  (OUT_1)    2.5000      
+
+(OUT_2)    2.5000  (N15690)    2.5000 (N15732)    2.5000 (N16239)    2.5000     
+
+(N16450)    2.5000 (X_U3A.6)-101.4E-09                   (X_U3A.7)    2.5000    
+
+(X_U3A.8)    2.5000                   (X_U3A.9)    0.0000                       
+
+(X_U3B.6)-101.4E-09                   (X_U3B.7)    2.5000                       
+
+(X_U3B.8)    2.5000                   (X_U3B.9)    0.0000                       
+
+(X_U3A.10)    2.5712                  (X_U3A.11)    -.4837                      
+
+(X_U3A.12)    -.4837                  (X_U3A.53)    3.4000                      
+
+(X_U3A.54)     .5400                  (X_U3A.60)    -.5000                      
+
+(X_U3A.90)-816.6E-12                  (X_U3A.91)   25.0000                      
+
+(X_U3A.92)  -25.0000                  (X_U3A.99)    2.5000                      
+
+(X_U3B.10)    2.5712                  (X_U3B.11)    -.4837                      
+
+(X_U3B.12)    -.4837                  (X_U3B.53)    3.4000                      
+
+(X_U3B.54)     .5400                  (X_U3B.60)    -.5000                      
+
+(X_U3B.90)-105.4E-09                  (X_U3B.91)   25.0000                      
+
+(X_U3B.92)  -25.0000                  (X_U3B.99)    2.5000                  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -2.659E-04
+    V_V1         0.000E+00
+    X_U3A.VAD    7.047E-07
+    X_U3A.VB    -1.014E-12
+    X_U3A.VC     9.008E-13
+    X_U3A.VE     1.961E-12
+    X_U3A.VLIM  -8.166E-13
+    X_U3A.VLP   -2.500E-11
+    X_U3A.VLN   -2.500E-11
+    X_U3B.VAD    7.047E-07
+    X_U3B.VB    -1.014E-12
+    X_U3B.VC     9.008E-13
+    X_U3B.VE     1.961E-12
+    X_U3B.VLIM  -1.054E-10
+    X_U3B.VLP   -2.500E-11
+    X_U3B.VLN   -2.500E-11
+
+    TOTAL POWER DISSIPATION   1.33E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/03/23 14:48:46 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_Basic_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .36
+

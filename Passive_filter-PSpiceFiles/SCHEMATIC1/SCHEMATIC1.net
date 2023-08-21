@@ -1,0 +1,15 @@
+* source PASSIVE_FILTER
+R_R1         EI 1ST_LPF  {R} TC=0,0 
+R_R2         EI N14523  {R} TC=0,0 
+R_R3         N14523 2ND_LPF  {R} TC=0,0 
+C_C1         0 1ST_LPF  {C}  TC=0,0 
+C_C2         N14523 0  {C}  TC=0,0 
+C_C3         0 2ND_LPF  {C}  TC=0,0 
+V_V1         EI 0 DC 0Vdc AC 1Vac 
+C_C4         1ST_HPF EI  {C}  TC=0,0 
+C_C5         N15064 EI  {C}  TC=0,0 
+C_C6         2ND_HPF N15064  {C}  TC=0,0 
+R_R4         0 1ST_HPF  {R} TC=0,0 
+R_R5         0 N15064  {R} TC=0,0 
+R_R6         0 2ND_HPF  {R} TC=0,0 
+.PARAM  c=0.15uf r=1k

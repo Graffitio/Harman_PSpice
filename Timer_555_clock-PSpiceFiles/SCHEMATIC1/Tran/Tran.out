@@ -1,0 +1,606 @@
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../library/ncs2200p.lib" 
+.LIB "../../../library/cmos_nor_gate.lib" 
+.LIB "../../../library/cmos_inv.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1ms 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TIMER_555_CLOCK
+Q_Q1         DISCHARGE N16780 0 Q2N3904
+R_R6         N16580 VCC  1k TC=0,0 
+X_U1         DISCHARGE N16576 N16580 VCC 0 NCS2202 
+C_C1         0 DISCHARGE  0.002uF  TC=0,0 
+R_R4         0 N16906  5k TC=0,0 
+R_R1         DISCHARGE VCC  4.7k TC=0,0 
+C_C2         0 N16576  0.1u  TC=0,0 
+X_U4         N16676 N17006 N16792 VCC CMOS_NOR_GATE 
+C_C5         0 VCC  0.1u  TC=0,0 
+C_C4         0 N16780  0.01uF  TC=0,0 
+R_R7         VCC N17006  1k TC=0,0 
+R_R3         N16906 N16576  5k TC=0,0 
+X_U6         N16780 OUT VCC CMOS_INV 
+X_U3         N16580 N16792 N16676 VCC CMOS_NOR_GATE 
+X_U2         N16906 N17472 N17006 VCC 0 NCS2202 
+R_R5         N16576 VCC  5k TC=0,0 
+V_V1         VCC 0 5.2Vdc
+C_C3         N16676 0  15n  TC=0,0 
+X_U5         N16676 N16780 VCC CMOS_INV 
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N17472 IO_STM IO_LEVEL=0 
++ 0 0
++ +50uS 1
++REPEAT FOREVER
++ +50us 0
++  +50uS 1
++ ENDREPEAT
+
+**** RESUMING Tran.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N17472
+*
+* Moving U_DSTM1:OUT1 from analog node N17472 to new digital node N17472$DtoA
+X$N17472_DtoA1
++ N17472$DtoA
++ N17472
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.NCS220DA   X_U1.NCS220DB   X_U2.NCS220DA   X_U2.NCS220DB   
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+           N     .5                              .5                          
+         CJO    2.000000E-12    2.000000E-12    2.000000E-12    2.000000E-12 
+
+
+               X_U4.X_M8.Dbody X_U4.X_M7.Dbody X_U4.X_M6.Dbody X_U4.X_M5.Dbody 
+          IS   75.320000E-15   75.320000E-15  125.000000E-15  125.000000E-15 
+           N    1.016           1.016           1.023           1.023        
+         IKF                                   18.01           18.01         
+          BV   45              45              60              60            
+         IBV   10.000000E-06   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    1.245           1.245           1.281           1.281        
+          TT   86.560000E-09   86.560000E-09  161.600000E-09  161.600000E-09 
+         CJO   53.220000E-12   53.220000E-12   46.300000E-12   46.300000E-12 
+          VJ     .5392           .5392           .4519           .4519       
+           M     .3583           .3583           .3423           .3423       
+
+
+               X_U6.X_M4.Dbody X_U6.X_M3.Dbody X_U3.X_M8.Dbody X_U3.X_M7.Dbody 
+          IS   75.320000E-15  125.000000E-15   75.320000E-15   75.320000E-15 
+           N    1.016           1.023           1.016           1.016        
+         IKF                   18.01                                         
+          BV   45              60              45              45            
+         IBV   10.000000E-06   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    1.245           1.281           1.245           1.245        
+          TT   86.560000E-09  161.600000E-09   86.560000E-09   86.560000E-09 
+         CJO   53.220000E-12   46.300000E-12   53.220000E-12   53.220000E-12 
+          VJ     .5392           .4519           .5392           .5392       
+           M     .3583           .3423           .3583           .3583       
+
+
+               X_U3.X_M6.Dbody X_U3.X_M5.Dbody X_U5.X_M4.Dbody X_U5.X_M3.Dbody 
+          IS  125.000000E-15  125.000000E-15   75.320000E-15  125.000000E-15 
+           N    1.023           1.023           1.016           1.023        
+         IKF   18.01           18.01                           18.01         
+          BV   60              60              45              60            
+         IBV   10.000000E-06   10.000000E-06   10.000000E-06   10.000000E-06 
+          RS    1.281           1.281           1.245           1.281        
+          TT  161.600000E-09  161.600000E-09   86.560000E-09  161.600000E-09 
+         CJO   46.300000E-12   46.300000E-12   53.220000E-12   46.300000E-12 
+          VJ     .4519           .4519           .5392           .4519       
+           M     .3423           .3423           .3583           .3423       
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3904         X_U1.NCS220Q    X_U2.NCS220Q    
+               NPN             NPN             NPN             
+       LEVEL    1               1               1            
+          IS    6.734000E-15   14.000000E-15   14.000000E-15 
+          BF  416.4           300             300            
+          NF    1               1               1            
+         VAF   74.03          100             100            
+         IKF     .06678          .025            .025        
+         ISE    6.734000E-15  300.000000E-15  300.000000E-15 
+          NE    1.259                                        
+          BR     .7371          7.5             7.5          
+          NR    1               1               1            
+         ISS    0               0               0            
+          RB   10                                            
+          RE    0               0               0            
+          RC    1               2.4             2.4          
+         CJE    4.493000E-12    4.500000E-12    4.500000E-12 
+         VJE     .75             .75             .75         
+         MJE     .2593                                       
+         CJC    3.638000E-12    3.500000E-12    3.500000E-12 
+         VJC     .75             .75             .75         
+         MJC     .3085           .33             .33         
+        XCJC    1               1               1            
+         CJS    0               0               0            
+         VJS     .75             .75             .75         
+          TF  301.200000E-12  400.000000E-12  400.000000E-12 
+         XTF    2                                            
+         VTF    4                                            
+         ITF     .4                                          
+          TR  239.500000E-09   21.000000E-09   21.000000E-09 
+         XTB    1.5             1.5             1.5          
+          KF    0             900.000000E-18  900.000000E-18 
+          AF    1               1               1            
+          CN    2.42            2.42            2.42         
+           D     .87             .87             .87         
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.NCS220NM   X_U1.NCS220NMA  X_U2.NCS220NM   X_U2.NCS220NMA  
+               NMOS            NMOS            NMOS            NMOS            
+       LEVEL    1               1               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    -.28             .28            -.28             .28         
+          KP    8.640000E-03    8.740000E-03    8.640000E-03    8.740000E-03 
+       GAMMA    1.86            0               1.86            0            
+         PHI     .75             .6              .75             .6          
+      LAMBDA     .0118           .02             .0118           .02         
+          RD    1.2             5               1.2             5            
+          RS   18                .1            18                .1          
+          IS   25.000000E-15   10.000000E-15   25.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+         CBD   11.500000E-12   10.600000E-12   11.500000E-12   10.600000E-12 
+         CBS   13.900000E-12   12.700000E-12   13.900000E-12   12.700000E-12 
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+          MJ     .46                             .46                         
+        CGSO   12.000000E-09   27.300000E-09   12.000000E-09   27.300000E-09 
+        CGDO   10.000000E-09   22.700000E-09   10.000000E-09   22.700000E-09 
+        CGBO   28.000000E-09   37.400000E-09   28.000000E-09   37.400000E-09 
+         TOX    0               0               0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U4.X_M8.MOST1 X_U4.X_M8.MOST2 X_U4.X_M7.MOST1 X_U4.X_M7.MOST2 
+               PMOS            PMOS            PMOS            PMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    7.600000E-03    7.600000E-03 
+         VTO   -2.3             2.43           -2.3             2.43         
+          KP   10.330000E-06   10.330000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           4.014                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U4.X_M6.MOST1 X_U4.X_M6.MOST2 X_U4.X_M5.MOST1 X_U4.X_M5.MOST2 
+               NMOS            NMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    9.700000E-03    9.700000E-03    9.700000E-03    9.700000E-03 
+         VTO    2              -4.73            2              -4.73         
+          KP   20.780000E-06   20.780000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    1.186                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U6.X_M4.MOST1 X_U6.X_M4.MOST2 X_U6.X_M3.MOST1 X_U6.X_M3.MOST2 
+               PMOS            PMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    9.700000E-03    9.700000E-03 
+         VTO   -2.3             2.43            2              -4.73         
+          KP   10.330000E-06   10.330000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U3.X_M8.MOST1 X_U3.X_M8.MOST2 X_U3.X_M7.MOST1 X_U3.X_M7.MOST2 
+               PMOS            PMOS            PMOS            PMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    7.600000E-03    7.600000E-03 
+         VTO   -2.3             2.43           -2.3             2.43         
+          KP   10.330000E-06   10.330000E-06   10.330000E-06   10.330000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           4.014                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U3.X_M6.MOST1 X_U3.X_M6.MOST2 X_U3.X_M5.MOST1 X_U3.X_M5.MOST2 
+               NMOS            NMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    9.700000E-03    9.700000E-03    9.700000E-03    9.700000E-03 
+         VTO    2              -4.73            2              -4.73         
+          KP   20.780000E-06   20.780000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    1.186                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U5.X_M4.MOST1 X_U5.X_M4.MOST2 X_U5.X_M3.MOST1 X_U5.X_M3.MOST2 
+               PMOS            PMOS            NMOS            NMOS            
+       LEVEL    3               1               3               1            
+           L    2.000000E-06    2.000000E-06    2.000000E-06    2.000000E-06 
+           W    7.600000E-03    7.600000E-03    9.700000E-03    9.700000E-03 
+         VTO   -2.3             2.43            2              -4.73         
+          KP   10.330000E-06   10.330000E-06   20.780000E-06   20.780000E-06 
+       GAMMA    0               0               0               0            
+         PHI     .6              .6              .6              .6          
+      LAMBDA    0               0               0               0            
+          RD    4.014                           1.186                        
+          RS     .02             .02             .02             .02         
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+         TOX  100.000000E-09    0             100.000000E-09    0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  OUT)     .1812  (  VCC)    5.2000  (N16576)    3.4667 (N16580)    5.2000     
+
+(N16676) 48.33E-12 (N16780)    2.3840 (N16792) 78.10E-12 (N16906)    1.7333     
+
+(N17006)    5.2000 (N17472)     .0025 (X_U1.6) 220.7E-06 (X_U1.7)    0.0000     
+
+(X_U1.8)    0.0000 (X_U1.9)    0.0000 (X_U2.6) 325.3E-06 (X_U2.7)    0.0000     
+
+(X_U2.8)    0.0000 (X_U2.9)    0.0000 ($G_DGND)    0.0000                       
+
+($G_DPWR)    5.0000                   (X_U1.13)    0.0000                       
+
+(X_U1.15)    -.6302                   (X_U1.16)     .5228                       
+
+(X_U1.19)    0.0000                   (X_U1.24)    0.0000                       
+
+(X_U2.13)    0.0000                   (X_U2.15)     .6734                       
+
+(X_U2.16)     .0036                   (X_U2.19)    0.0000                       
+
+(X_U2.24)    0.0000                   (DISCHARGE)     .0483                     
+
+(X_U3.N20502)    2.3000               (X_U3.X_M5.4) 48.33E-12                   
+
+(X_U3.X_M6.4) 48.33E-12               (X_U3.X_M7.4) 72.64E-12                   
+
+(X_U3.X_M8.4)    2.7700               (X_U4.N20502)    5.2000                   
+
+(X_U4.X_M5.4) 78.10E-12               (X_U4.X_M6.4) 78.10E-12                   
+
+(X_U4.X_M7.4)    2.7700               (X_U4.X_M8.4)    5.2000                   
+
+(X_U5.X_M3.4)    2.3840               (X_U5.X_M4.4)    2.3840                   
+
+(X_U6.X_M3.4)     .1812               (X_U6.X_M4.4)     .1812               
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N17472$DtoA) : 0  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.616E-01
+    X_U1.V1      4.406E-06
+    X_U1.V2      5.936E-07
+    X_U1.V3      0.000E+00
+    X_U2.V1      7.581E-07
+    X_U2.V2      4.242E-06
+    X_U2.V3      0.000E+00
+    X$DIGIFPWR.VDPWR  -5.003E-03
+    X$DIGIFPWR.VDGND  -5.000E-06
+
+    TOTAL POWER DISSIPATION   8.65E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/04/23 11:09:06 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =       19.59
+  Total job time (using Solver 1)   =        2.59
+

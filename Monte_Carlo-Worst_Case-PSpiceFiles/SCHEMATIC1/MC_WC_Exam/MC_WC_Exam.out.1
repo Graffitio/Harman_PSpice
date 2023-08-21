@@ -1,0 +1,5483 @@
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "MC_WC_Exam.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../monte_carlo-worst_case-pspicefiles/monte_carlo-worst_case.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 50ms 0 
+.MC 100 TRAN V([OUT]) YMAX OUTPUT ALL SEED=43 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MONTE_CARLO-WORST_CASE
+V_V1         IN 0  
++PULSE 0 10v 1m 1n 1n 10m 20m
+V_V2         N14719 0 {VDC}
+X_U1         N14530 N14684 N14719 0 OUT uA741
+C_C1         0 N14530 Cbreak 1n 
+R_R1         IN N14530 Rmonte 10k
+R_R2         0 N14684 Rmonte {Rdown}
+R_R3         N14684 N14719 Rmonte {Rup}
+R_R4         0 OUT Rmonte 10k
+.PARAM  rdown=6.3 vdc=10v rup=3.7
+
+**** RESUMING MC_WC_Exam.cir ****
+.END
+
+WARNING(ORPSIM-15223): Library file D:\Ian_Jung\workplace\PSpice\monte_carlo-worst_case-pspicefiles\monte_carlo-worst_case.lib has changed since index file monte_carlo-worst_case.ind was created.
+
+WARNING(ORPSIM-15227): The timestamp changed from Fri Jul 21 15:27:15 2023 to Fri Jul 21 18:21:31 2023.
+
+INFO(ORPSIM-15422): Making new index file monte_carlo-worst_case.ind for library file monte_carlo-worst_case.lib.
+
+Index has 3 entries from 1 file(s).
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.dx         X_U1.dy         
+          IS  800.000000E-18  800.000000E-18 
+          RS    1               1.000000E-03 
+         CJO                   10.000000E-12 
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.qx         
+               NPN             
+       LEVEL    1            
+          IS  800.000000E-18 
+          BF   93.75         
+          NF    1            
+          BR    1            
+          NR    1            
+         ISS    0            
+          RE    0            
+          RC    0            
+         CJE    0            
+         VJE     .75         
+         CJC    0            
+         VJC     .75         
+         MJC     .33         
+        XCJC    1            
+         CJS    0            
+         VJS     .75         
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Rmonte          
+           R    1            
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     Capacitor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Cbreak          
+           C    1            
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO NOMINAL
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 100.6E-09 (N14684)    6.3000     
+
+(N14719)   10.0000 (X_U1.6)    1.5053 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6602                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6881                       
+
+(X_U1.14)    5.6602                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.001E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.00E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 2
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.8E-09 (N14684)    6.1094     
+
+(N14719)   10.0000 (X_U1.6)    1.5038 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4697                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4976                       
+
+(X_U1.14)    5.4697                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.061E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 3
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.54E-09 (N14684)    6.0727     
+
+(N14719)   10.0000 (X_U1.6)    1.5035 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4329                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4608                       
+
+(X_U1.14)    5.4329                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.052E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 4
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.9E-09 (N14684)    6.3421     
+
+(N14719)   10.0000 (X_U1.6)    1.5057 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7022                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7302                       
+
+(X_U1.14)    5.7022                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.038E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 5
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 107.8E-09 (N14684)    6.1693     
+
+(N14719)   10.0000 (X_U1.6)    1.5043 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5295                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5574                       
+
+(X_U1.14)    5.5295                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.054E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 6
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.03E-09 (N14684)    6.2150     
+
+(N14719)   10.0000 (X_U1.6)    1.5046 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5752                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6032                       
+
+(X_U1.14)    5.5752                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.992E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.00E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 7
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 98.35E-09 (N14684)    5.9667     
+
+(N14719)   10.0000 (X_U1.6)    1.5026 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3269                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3548                       
+
+(X_U1.14)    5.3269                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.953E-01
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   9.99E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 8
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.42E-09 (N14684)    5.9244     
+
+(N14719)   10.0000 (X_U1.6)    1.5023 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.2847                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3125                       
+
+(X_U1.14)    5.2847                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.028E+00
+    X_U1.vb      1.502E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 9
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 98.78E-09 (N14684)    6.0498     
+
+(N14719)   10.0000 (X_U1.6)    1.5033 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4100                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4379                       
+
+(X_U1.14)    5.4100                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.013E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 10
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 95.88E-09 (N14684)    6.1712     
+
+(N14719)   10.0000 (X_U1.6)    1.5043 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5314                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5593                       
+
+(X_U1.14)    5.5314                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.575E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   9.62E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 11
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.1E-09 (N14684)    6.0266     
+
+(N14719)   10.0000 (X_U1.6)    1.5031 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3868                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4147                       
+
+(X_U1.14)    5.3868                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.969E-01
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.00E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 12
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.30E-09 (N14684)    6.4301     
+
+(N14719)   10.0000 (X_U1.6)    1.5064 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7903                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8182                       
+
+(X_U1.14)    5.7903                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.070E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.07E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 13
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 98.45E-09 (N14684)    6.3910     
+
+(N14719)   10.0000 (X_U1.6)    1.5061 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7512                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7791                       
+
+(X_U1.14)    5.7512                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.054E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 14
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.6E-09 (N14684)    6.6387     
+
+(N14719)   10.0000 (X_U1.6)    1.5081 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.9988                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0268                       
+
+(X_U1.14)    5.9988                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.843E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.88E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 15
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.3E-09 (N14684)    6.2977     
+
+(N14719)   10.0000 (X_U1.6)    1.5053 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6579                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6858                       
+
+(X_U1.14)    5.6579                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.211E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.25E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 16
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.7E-09 (N14684)    6.0854     
+
+(N14719)   10.0000 (X_U1.6)    1.5036 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4456                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4735                       
+
+(X_U1.14)    5.4456                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.040E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 17
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.8E-09 (N14684)    6.1632     
+
+(N14719)   10.0000 (X_U1.6)    1.5042 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5234                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5513                       
+
+(X_U1.14)    5.5234                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.079E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.08E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 18
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 105.6E-09 (N14684)    6.4566     
+
+(N14719)   10.0000 (X_U1.6)    1.5066 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8168                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8447                       
+
+(X_U1.14)    5.8168                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.010E+00
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.01E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 19
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.9E-09 (N14684)    6.0417     
+
+(N14719)   10.0000 (X_U1.6)    1.5032 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4020                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4299                       
+
+(X_U1.14)    5.4020                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.879E-01
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   9.92E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 20
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 91.20E-09 (N14684)    6.3739     
+
+(N14719)   10.0000 (X_U1.6)    1.5059 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7341                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7620                       
+
+(X_U1.14)    5.7341                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.502E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.54E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 21
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.4E-09 (N14684)    6.4341     
+
+(N14719)   10.0000 (X_U1.6)    1.5064 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7943                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8222                       
+
+(X_U1.14)    5.7943                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.035E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 22
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 96.31E-09 (N14684)    6.4149     
+
+(N14719)   10.0000 (X_U1.6)    1.5063 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7750                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8030                       
+
+(X_U1.14)    5.7750                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.016E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 23
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.34E-09 (N14684)    6.4172     
+
+(N14719)   10.0000 (X_U1.6)    1.5063 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7774                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8053                       
+
+(X_U1.14)    5.7774                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.017E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 24
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.81E-09 (N14684)    6.2405     
+
+(N14719)   10.0000 (X_U1.6)    1.5049 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6007                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6286                       
+
+(X_U1.14)    5.6007                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.061E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 25
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.5E-09 (N14684)    6.3018     
+
+(N14719)   10.0000 (X_U1.6)    1.5053 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6620                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6900                       
+
+(X_U1.14)    5.6620                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.092E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.10E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 26
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 107.4E-09 (N14684)    6.4817     
+
+(N14719)   10.0000 (X_U1.6)    1.5068 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8418                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8698                       
+
+(X_U1.14)    5.8418                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.034E+00
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 27
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 95.52E-09 (N14684)    6.4836     
+
+(N14719)   10.0000 (X_U1.6)    1.5068 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8438                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8717                       
+
+(X_U1.14)    5.8438                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.369E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.41E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 28
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 100.6E-09 (N14684)    5.9709     
+
+(N14719)   10.0000 (X_U1.6)    1.5027 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3311                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3590                       
+
+(X_U1.14)    5.3311                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.049E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.05E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 29
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.48E-09 (N14684)    6.4870     
+
+(N14719)   10.0000 (X_U1.6)    1.5068 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8471                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8751                       
+
+(X_U1.14)    5.8471                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.872E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.91E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 30
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.7E-09 (N14684)    6.2691     
+
+(N14719)   10.0000 (X_U1.6)    1.5051 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6293                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6573                       
+
+(X_U1.14)    5.6293                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.507E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.55E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 31
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 95.11E-09 (N14684)    6.4488     
+
+(N14719)   10.0000 (X_U1.6)    1.5065 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8090                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8369                       
+
+(X_U1.14)    5.8090                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.347E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.39E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 32
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.37E-09 (N14684)    6.4659     
+
+(N14719)   10.0000 (X_U1.6)    1.5067 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8260                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8540                       
+
+(X_U1.14)    5.8260                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.676E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.72E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 33
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.0E-09 (N14684)    6.1269     
+
+(N14719)   10.0000 (X_U1.6)    1.5039 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4871                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5150                       
+
+(X_U1.14)    5.4871                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.929E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   9.97E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 34
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.9E-09 (N14684)    6.3904     
+
+(N14719)   10.0000 (X_U1.6)    1.5061 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7506                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7785                       
+
+(X_U1.14)    5.7506                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.068E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.07E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 35
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 106.5E-09 (N14684)    6.3024     
+
+(N14719)   10.0000 (X_U1.6)    1.5054 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6626                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6905                       
+
+(X_U1.14)    5.6626                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.407E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.45E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 36
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 97.36E-09 (N14684)    6.2927     
+
+(N14719)   10.0000 (X_U1.6)    1.5053 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6529                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6808                       
+
+(X_U1.14)    5.6529                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.108E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.11E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 37
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.6E-09 (N14684)    6.3146     
+
+(N14719)   10.0000 (X_U1.6)    1.5055 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6748                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7027                       
+
+(X_U1.14)    5.6748                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.011E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.01E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 38
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 106.6E-09 (N14684)    6.0163     
+
+(N14719)   10.0000 (X_U1.6)    1.5030 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3766                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4045                       
+
+(X_U1.14)    5.3766                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.059E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 39
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.66E-09 (N14684)    5.9980     
+
+(N14719)   10.0000 (X_U1.6)    1.5029 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3583                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3862                       
+
+(X_U1.14)    5.3583                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.032E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 40
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 107.6E-09 (N14684)    6.6552     
+
+(N14719)   10.0000 (X_U1.6)    1.5082 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    6.0153                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0433                       
+
+(X_U1.14)    6.0153                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.007E-11
+    V_V2        -9.682E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.72E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 41
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 96.36E-09 (N14684)    6.0474     
+
+(N14719)   10.0000 (X_U1.6)    1.5033 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4077                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4356                       
+
+(X_U1.14)    5.4077                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.023E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 42
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 98.96E-09 (N14684)    6.6612     
+
+(N14719)   10.0000 (X_U1.6)    1.5083 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    6.0213                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0493                       
+
+(X_U1.14)    6.0213                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.007E-11
+    V_V2        -9.796E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.84E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 43
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.88E-09 (N14684)    6.2394     
+
+(N14719)   10.0000 (X_U1.6)    1.5048 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5996                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6275                       
+
+(X_U1.14)    5.5996                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.024E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 44
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 91.69E-09 (N14684)    6.3438     
+
+(N14719)   10.0000 (X_U1.6)    1.5057 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7040                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7320                       
+
+(X_U1.14)    5.7040                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.073E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.08E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 45
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 97.30E-09 (N14684)    6.1648     
+
+(N14719)   10.0000 (X_U1.6)    1.5042 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5250                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5529                       
+
+(X_U1.14)    5.5250                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.723E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   9.76E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 46
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 105.3E-09 (N14684)    6.6309     
+
+(N14719)   10.0000 (X_U1.6)    1.5080 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.9910                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0189                       
+
+(X_U1.14)    5.9910                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.777E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.82E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 47
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.83E-09 (N14684)    6.5043     
+
+(N14719)   10.0000 (X_U1.6)    1.5070 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8645                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8924                       
+
+(X_U1.14)    5.8645                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.038E+00
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.192E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 48
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.5E-09 (N14684)    6.1556     
+
+(N14719)   10.0000 (X_U1.6)    1.5042 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5158                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5437                       
+
+(X_U1.14)    5.5158                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.988E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.00E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 49
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 99.75E-09 (N14684)    6.0158     
+
+(N14719)   10.0000 (X_U1.6)    1.5030 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3761                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4040                       
+
+(X_U1.14)    5.3761                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.011E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.01E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 50
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.41E-09 (N14684)    6.3745     
+
+(N14719)   10.0000 (X_U1.6)    1.5059 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7347                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7626                       
+
+(X_U1.14)    5.7347                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.065E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.07E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 51
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 106.6E-09 (N14684)    6.4102     
+
+(N14719)   10.0000 (X_U1.6)    1.5062 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7703                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7983                       
+
+(X_U1.14)    5.7703                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.431E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.47E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 52
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.4E-09 (N14684)    6.0968     
+
+(N14719)   10.0000 (X_U1.6)    1.5037 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4570                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4849                       
+
+(X_U1.14)    5.4570                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.728E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   9.77E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 53
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.6E-09 (N14684)    6.0637     
+
+(N14719)   10.0000 (X_U1.6)    1.5034 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4240                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4519                       
+
+(X_U1.14)    5.4240                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.006E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.01E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 54
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.07E-09 (N14684)    6.3930     
+
+(N14719)   10.0000 (X_U1.6)    1.5061 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7531                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7811                       
+
+(X_U1.14)    5.7531                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.282E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.32E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 55
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.6E-09 (N14684)    6.3816     
+
+(N14719)   10.0000 (X_U1.6)    1.5060 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7417                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7697                       
+
+(X_U1.14)    5.7417                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.401E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.44E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 56
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 100.8E-09 (N14684)    6.0725     
+
+(N14719)   10.0000 (X_U1.6)    1.5035 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4327                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4606                       
+
+(X_U1.14)    5.4327                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.043E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.05E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 57
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.5E-09 (N14684)    6.2948     
+
+(N14719)   10.0000 (X_U1.6)    1.5053 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6550                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6830                       
+
+(X_U1.14)    5.6550                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.661E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.70E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 58
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.3E-09 (N14684)    6.4587     
+
+(N14719)   10.0000 (X_U1.6)    1.5066 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8188                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8468                       
+
+(X_U1.14)    5.8188                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.612E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.65E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 59
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 106.1E-09 (N14684)    6.3380     
+
+(N14719)   10.0000 (X_U1.6)    1.5056 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6982                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7261                       
+
+(X_U1.14)    5.6982                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.000E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.00E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 60
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.0E-09 (N14684)    6.1758     
+
+(N14719)   10.0000 (X_U1.6)    1.5043 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5360                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5639                       
+
+(X_U1.14)    5.5360                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.057E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 61
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.10E-09 (N14684)    6.6535     
+
+(N14719)   10.0000 (X_U1.6)    1.5082 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    6.0136                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0415                       
+
+(X_U1.14)    6.0136                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.007E-11
+    V_V2        -9.646E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.69E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 62
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.4E-09 (N14684)    6.2301     
+
+(N14719)   10.0000 (X_U1.6)    1.5048 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5903                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6182                       
+
+(X_U1.14)    5.5903                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.041E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.05E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 63
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 109.5E-09 (N14684)    6.6819     
+
+(N14719)   10.0000 (X_U1.6)    1.5084 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    6.0420                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0700                       
+
+(X_U1.14)    6.0420                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.007E-11
+    V_V2        -9.715E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.76E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 64
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.9E-09 (N14684)    6.1489     
+
+(N14719)   10.0000 (X_U1.6)    1.5041 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5091                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5370                       
+
+(X_U1.14)    5.5091                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.021E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 65
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 110.2E-09 (N14684)    6.4163     
+
+(N14719)   10.0000 (X_U1.6)    1.5063 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7765                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8044                       
+
+(X_U1.14)    5.7765                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.035E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 66
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.71E-09 (N14684)    6.1243     
+
+(N14719)   10.0000 (X_U1.6)    1.5039 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4845                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5124                       
+
+(X_U1.14)    5.4845                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.924E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   9.96E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 67
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 90.97E-09 (N14684)    6.4710     
+
+(N14719)   10.0000 (X_U1.6)    1.5067 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8311                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8591                       
+
+(X_U1.14)    5.8311                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.460E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.50E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 68
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 97.32E-09 (N14684)    6.3497     
+
+(N14719)   10.0000 (X_U1.6)    1.5057 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7098                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7378                       
+
+(X_U1.14)    5.7098                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.092E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.10E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 69
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.8E-09 (N14684)    6.3180     
+
+(N14719)   10.0000 (X_U1.6)    1.5055 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6782                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7061                       
+
+(X_U1.14)    5.6782                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.041E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 70
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 107.6E-09 (N14684)    5.9457     
+
+(N14719)   10.0000 (X_U1.6)    1.5025 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3060                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3339                       
+
+(X_U1.14)    5.3060                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.039E+00
+    X_U1.vb      1.502E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 71
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 99.47E-09 (N14684)    6.3612     
+
+(N14719)   10.0000 (X_U1.6)    1.5058 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7214                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7493                       
+
+(X_U1.14)    5.7214                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.775E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.82E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 72
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.81E-09 (N14684)    6.3174     
+
+(N14719)   10.0000 (X_U1.6)    1.5055 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6775                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7055                       
+
+(X_U1.14)    5.6775                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.756E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.80E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 73
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 96.34E-09 (N14684)    6.2695     
+
+(N14719)   10.0000 (X_U1.6)    1.5051 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6297                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6576                       
+
+(X_U1.14)    5.6297                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.026E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 74
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.0E-09 (N14684)    5.9594     
+
+(N14719)   10.0000 (X_U1.6)    1.5026 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.3197                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.3476                       
+
+(X_U1.14)    5.3197                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.028E+00
+    X_U1.vb      1.503E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.187E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 75
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 95.37E-09 (N14684)    6.7196     
+
+(N14719)   10.0000 (X_U1.6)    1.5087 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    6.0797                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.1076                       
+
+(X_U1.14)    6.0797                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.007E-11
+    V_V2        -9.829E-01
+    X_U1.vb      1.509E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.87E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 76
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.6E-09 (N14684)    6.6263     
+
+(N14719)   10.0000 (X_U1.6)    1.5080 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.9863                   (X_U1.11)    9.9200    
+
+(X_U1.12)   10.0000                   (X_U1.13)    6.0143                       
+
+(X_U1.14)    5.9863                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.639E-01
+    X_U1.vb      1.508E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.193E-05
+
+    TOTAL POWER DISSIPATION   9.68E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 77
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.4E-09 (N14684)    6.1776     
+
+(N14719)   10.0000 (X_U1.6)    1.5043 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5378                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5657                       
+
+(X_U1.14)    5.5378                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.038E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.04E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 78
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 90.82E-09 (N14684)    6.3151     
+
+(N14719)   10.0000 (X_U1.6)    1.5055 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6752                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7032                       
+
+(X_U1.14)    5.6752                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.946E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.99E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 79
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.85E-09 (N14684)    6.1540     
+
+(N14719)   10.0000 (X_U1.6)    1.5042 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5142                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5421                       
+
+(X_U1.14)    5.5142                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.022E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 80
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 92.27E-09 (N14684)    6.5081     
+
+(N14719)   10.0000 (X_U1.6)    1.5070 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8682                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8962                       
+
+(X_U1.14)    5.8682                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.466E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.192E-05
+
+    TOTAL POWER DISSIPATION   9.51E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 81
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 108.6E-09 (N14684)    6.4755     
+
+(N14719)   10.0000 (X_U1.6)    1.5068 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8357                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8636                       
+
+(X_U1.14)    5.8357                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.699E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.74E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 82
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.9E-09 (N14684)    6.3334     
+
+(N14719)   10.0000 (X_U1.6)    1.5056 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6935                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7215                       
+
+(X_U1.14)    5.6935                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.079E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.08E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 83
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 105.2E-09 (N14684)    6.4168     
+
+(N14719)   10.0000 (X_U1.6)    1.5063 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7769                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8049                       
+
+(X_U1.14)    5.7769                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.022E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 84
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.1E-09 (N14684)    6.1471     
+
+(N14719)   10.0000 (X_U1.6)    1.5041 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5074                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5353                       
+
+(X_U1.14)    5.5074                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.609E-01
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   9.65E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 85
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 101.2E-09 (N14684)    6.3644     
+
+(N14719)   10.0000 (X_U1.6)    1.5059 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7246                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7525                       
+
+(X_U1.14)    5.7246                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.610E-01
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.65E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 86
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.4E-09 (N14684)    6.5243     
+
+(N14719)   10.0000 (X_U1.6)    1.5072 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8845                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.9124                       
+
+(X_U1.14)    5.8845                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.909E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.192E-05
+
+    TOTAL POWER DISSIPATION   9.95E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 87
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 95.61E-09 (N14684)    6.5373     
+
+(N14719)   10.0000 (X_U1.6)    1.5073 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8974                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.9253                       
+
+(X_U1.14)    5.8974                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.713E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.192E-05
+
+    TOTAL POWER DISSIPATION   9.75E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 88
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 91.66E-09 (N14684)    6.2716     
+
+(N14719)   10.0000 (X_U1.6)    1.5051 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6318                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6597                       
+
+(X_U1.14)    5.6318                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.079E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.08E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 89
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.4E-09 (N14684)    6.2741     
+
+(N14719)   10.0000 (X_U1.6)    1.5051 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6343                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6622                       
+
+(X_U1.14)    5.6343                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.354E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.39E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 90
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 104.3E-09 (N14684)    6.4881     
+
+(N14719)   10.0000 (X_U1.6)    1.5069 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8482                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8761                       
+
+(X_U1.14)    5.8482                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.047E+00
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.05E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 91
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 96.94E-09 (N14684)    6.1017     
+
+(N14719)   10.0000 (X_U1.6)    1.5037 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4620                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4899                       
+
+(X_U1.14)    5.4620                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.058E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.06E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 92
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.9E-09 (N14684)    6.2681     
+
+(N14719)   10.0000 (X_U1.6)    1.5051 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6283                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6562                       
+
+(X_U1.14)    5.6283                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.028E+00
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 93
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.40E-09 (N14684)    6.4794     
+
+(N14719)   10.0000 (X_U1.6)    1.5068 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8395                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8674                       
+
+(X_U1.14)    5.8395                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.917E-01
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   9.96E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 94
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 97.64E-09 (N14684)    5.8739     
+
+(N14719)   10.0000 (X_U1.6)    1.5019 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.2342                   (X_U1.11)    9.9203    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.2621                       
+
+(X_U1.14)    5.2342                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.020E+00
+    X_U1.vb      1.502E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.186E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 95
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 98.66E-09 (N14684)    6.1356     
+
+(N14719)   10.0000 (X_U1.6)    1.5040 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4958                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.5237                       
+
+(X_U1.14)    5.4958                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.017E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.02E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 96
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 94.14E-09 (N14684)    6.5058     
+
+(N14719)   10.0000 (X_U1.6)    1.5070 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.8659                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.8939                       
+
+(X_U1.14)    5.8659                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.023E+00
+    X_U1.vb      1.507E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.192E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 97
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 93.12E-09 (N14684)    6.2338     
+
+(N14719)   10.0000 (X_U1.6)    1.5048 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.5941                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6220                       
+
+(X_U1.14)    5.5941                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.803E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.189E-05
+
+    TOTAL POWER DISSIPATION   9.84E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 98
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 102.5E-09 (N14684)    6.1016     
+
+(N14719)   10.0000 (X_U1.6)    1.5037 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.4619                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.4898                       
+
+(X_U1.14)    5.4619                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.024E+00
+    X_U1.vb      1.504E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.188E-05
+
+    TOTAL POWER DISSIPATION   1.03E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 99
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 107.0E-09 (N14684)    6.3850     
+
+(N14719)   10.0000 (X_U1.6)    1.5060 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.7452                   (X_U1.11)    9.9201    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.7731                       
+
+(X_U1.14)    5.7452                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -1.064E+00
+    X_U1.vb      1.506E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.063E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.191E-05
+
+    TOTAL POWER DISSIPATION   1.07E+01  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO PASS 100
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  OUT)     .1837  (N14530) 103.4E-09 (N14684)    6.2886     
+
+(N14719)   10.0000 (X_U1.6)    1.5052 (X_U1.7)   -1.8466 (X_U1.8)   -1.8466     
+
+(X_U1.9)    0.0000 (X_U1.10)    5.6488                   (X_U1.11)    9.9202    
+
+(X_U1.12)   10.0000                   (X_U1.13)    5.6767                       
+
+(X_U1.14)    5.6488                   (X_U1.53)    9.0000                       
+
+(X_U1.54)    1.0000                   (X_U1.90)  -40.6060                       
+
+(X_U1.91)   40.0000                   (X_U1.92)  -40.0000                       
+
+(X_U1.99)    5.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         1.006E-11
+    V_V2        -9.838E-01
+    X_U1.vb      1.505E-05
+    X_U1.vc      8.817E-12
+    X_U1.ve     -4.062E-02
+    X_U1.vlim   -4.061E-02
+    X_U1.vlp    -8.061E-11
+    X_U1.vln     1.190E-05
+
+    TOTAL POWER DISSIPATION   9.88E+00  WATTS
+
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     SORTED DEVIATIONS OF V(OUT)      TEMPERATURE =   27.000 DEG C
+
+                      MONTE CARLO SUMMARY
+
+******************************************************************************
+
+
+
+
+
+Mean Deviation =    -.0671
+Sigma          =     .6232
+
+ RUN                    MAX DEVIATION FROM NOMINAL
+
+Pass   57               1.746   (2.80 sigma)  lower  at T =    1.0352E-03
+                        (  81.395% of Nominal)
+
+Pass   26               1.3715  (2.20 sigma)  lower  at T =     .041 
+                        (  85.484% of Nominal)
+
+Pass   77               1.1011  (1.77 sigma)  lower  at T =    1.0436E-03
+                        (  88.267% of Nominal)
+
+Pass   35               1.0349  (1.66 sigma)  higher  at T =     .011 
+                        ( 462.72% of Nominal)
+
+Pass   81               1.0236  (1.64 sigma)  lower  at T =     .021 
+                        (  89.166% of Nominal)
+
+Pass   65               1.0224  (1.64 sigma)  lower  at T =     .041 
+                        (  89.178% of Nominal)
+
+Pass   14               1.0207  (1.64 sigma)  lower  at T =    1.0416E-03
+                        (  89.124% of Nominal)
+
+Pass   86               1.02    (1.64 sigma)  lower  at T =     .041 
+                        (  89.204% of Nominal)
+
+Pass   75               1.0198  (1.64 sigma)  lower  at T =    1.0431E-03
+                        (  89.134% of Nominal)
+
+Pass   90               1.0183  (1.63 sigma)  lower  at T =     .041 
+                        (  69.435% of Nominal)
+
+Pass   40               1.0181  (1.63 sigma)  lower  at T =     .041 
+                        (  69.44 % of Nominal)
+
+Pass   76               1.0166  (1.63 sigma)  lower  at T =     .041 
+                        (  69.486% of Nominal)
+
+Pass   63                .9939  (1.59 sigma)  lower  at T =    1.0382E-03
+                        (  89.409% of Nominal)
+
+Pass   69                .9926  (1.59 sigma)  higher  at T =     .011 
+                        ( 447.87% of Nominal)
+
+Pass   37                .9831  (1.58 sigma)  lower  at T =     .041 
+                        (  89.594% of Nominal)
+
+Pass   18                .9757  (1.57 sigma)  lower  at T =     .041 
+                        (  89.672% of Nominal)
+
+Pass   51                .9716  (1.56 sigma)  lower  at T =    1.0428E-03
+                        (  89.647% of Nominal)
+
+Pass   89                .951   (1.53 sigma)  lower  at T =    1.0429E-03
+                        (  89.867% of Nominal)
+
+Pass   46                .912   (1.46 sigma)  lower  at T =    1.0352E-03
+                        (  90.282% of Nominal)
+
+Pass   33                .8791  (1.41 sigma)  lower  at T =    1.0422E-03
+                        (  90.633% of Nominal)
+
+Pass    8                .8541  (1.37 sigma)  higher  at T =     .021 
+                        ( 125.64% of Nominal)
+
+Pass   30                .8492  (1.36 sigma)  higher  at T =     .011 
+                        ( 397.63% of Nominal)
+
+Pass   66                .8325  (1.34 sigma)  higher  at T =     .021 
+                        ( 115.04% of Nominal)
+
+Pass   94                .8226  (1.32 sigma)  higher  at T =     .021 
+                        ( 190.47% of Nominal)
+
+Pass   48                .8165  (1.31 sigma)  lower  at T =     .041 
+                        (  91.358% of Nominal)
+
+Pass   15                .8021  (1.29 sigma)  lower  at T =    1.0430E-03
+                        (  91.453% of Nominal)
+
+Pass   21                .7925  (1.27 sigma)  lower  at T =     .041 
+                        (  91.612% of Nominal)
+
+Pass   13                .7638  (1.23 sigma)  lower  at T =    1.0427E-03
+                        (  91.861% of Nominal)
+
+Pass    7                .7364  (1.18 sigma)  higher  at T =    1.0182E-03
+                        ( 183.65% of Nominal)
+
+Pass    4                .7125  (1.14 sigma)  lower  at T =     .041 
+                        (  53.399% of Nominal)
+
+Pass   39                .7114  (1.14 sigma)  higher  at T =     .011 
+                        ( 349.33% of Nominal)
+
+Pass   38                .6326  (1.02 sigma)  higher  at T =     .031 
+                        ( 167.62% of Nominal)
+
+Pass    3                .6273  (1.01 sigma)  higher  at T =     .021 
+                        ( 111.34% of Nominal)
+
+Pass   97                .621   (1.00 sigma)  higher  at T =     .041 
+                        ( 111.22% of Nominal)
+
+Pass   99                .6032  ( .97 sigma)  lower  at T =    1.0352E-03
+                        (  93.573% of Nominal)
+
+Pass   44                .5525  ( .89 sigma)  higher  at T =     .021 
+                        ( 109.98% of Nominal)
+
+Pass   56                .5461  ( .88 sigma)  higher  at T =     .041 
+                        ( 160.06% of Nominal)
+
+Pass   28                .5415  ( .87 sigma)  higher  at T =     .041 
+                        ( 159.56% of Nominal)
+
+Pass   11                .5218  ( .84 sigma)  higher  at T =     .021 
+                        ( 157.39% of Nominal)
+
+Pass   10                .5092  ( .82 sigma)  higher  at T =     .041 
+                        ( 109.2 % of Nominal)
+
+Pass   70                .5056  ( .81 sigma)  higher  at T =     .031 
+                        ( 154.05% of Nominal)
+
+Pass   54                .5053  ( .81 sigma)  higher  at T =     .041 
+                        ( 109.13% of Nominal)
+
+Pass    9                .4566  ( .73 sigma)  higher  at T =    1.0185E-03
+                        ( 151.87% of Nominal)
+
+Pass   16                .4545  ( .73 sigma)  higher  at T =     .011 
+                        ( 164.7 % of Nominal)
+
+Pass   19                .4431  ( .71 sigma)  higher  at T =     .031 
+                        ( 147.36% of Nominal)
+
+Pass   79                .4403  ( .71 sigma)  higher  at T =     .021 
+                        ( 148.43% of Nominal)
+
+Pass   80                .4377  ( .70 sigma)  lower  at T =     .031 
+                        (  71.16 % of Nominal)
+
+Pass   41                .4356  ( .70 sigma)  higher  at T =     .021 
+                        ( 147.91% of Nominal)
+
+Pass   74                .4326  ( .69 sigma)  higher  at T =     .021 
+                        ( 147.58% of Nominal)
+
+Pass   52                .4297  ( .69 sigma)  higher  at T =     .011 
+                        ( 250.6 % of Nominal)
+
+Pass   42                .4282  ( .69 sigma)  lower  at T =     .011 
+                        (  54.231% of Nominal)
+
+Pass   84                .4176  ( .67 sigma)  higher  at T =     .031 
+                        ( 144.64% of Nominal)
+
+Pass   49                .4129  ( .66 sigma)  higher  at T =     .041 
+                        ( 145.41% of Nominal)
+
+Pass   88                .4071  ( .65 sigma)  higher  at T =     .041 
+                        ( 107.36% of Nominal)
+
+Pass   67                .3986  ( .64 sigma)  higher  at T =     .021 
+                        ( 107.2 % of Nominal)
+
+Pass   61                .3919  ( .63 sigma)  lower  at T =     .011 
+                        (  95.932% of Nominal)
+
+Pass    6                .3905  ( .63 sigma)  higher  at T =    1.0194E-03
+                        ( 144.36% of Nominal)
+
+Pass   50                .3905  ( .63 sigma)  higher  at T =     .041 
+                        ( 142.95% of Nominal)
+
+Pass   53                .3764  ( .60 sigma)  higher  at T =     .011 
+                        ( 153.57% of Nominal)
+
+Pass   98                .373   ( .60 sigma)  higher  at T =     .021 
+                        ( 141.03% of Nominal)
+
+Pass   78                .3703  ( .59 sigma)  higher  at T =     .021 
+                        ( 106.69% of Nominal)
+
+Pass   24                .3685  ( .59 sigma)  higher  at T =     .021 
+                        ( 106.66% of Nominal)
+
+Pass   45                .3672  ( .59 sigma)  higher  at T =     .021 
+                        ( 140.39% of Nominal)
+
+Pass   55                .3589  ( .58 sigma)  lower  at T =     .041 
+                        (  96.201% of Nominal)
+
+Pass   91                .3569  ( .57 sigma)  higher  at T =     .021 
+                        ( 139.26% of Nominal)
+
+Pass   93                .3484  ( .56 sigma)  lower  at T =     .011 
+                        (  96.383% of Nominal)
+
+Pass   43                .3476  ( .56 sigma)  higher  at T =     .041 
+                        ( 106.28% of Nominal)
+
+Pass   29                .3404  ( .55 sigma)  lower  at T =     .011 
+                        (  96.467% of Nominal)
+
+Pass   17                .3335  ( .54 sigma)  higher  at T =     .011 
+                        ( 147.47% of Nominal)
+
+Pass   27                .3218  ( .52 sigma)  lower  at T =     .011 
+                        (  96.659% of Nominal)
+
+Pass   47                .3164  ( .51 sigma)  lower  at T =     .011 
+                        (  96.716% of Nominal)
+
+Pass   32                .2977  ( .48 sigma)  lower  at T =     .011 
+                        (  96.909% of Nominal)
+
+Pass   87                .2832  ( .45 sigma)  lower  at T =     .041 
+                        (  81.479% of Nominal)
+
+Pass   58                .2673  ( .43 sigma)  lower  at T =    1.0192E-03
+                        (  82.262% of Nominal)
+
+Pass   22                .2476  ( .40 sigma)  lower  at T =     .011 
+                        (  97.43 % of Nominal)
+
+Pass   62                .2456  ( .39 sigma)  higher  at T =     .011 
+                        ( 186.09% of Nominal)
+
+Pass   72                .2456  ( .39 sigma)  higher  at T =     .021 
+                        ( 104.44% of Nominal)
+
+Pass   82                .2403  ( .39 sigma)  higher  at T =     .011 
+                        ( 184.22% of Nominal)
+
+Pass   96                .2348  ( .38 sigma)  lower  at T =     .041 
+                        (  97.515% of Nominal)
+
+Pass    2                .2302  ( .37 sigma)  higher  at T =     .011 
+                        ( 132.77% of Nominal)
+
+Pass   83                .2269  ( .36 sigma)  lower  at T =    1.0203E-03
+                        (  84.945% of Nominal)
+
+Pass   12                .2197  ( .35 sigma)  lower  at T =     .031 
+                        (  79.11 % of Nominal)
+
+Pass   68                .2192  ( .35 sigma)  lower  at T =     .031 
+                        (  97.724% of Nominal)
+
+Pass   95                .2186  ( .35 sigma)  higher  at T =     .011 
+                        ( 131.12% of Nominal)
+
+Pass    5                .2091  ( .34 sigma)  higher  at T =     .031 
+                        ( 173.27% of Nominal)
+
+Pass   60                .1886  ( .30 sigma)  higher  at T =    1.0187E-03
+                        ( 121.43% of Nominal)
+
+Pass   73                .1783  ( .29 sigma)  higher  at T =     .031 
+                        ( 162.48% of Nominal)
+
+Pass   23                .1746  ( .28 sigma)  lower  at T =     .011 
+                        (  98.188% of Nominal)
+
+Pass   36                .1744  ( .28 sigma)  higher  at T =     .041 
+                        ( 170.15% of Nominal)
+
+Pass   20                .1736  ( .28 sigma)  lower  at T =     .011 
+                        (  97.626% of Nominal)
+
+Pass   64                .1634  ( .26 sigma)  higher  at T =    1.0196E-03
+                        ( 118.57% of Nominal)
+
+Pass   85                .1538  ( .25 sigma)  lower  at T =     .011 
+                        (  98.403% of Nominal)
+
+Pass   34                .1493  ( .24 sigma)  lower  at T =    1.0346E-03
+                        (  98.41 % of Nominal)
+
+Pass   31                .1492  ( .24 sigma)  lower  at T =     .011 
+                        (  98.451% of Nominal)
+
+Pass   71                .1449  ( .23 sigma)  lower  at T =     .031 
+                        (  98.496% of Nominal)
+
+Pass   92                .1434  ( .23 sigma)  lower  at T =     .041 
+                        (  98.482% of Nominal)
+
+Pass   59                .1283  ( .21 sigma)  lower  at T =     .041 
+                        (  98.642% of Nominal)
+
+Pass   25                .1029  ( .17 sigma)  higher  at T =     .021 
+                        ( 141.4 % of Nominal)
+
+Pass  100                .0536  ( .09 sigma)  higher  at T =    1.0172E-03
+                        ( 121.83% of Nominal)
+
+
+
+          JOB CONCLUDED
+
+**** 07/21/23 18:26:32 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-MC_WC_Exam"  [ D:\Ian_Jung\workplace\PSpice\Monte_Carlo-Worst_Case-PSpiceFiles\SCHEMATIC1\MC_WC_Exam.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =       39.30
+

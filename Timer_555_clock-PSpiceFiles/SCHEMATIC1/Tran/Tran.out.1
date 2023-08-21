@@ -1,0 +1,76 @@
+
+**** 08/04/23 11:01:39 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Timer_555_clock-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10000us 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TIMER_555_CLOCK
+Q_Q1         DISCHARGE N16780 0 Q2N3904
+R_R6         N16580 VCC  1k TC=0,0 
+X_U1         DISCHARGE N16576 N16580 VCC 0 NCS2202 
+C_C1         0 DISCHARGE  100pF  TC=0,0 
+R_R4         0 N16906  5k TC=0,0 
+R_R1         DISCHARGE VCC  30k TC=0,0 
+C_C2         0 N16576  0.1u  TC=0,0 
+X_U4         N16676 N17006 N16792 VCC CMOS_NOR_GATE 
+C_C5         0 VCC  0.1u  TC=0,0 
+C_C4         0 N16780  15n  TC=0,0 
+R_R7         VCC N17006  1k TC=0,0 
+R_R3         N16906 N16576  5k TC=0,0 
+X_U6         N16780 OUT VCC CMOS_INV 
+X_U3         N16580 N16792 N16676 VCC CMOS_NOR_GATE 
+X_U2         N16906 N17472 N17006 VCC 0 NCS2202 
+R_R5         N16576 VCC  5k TC=0,0 
+V_V1         VCC 0 12Vdc
+C_C3         N16676 0  15n  TC=0,0 
+X_U5         N16676 N16780 VCC CMOS_INV 
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N17472 IO_STM IO_LEVEL=0 
++ 0 0
++ +100uS 1
++REPEAT FOREVER
++ +100us 0
++  +100uS 1
++ ENDREPEAT
+
+**** RESUMING Tran.cir ****
+.END
+
+
+ERROR(ORPSIM-15108): Subcircuit NCS2202 used by X_U1 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit CMOS_NOR_GATE used by X_U4 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit CMOS_INV used by X_U6 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit CMOS_NOR_GATE used by X_U3 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit NCS2202 used by X_U2 is undefined
+
+ERROR(ORPSIM-15108): Subcircuit CMOS_INV used by X_U5 is undefined
+

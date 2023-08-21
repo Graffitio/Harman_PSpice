@@ -1,0 +1,3 @@
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\on_bjt.lib, offset=52983, size=985
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\anl_misc.lib, offset=21002, size=479
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\fairchild.lib, offset=3176, size=910

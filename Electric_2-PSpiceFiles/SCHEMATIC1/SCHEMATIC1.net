@@ -1,0 +1,11 @@
+* source ELECTRIC_2
+V_V1         N14452 0 1Vdc
+R_R1         N14452 N14459  {R} TC=0,0 
+R_R2         N14463 N14459  {R} TC=0,0 
+R_R3         N14463 N14467  {R} TC=0,0 
+R_R4         N14467 N14471  {R} TC=0,0 
+R_R5         0 N14471  {R} TC=0,0 
+R_R6         0 N14467  {2*R} TC=0,0 
+R_R7         0 N14463  {2*R} TC=0,0 
+R_R8         0 N14459  {2*R} TC=0,0 
+.PARAM  r=1k

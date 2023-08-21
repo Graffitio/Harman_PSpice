@@ -1,0 +1,153 @@
+
+**** 07/24/23 14:43:02 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Electric_9-PSpiceFiles\SCHEMATIC1\DC_sweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DC_sweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN PARAM R 1m 5.0 1m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_9
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND OUT IO_STM IO_LEVEL=0 
++ 0 1
++ +.5uS 0
++REPEAT FOREVER
++ +.5uS 1
++  +.5uS 0
++ ENDREPEAT
+R_R1         0 OUT  {R} TC=0,0 
+R_R2         N14725 N14732  {Rs} TC=0,0 
+R_R3         0 N14732  {R} TC=0,0 
+R_R4         N14773 0  {Rs} TC=0,0 
+R_R5         N14773 0  {R} TC=0,0 
+V_Vth         N14725 0 0Vdc
+I_Inor         0 N14773   
+V_CONST1         INOR 0 DC {5/0.5}
+.PARAM  p=12.5 rs=0.5 r=0.5
+
+**** RESUMING DC_sweep.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node OUT
+*
+* Moving U_DSTM1:OUT1 from analog node OUT to new digital node OUT$DtoA
+X$OUT_DtoA1
++ OUT$DtoA
++ OUT
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 07/24/23 14:43:02 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Electric_9-PSpiceFiles\SCHEMATIC1\DC_sweep.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 07/24/23 14:43:02 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Electric_9-PSpiceFiles\SCHEMATIC1\DC_sweep.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+
+          JOB CONCLUDED
+
+**** 07/24/23 14:43:02 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Electric_9-PSpiceFiles\SCHEMATIC1\DC_sweep.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .13
+

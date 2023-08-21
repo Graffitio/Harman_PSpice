@@ -1,0 +1,497 @@
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TTest.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10s 0 0.01s 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source TTEST
+U_DSTM4         STIM(1,1)
++ $G_DPWR $G_DGND
++ N14530 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+R_R4         0 N14530  1k TC=0,0 
+V_V1         P12V 0 12V
+V_V2         0 N12V 12V
+R_R6         0 N17207  1k TC=0,0 
+U_DSTM6         STIM(1,1)
++ P12V $G_DGND
++ N17207 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+U_DSTM7         STIM(1,1)
++ P12V N12V
++ N17317 
++ IO_STM
++ IO_LEVEL=0
++  0s 0  
++ 1s 1  
++ 2s 0  
++ 3s 0 
+R_R7         0 N17317  1k TC=0,0 
+U_DSTM8         STIM(8,11111111)
++ $G_DPWR $G_DGND
++ D7 D6 D5 D4 D3 D2 D1 D0 
++ IO_STM
++ IO_LEVEL=0
++  0s 00000000  
++ 1s 00011100  
++ 2s 00101111  
++ 3s 01001100 
+R_R8         0 D0  1k TC=0,0 
+R_R9         0 D1  1k TC=0,0 
+R_R10         0 D2  1k TC=0,0 
+R_R11         0 D3  1k TC=0,0 
+R_R12         0 D4  1k TC=0,0 
+R_R13         0 D5  1k TC=0,0 
+R_R14         0 D6  1k TC=0,0 
+R_R15         0 D7  1k TC=0,0 
+V_V3         N20958 0 5Vdc
+X_U1         0 N20965 Sw_tClose PARAMS: tClose=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+X_U2         N20958 N20965 Sw_tOpen PARAMS: tOpen=50 ttran=1u Rclosed=0.01
++  Ropen=1Meg
+R_R16         N20965 N21206  100k TC=0,0 
+C_C1         0 N21206  100u  TC=0,0 
+V_V4         0 AC_IN  
++SIN 0 230 60 0 0 0
+R_R17         AC_IN N22126  0.01 TC=0,0 
+R_R18         0 N22162  1g TC=0,0 
+R_R19         N22180 DC_SEC1  1k TC=0,0 
+R_R20         N22256 DC_SEC2  1k TC=0,0 
+L_Lpri         N22126 0  5200  
+L_Lsec1         AC_SEC1 N22162  356  
+L_Lsec2         AC_SEC2 N22162  271  
+D_D1         N22180 AC_SEC1 D1N4004 
+D_D2         AC_SEC1 DC_SEC1 D1N4004 
+D_D3         N22180 N22162 D1N4004 
+D_D4         N22162 DC_SEC1 D1N4004 
+D_D5         N22256 AC_SEC2 D1N4004 
+D_D6         AC_SEC2 DC_SEC2 D1N4004 
+D_D7         N22256 N22162 D1N4004 
+D_D8         N22162 DC_SEC2 D1N4004 
+C_C2         N22180 DC_SEC1  680u  TC=0,0 
+C_C3         N22256 DC_SEC2  220u  TC=0,0 
+Kn_K1         L_Lpri L_Lsec1 
++ L_Lsec2    0.85 K1041T060_3E2A
+
+**** RESUMING TTest.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14530
+*
+* Moving U_DSTM4:OUT1 from analog node N14530 to new digital node N14530$DtoA
+X$N14530_DtoA1
++ N14530$DtoA
++ N14530
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N17207
+*
+* Moving U_DSTM6:OUT1 from analog node N17207 to new digital node N17207$DtoA
+X$N17207_DtoA1
++ N17207$DtoA
++ N17207
++ P12V
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N17317
+*
+* Moving U_DSTM7:OUT1 from analog node N17317 to new digital node N17317$DtoA
+X$N17317_DtoA1
++ N17317$DtoA
++ N17317
++ P12V
++ N12V
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D0
+*
+* Moving U_DSTM8:OUT1 from analog node D0 to new digital node D0$DtoA
+X$D0_DtoA1
++ D0$DtoA
++ D0
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D1
+*
+* Moving U_DSTM8:OUT2 from analog node D1 to new digital node D1$DtoA
+X$D1_DtoA1
++ D1$DtoA
++ D1
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D2
+*
+* Moving U_DSTM8:OUT3 from analog node D2 to new digital node D2$DtoA
+X$D2_DtoA1
++ D2$DtoA
++ D2
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D3
+*
+* Moving U_DSTM8:OUT4 from analog node D3 to new digital node D3$DtoA
+X$D3_DtoA1
++ D3$DtoA
++ D3
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D4
+*
+* Moving U_DSTM8:OUT5 from analog node D4 to new digital node D4$DtoA
+X$D4_DtoA1
++ D4$DtoA
++ D4
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D5
+*
+* Moving U_DSTM8:OUT6 from analog node D5 to new digital node D5$DtoA
+X$D5_DtoA1
++ D5$DtoA
++ D5
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D6
+*
+* Moving U_DSTM8:OUT7 from analog node D6 to new digital node D6$DtoA
+X$D6_DtoA1
++ D6$DtoA
++ D6
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface for node D7
+*
+* Moving U_DSTM8:OUT8 from analog node D7 to new digital node D7$DtoA
+X$D7_DtoA1
++ D7$DtoA
++ D7
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N4004         D1N4001         
+          IS   14.110000E-09   14.110000E-09 
+           N    1.984           1.984        
+         IKF   94.81           94.81         
+          BV  600              75            
+         IBV   10.000000E-06   10.000000E-06 
+          RS     .03389          .03389      
+          TT    5.700000E-06    5.700000E-06 
+         CJO   25.890000E-12   25.890000E-12 
+          VJ     .3245           .3245       
+           M     .44             .44         
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     Ferromagnetic Core MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               K1041T060_3E2A  K3E2A           
+       LEVEL    2               2            
+        AREA     .0202                       
+        PATH    1.3                          
+          MS  353.000000E+03  353.000000E+03 
+           A   31.02           31.02         
+           C     .7842           .7842       
+           K   12.46           12.46         
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.Smod       X_U2.Smod       
+         RON     .01             .01         
+        ROFF    1.000000E+06    1.000000E+06 
+         VON    1               1            
+        VOFF    0               0            
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DINSTM          
+      S0NAME 0               
+       S0TSW  500.000000E-12 
+       S0RLO     .5          
+       S0RHI    1.000000E+03 
+      S1NAME 1               
+       S1TSW  500.000000E-12 
+       S1RLO    1.000000E+03 
+       S1RHI     .5          
+      S2NAME X               
+       S2TSW  500.000000E-12 
+       S2RLO     .429        
+       S2RHI    1.16         
+      S3NAME R               
+       S3TSW  500.000000E-12 
+       S3RLO     .429        
+       S3RHI    1.16         
+      S4NAME F               
+       S4TSW  500.000000E-12 
+       S4RLO     .429        
+       S4RHI    1.16         
+      S5NAME Z               
+       S5TSW  500.000000E-12 
+       S5RLO    1.000000E+06 
+       S5RHI    1.000000E+06 
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          
+        DRVL    0            
+        DRVH    0            
+       DtoA1 DtoA_STM        
+       DtoA2 DtoA_STM        
+       DtoA3 DtoA_STM        
+       DtoA4 DtoA_STM        
+       TPWRT  100.000000E+03 
+
+
+**** 07/21/23 16:33:29 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TTest"  [ D:\Ian_Jung\workplace\PSpice\ttest-pspicefiles\schematic1\ttest.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   D0)     .0025  (   D1)     .0025  (   D2)     .0025  (   D3)     .0025      
+
+(   D4)     .0025  (   D5)     .0025  (   D6)     .0025  (   D7)     .0025      
+
+( N12V)  -12.0000  ( P12V)   12.0000  (AC_IN)    0.0000  (N14530)     .0025     
+
+(N17207)     .0060 (N17317)  -11.9820 (N20958)    5.0000 (N20965)    5.0000     
+
+(N21206)    5.0000 (N22126)    0.0000 (N22162) 3.608E-24 (N22180)-1.522E-18     
+
+(N22256)-145.6E-21 (X_U1.3)    0.0000 (X_U2.3)    1.0000 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (AC_SEC1) 3.608E-24                       
+
+(AC_SEC2) 3.608E-24                   (DC_SEC1)-1.567E-18                       
+
+(DC_SEC2)-194.0E-21                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( D0$DtoA) : 0     ( D7$DtoA) : 0     ( D4$DtoA) : 0     (N17207$DtoA) : 0      
+
+( D1$DtoA) : 0     (N17317$DtoA) : 0  ( D5$DtoA) : 0     ( D2$DtoA) : 0         
+
+( D6$DtoA) : 0     (N14530$DtoA) : 0  ( D3$DtoA) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -3.598E-02
+    V_V2        -3.596E-02
+    V_V3        -5.000E-06
+    V_V4         0.000E+00
+    X_U1.V1      0.000E+00
+    X_U2.V1     -1.000E-12
+    X$DIGIFPWR.VDPWR  -4.498E-02
+    X$DIGIFPWR.VDGND   1.196E-02
+
+    TOTAL POWER DISSIPATION   1.09E+00  WATTS
+
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+Reducing minimum delta to make the circuit converge.
+
+ERROR(ORPSIM-15138): Convergence problem in Transient Analysis at Time =  1    .
+         Time step =  0    , minimum allowable step size =  1.000E-18
+
+  These voltages failed to converge:
+
+    V(N22162)                 =    -21.86V  \    -5.697V
+    V(N22180)                 =    -29.83V  \    -13.66V
+    V(DC_SEC1)                =    -15.79V  \   375.53mV
+    V(N22256)                 =    -27.98V  \    -11.82V
+    V(DC_SEC2)                =    -17.68V  \    -1.521V
+    V(AC_SEC1)                =    -23.75V  \    -7.591V
+    V(AC_SEC2)                =    -23.81V  \    -7.644V
+
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   D0)     .0025  (   D1)     .0025  (   D2)    4.9950  (   D3)    4.9950      
+
+(   D4)    4.9950  (   D5)     .0025  (   D6)     .0025  (   D7)     .0025      
+
+( N12V)  -12.0000  ( P12V)   12.0000  (AC_IN)-113.6E-06  (N14530)    4.9950     
+
+(N17207)   11.9880 (N17317)   11.9820 (N20958)    5.0000 (N20965)    5.0000     
+
+(N21206)    5.0000 (N22126)   -1.4181 (N22162)  -21.8590 (N22180)  -29.8260     
+
+(N22256)  -27.9820 (X_U1.3)    0.0000 (X_U2.3)    1.0000 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (AC_SEC1)  -23.7530                       
+
+(AC_SEC2)  -23.8060                   (DC_SEC1)  -15.7860                       
+
+(DC_SEC2)  -17.6840                   
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+( D0$DtoA) : 0     ( D7$DtoA) : 0     ( D4$DtoA) : 1     (N17207$DtoA) : 1      
+
+( D1$DtoA) : 0     (N17317$DtoA) : 1  ( D5$DtoA) : 0     ( D2$DtoA) : 1         
+
+( D6$DtoA) : 0     (N14530$DtoA) : 1  ( D3$DtoA) : 1     
+
+
+**** Interrupt ****

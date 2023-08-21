@@ -1,0 +1,15 @@
+* source FET_AMP
+R_Rsi         IN N14527  0.1k TC=0,0 
+R_R1         N14560 N14611  49k TC=0,0 
+R_R2         0 N14560  27k TC=0,0 
+R_Rd         N14635 N14611  6k TC=0,0 
+R_Rs         0 N14639  0.2k TC=0,0 
+R_RL         0 OUT  10k TC=0,0 
+C_C1         N14527 N14560  3u  TC=0,0 
+C_C3         N14635 OUT  4u  TC=0,0 
+C_Cs         0 N14639  75u  TC=0,0 
+V_V2         N14611 0 5V
+V_V1         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+M_M1         N14635 N14560 N14639 N14639 M2N7000
+V_CONST1         VGS 0 DC {1.776-0.8989}

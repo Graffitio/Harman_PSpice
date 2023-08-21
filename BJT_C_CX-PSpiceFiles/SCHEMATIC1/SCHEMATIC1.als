@@ -1,0 +1,16 @@
+.ALIASES
+R_Rs            Rs(1=0 2=N15294 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15362@ANALOG.R.Normal(chips)
+C_C1            C1(1=N15276 2=N15154 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15244@ANALOG.C.Normal(chips)
+R_Rsi           Rsi(1=IN 2=N15276 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15224@ANALOG.R.Normal(chips)
+R_Rd            Rd(1=N15160 2=N15064 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15124@ANALOG.R.Normal(chips)
+R_RL            RL(1=0 2=OUT ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15382@ANALOG.R.Normal(chips)
+V_V1            V1(+=IN -=0 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15310@SOURCE.VSIN.Normal(chips)
+R_R2            R2(1=0 2=N15154 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15342@ANALOG.R.Normal(chips)
+R_R1            R1(1=N15154 2=N15064 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15104@ANALOG.R.Normal(chips)
+V_V2            V2(+=N15064 -=0 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15084@SOURCE.VDC.Normal(chips)
+C_C3            C3(1=N15160 2=OUT ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15162@ANALOG.C.Normal(chips)
+Q_Q1            Q1(c=N15160 b=N15154 e=N15294 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS15524@BIPOLAR.Q2N2222.Normal(chips)
+C_C4            C4(1=0 2=N15294 ) CN @BJT_C_CX.SCHEMATIC1(sch_1):INS18472@ANALOG.C.Normal(chips)
+_    _(in=IN)
+_    _(out=OUT)
+.ENDALIASES

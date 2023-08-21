@@ -1,0 +1,44 @@
+
+**** 07/17/23 10:54:48 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\part_3_bias_point-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "D:\Lee_Seung_Min\0412\NCP1117 PSPICE MODELS\NCP1117 Model Library.lib" 
+
+ERROR(ORPSIM-16276): Simulation cannot be completed because library D:\Lee_Seung_Min\0412\NCP1117 PSPICE MODELS\NCP1117 Model Library.lib 
+is not available.
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART_3_BIAS_POINT
+V_V1         IN 0 10Vdc
+R_R1         IN OUT  1k TC=0,0 
+R_R2         0 OUT  1k TC=0,0 
+C_C1         OUT 0  1n  TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+

@@ -1,0 +1,268 @@
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../library/ncs2200p.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 3m 0 10u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OPAMP_2_OUTPUT_TYPE
+X_U1         REF IN N14714 VCC 0 NCS2202 
+X_U2         REF IN N143582 VCC 0 NCS2200 
+V_V1         IN 0  
++SIN 2 1 1k 0 0 0
+V_V2         VCC 0 5Vdc
+R_R1         VCC REF  {R} TC=0,0 
+R_R2         0 REF  {R} TC=0,0 
+R_R3         N14714 VCC  10k TC=0,0 
+R_R4         0 N143582  10k TC=0,0 
+.PARAM  r=100k
+
+**** RESUMING Tran.cir ****
+.END
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.NCS220DA   X_U1.NCS220DB   X_U2.NCS220DA   X_U2.NCS220DB   
+          IS   10.000000E-15   10.000000E-15   10.000000E-15   10.000000E-15 
+           N     .5                              .5                          
+         CJO    2.000000E-12    2.000000E-12    2.000000E-12    2.000000E-12 
+
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.NCS220Q    X_U2.NCS220Q    
+               NPN             NPN             
+       LEVEL    1               1            
+          IS   14.000000E-15   14.000000E-15 
+          BF  300             300            
+          NF    1               1            
+         VAF  100             100            
+         IKF     .025            .025        
+         ISE  300.000000E-15  300.000000E-15 
+          BR    7.5             7.5          
+          NR    1               1            
+         ISS    0               0            
+          RE    0               0            
+          RC    2.4             2.4          
+         CJE    4.500000E-12    4.500000E-12 
+         VJE     .75             .75         
+         CJC    3.500000E-12    3.500000E-12 
+         VJC     .75             .75         
+         MJC     .33             .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  400.000000E-12  400.000000E-12 
+          TR   21.000000E-09   21.000000E-09 
+         XTB    1.5             1.5          
+          KF  900.000000E-18  900.000000E-18 
+          AF    1               1            
+          CN    2.42            2.42         
+           D     .87             .87         
+
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.NCS220NM   X_U1.NCS220NMA  X_U2.NCS220NM   X_U2.NCS220NMA  
+               NMOS            NMOS            NMOS            NMOS            
+       LEVEL    1               1               1               1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO    -.28             .28            -.28             .28         
+          KP    8.640000E-03    8.740000E-03    8.640000E-03    8.740000E-03 
+       GAMMA    1.86            0               1.86            0            
+         PHI     .75             .6              .75             .6          
+      LAMBDA     .0118           .02             .0118           .02         
+          RD    1.2             5               1.2             5            
+          RS   18                .1            18                .1          
+          IS   25.000000E-15   10.000000E-15   25.000000E-15   10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+         CBD   11.500000E-12   10.600000E-12   11.500000E-12   10.600000E-12 
+         CBS   13.900000E-12   12.700000E-12   13.900000E-12   12.700000E-12 
+          CJ    0               0               0               0            
+        CJSW    0               0               0               0            
+          MJ     .46                             .46                         
+        CGSO   12.000000E-09   27.300000E-09   12.000000E-09   27.300000E-09 
+        CGDO   10.000000E-09   22.700000E-09   10.000000E-09   22.700000E-09 
+        CGBO   28.000000E-09   37.400000E-09   28.000000E-09   37.400000E-09 
+         TOX    0               0               0               0            
+          XJ    0               0               0               0            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_U2.NCS220PM   
+               PMOS            
+       LEVEL    1            
+           L  100.000000E-06 
+           W  100.000000E-06 
+         VTO    -.28         
+          KP    8.740000E-03 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA     .02         
+          RD    5            
+          RS     .1          
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD   10.600000E-12 
+         CBS   12.700000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO   27.300000E-09 
+        CGDO   22.700000E-09 
+        CGBO   37.400000E-09 
+         TOX    0            
+          XJ    0            
+       UCRIT   10.000000E+03 
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    2.0000  (  REF)    2.5000  (  VCC)    5.0000  (N14714)    5.0000     
+
+(X_U1.6) 162.7E-06 (X_U1.7)    0.0000 (X_U1.8)    0.0000 (X_U1.9)    0.0000     
+
+(X_U2.6) 162.7E-06 (X_U2.7)    0.0000 (X_U2.8)    0.0000 (X_U2.9)    0.0000     
+
+(N143582) 50.10E-09                   (X_U1.13)    0.0000                       
+
+(X_U1.15)     .6132                   (X_U1.16)     .0039                       
+
+(X_U1.19)    0.0000                   (X_U1.24)    0.0000                       
+
+(X_U2.10)    5.0000                   (X_U2.12)    5.0000                       
+
+(X_U2.13)    0.0000                   (X_U2.15)     .6132                       
+
+(X_U2.16)     .0039                   (X_U2.19)    0.0000                       
+
+(X_U2.24)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V2        -4.700E-05
+    X_U1.V1      2.325E-06
+    X_U1.V2      2.675E-06
+    X_U1.V3      0.000E+00
+    X_U2.V1      2.325E-06
+    X_U2.V2      2.675E-06
+    X_U2.V3      0.000E+00
+
+    TOTAL POWER DISSIPATION   2.35E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/03/23 16:53:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\OPAMP_2_Output_type-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .62
+  Total job time (using Solver 1)   =         .06
+

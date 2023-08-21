@@ -1,0 +1,46 @@
+
+**** 08/02/23 14:23:44 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Curve_1"  [ D:\Ian_Jung\workplace\PSpice\FET_gm_cal-PSpiceFiles\SCHEMATIC1\Curve_1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Curve_1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_VGS 0 2V 0.4V 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FET_GM_CAL
+V_VGS         N14360 N14367 0Vdc
+V_VDS         N14391 N14367 3Vdc
+M_M1         N14391 N14360 N14367 N14367 M2N7000
+
+**** RESUMING Curve_1.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N14360 is floating
+
+ERROR(ORPSIM-15142): Node N14367 is floating
+
+ERROR(ORPSIM-15142): Node N14391 is floating
+

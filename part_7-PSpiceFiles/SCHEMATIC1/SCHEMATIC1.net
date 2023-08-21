@@ -1,0 +1,18 @@
+* source PART_7
+V_V1         N14693 N14827 0Vdc
+V_V2         N14710 N14827 0Vdc
+V_V3         N14722 N14827 0Vdc
+V_V4         N14747 N14827 0Vdc
+R_R1         N14702 N14693  50 TC=0,0 
+R_R2         N14714 N14710  50 TC=0,0 
+R_R3         N15255 N14722  50 TC=0,0 
+R_R4         N14743 N14747  50 TC=0,0 
+L_L1         N14702 N14706  5m  
+L_L2         N14714 N14718  10m  
+L_L3         N15255 N14735  15m  
+L_L4         N14743 N14739  20m  
+C_C1         0 N14706  1u  TC=0,0 
+C_C2         0 N14718  1u  TC=0,0 
+C_C3         0 N14735  1u  TC=0,0 
+C_C4         0 N14739  1u  TC=0,0 
+V_V5         N14827 0 DC 0Vdc AC 1Vac 

@@ -1,0 +1,15 @@
+.ALIASES
+CN @XFRMMODEL_EX.SCHEMATIC1(sch_1)
+Kn_K1            K1() CN INS14297@MAGNETIC.K1041T060_3E2A.Normal(chips)
+R_R1            R1(1=AC_IN 2=N14421 ) CN INS14322@ANALOG.R.Normal(chips)
+L_L1            L1(1=N14421 2=GND ) CN INS14347@ANALOG.L.Normal(chips)
+L_L2            L2(1=AC_SEC 2=AC_CT ) CN INS14363@ANALOG.L.Normal(chips)
+L_L3            L3(1=AC_SEC1 2=AC_CT ) CN INS14379@ANALOG.L.Normal(chips)
+R_R2            R2(1=GND 2=AC_CT ) CN INS14405@ANALOG.R.Normal(chips)
+_    _(AC_CT=AC_CT)
+_    _(AC_IN=AC_IN)
+_    _(AC_SEC=AC_SEC)
+_    _(AC_SEC2=AC_SEC)
+_    _(AC_SEC1=AC_SEC1)
+_    _(GND=GND)
+.ENDALIASES

@@ -1,0 +1,86 @@
+
+**** 07/17/23 19:51:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ZEner"  [ D:\Ian_Jung\workplace\PSpice\Zener1-PSpiceFiles\SCHEMATIC1\ZEner.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ZEner.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 10 0.01 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ZENER1
+V_V1         N14404 0 0Vdc
+R_R1         N14404 N14411  10 TC=0,0 
+D_D1         0 N14411 D1N750 
+R_R2         0 N14411  1k TC=0,0 
+
+**** RESUMING ZEner.cir ****
+.END
+
+**** 07/17/23 19:51:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ZEner"  [ D:\Ian_Jung\workplace\PSpice\Zener1-PSpiceFiles\SCHEMATIC1\ZEner.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          
+          IS  880.500000E-18 
+         ISR    1.859000E-09 
+          BV    4.7          
+         IBV     .020245     
+         NBV    1.6989       
+        IBVL    1.955600E-03 
+        NBVL   14.976        
+          RS     .25         
+         CJO  175.000000E-12 
+          VJ     .75         
+           M     .5516       
+        TBV1  -21.277000E-06 
+
+
+
+          JOB CONCLUDED
+
+**** 07/17/23 19:51:45 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ZEner"  [ D:\Ian_Jung\workplace\PSpice\Zener1-PSpiceFiles\SCHEMATIC1\ZEner.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .03
+

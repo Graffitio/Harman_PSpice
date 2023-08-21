@@ -1,0 +1,58 @@
+
+**** 07/24/23 14:10:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\Electric_8-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_8
+I_I1         0 N15385 DC 6mAdc  
+R_R1         0 N15385  2k TC=0,0 
+R_R2         B A  2k TC=0,0 
+V_V1         A N15385 2Vdc
+V_V2         B 0 4Vdc
+R_Rdum         B A  1m TC=0,0 
+V_V3         N15943 N15950 1Vdc
+R_R3         N15954 N15943  1k TC=0,0 
+I_I2         N16039 N16028 DC 1mAdc  
+R_R4         N16039 N16028  1k TC=0,0 
+R_R5         N15950 N15954  1k TC=0,0 
+R_R6         N16039 N16028  1k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+ERROR(ORPSIM-15142): Node N15943 is floating
+
+ERROR(ORPSIM-15142): Node N15950 is floating
+
+ERROR(ORPSIM-15142): Node N15954 is floating
+
+ERROR(ORPSIM-15142): Node N16039 is floating
+
+ERROR(ORPSIM-15142): Node N16028 is floating
+

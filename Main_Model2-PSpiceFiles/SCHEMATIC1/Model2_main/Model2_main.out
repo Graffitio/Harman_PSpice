@@ -1,0 +1,118 @@
+
+**** 07/21/23 17:49:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Model2_main"  [ D:\Ian_Jung\workplace\PSpice\Main_Model2-PSpiceFiles\SCHEMATIC1\Model2_main.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Model2_main.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../library/model2_lib.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 100 1 100MEG
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source MAIN_MODEL2
+V_V1         N14446 0 DC 0Vdc AC 1Vac 
+R_R1         0 N14453  1k TC=0,0 
+R_R2         0 N14460  1k TC=0,0 
+X_U1         N14446 N14460 N14453 MODEL2_LIB
+
+**** RESUMING Model2_main.cir ****
+.END
+
+**** 07/21/23 17:49:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Model2_main"  [ D:\Ian_Jung\workplace\PSpice\Main_Model2-PSpiceFiles\SCHEMATIC1\Model2_main.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N3940         
+          IS  400.000000E-12 
+           N    1.48         
+          BV  600            
+         IBV  100.000000E-06 
+          RS     .105        
+          TT  800.000000E-09 
+         CJO   19.500000E-12 
+          VJ     .4          
+           M     .38         
+          FC     .9          
+          EG    1.36         
+         XTI   -8            
+
+
+**** 07/21/23 17:49:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Model2_main"  [ D:\Ian_Jung\workplace\PSpice\Main_Model2-PSpiceFiles\SCHEMATIC1\Model2_main.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14446)    0.0000 (N14453)    0.0000 (N14460)     .4587                        
+
+(X_U1.OFFPAGELEFT-R)    5.0000        
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         4.587E-04
+    X_U1.V_V1   -1.376E-03
+
+    TOTAL POWER DISSIPATION   6.88E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/21/23 17:49:35 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Model2_main"  [ D:\Ian_Jung\workplace\PSpice\Main_Model2-PSpiceFiles\SCHEMATIC1\Model2_main.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .05
+

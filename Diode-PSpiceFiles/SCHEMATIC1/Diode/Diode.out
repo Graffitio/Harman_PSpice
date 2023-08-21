@@ -1,0 +1,84 @@
+
+**** 07/31/23 12:32:41 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode"  [ D:\Ian_Jung\workplace\PSpice\Diode-PSpiceFiles\SCHEMATIC1\Diode.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Diode.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 -10 2 1m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source DIODE
+V_V1         N14340 0 0Vdc
+D_D1         0 N14340 D1N750 
+
+**** RESUMING Diode.cir ****
+.END
+
+**** 07/31/23 12:32:41 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode"  [ D:\Ian_Jung\workplace\PSpice\Diode-PSpiceFiles\SCHEMATIC1\Diode.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          
+          IS  880.500000E-18 
+         ISR    1.859000E-09 
+          BV    4.7          
+         IBV     .020245     
+         NBV    1.6989       
+        IBVL    1.955600E-03 
+        NBVL   14.976        
+          RS     .25         
+         CJO  175.000000E-12 
+          VJ     .75         
+           M     .5516       
+        TBV1  -21.277000E-06 
+
+
+
+          JOB CONCLUDED
+
+**** 07/31/23 12:32:41 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Diode"  [ D:\Ian_Jung\workplace\PSpice\Diode-PSpiceFiles\SCHEMATIC1\Diode.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+

@@ -1,0 +1,178 @@
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Param_1.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 3m 0 0.3u 
+.STEP PARAM Cvar LIST 1u 2u 5u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source PART_7_PARAMETRIC
+D_D1         N14416 N14423 D1N914 
+R_R1         0 N14423  1k TC=0,0 
+C_C1         0 N14423  {Cvar}  TC=0,0 
+V_V2         N14416 0  
++SIN 0 30v 1khz 0 0 0
+.PARAM  cvar=1u
+
+**** RESUMING Param_1.cir ****
+.END
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N914          
+          IS  168.100000E-21 
+         ISR  100.000000E-12 
+          BV  100            
+         IBV  100.000000E-06 
+          RS     .1          
+          TT   11.540000E-09 
+         CJO    4.000000E-12 
+          VJ     .75         
+           M     .3333       
+
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM CVAR =    1.0000E-06
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14416)    0.0000 (N14423)-11.06E-24 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         1.106E-26
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM CVAR =    2.0000E-06
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14416)    0.0000 (N14423)-11.06E-24 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         1.106E-26
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+ ****     CURRENT STEP                     PARAM CVAR =    5.0000E-06
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14416)    0.0000 (N14423)-11.06E-24 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2         1.106E-26
+
+    TOTAL POWER DISSIPATION   0.00E+00  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 07/17/23 20:37:37 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Param_1"  [ D:\Ian_Jung\workplace\PSpice\part_7_parametric-pspicefiles\schematic1\param_1.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+ ****     CURRENT STEP                     PARAM CVAR =    5.0000E-06
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .17
+

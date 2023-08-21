@@ -1,0 +1,81 @@
+
+**** 07/24/23 20:05:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\electric_10-PSpiceFiles\SCHEMATIC1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_10
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND VCC IO_STM IO_LEVEL=0 
++ 0 0
++ +2m 1
++REPEAT FOREVER
++ +6m 0
++  +6m 1
++ ENDREPEAT
+C_C1         N16197 0  0.5uF  TC=0,0 
+R_R1         N16185 0  1k TC=0,0 
+L_L1         N16191 0  0.5H  
+R_R3         VCC N16191  1k TC=0,0 
+R_R4         VCC N16197  1k TC=0,0 
+R_R2         VCC N16185  1k TC=0,0 
+R_R5         IN OUT  1k TC=0,0 
+R_R6         GND OUT  1k TC=0,0 
+
+**** RESUMING bias.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node VCC
+*
+* Moving U_DSTM1:OUT1 from analog node VCC to new digital node VCC$DtoA
+X$VCC_DtoA1
++ VCC$DtoA
++ VCC
++ $G_DPWR
++ $G_DGND
++ DtoA_STM
++       PARAMS: DRVH=   0      DRVL=   0      CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+ERROR(ORPSIM-15141): Less than 2 connections at node IN.
+
+ERROR(ORPSIM-15141): Less than 2 connections at node GND.
+
+ERROR(ORPSIM-15142): Node IN is floating
+
+ERROR(ORPSIM-15142): Node OUT is floating
+
+ERROR(ORPSIM-15142): Node GND is floating
+

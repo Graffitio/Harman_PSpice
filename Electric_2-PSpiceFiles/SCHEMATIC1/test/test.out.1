@@ -1,0 +1,56 @@
+
+**** 07/24/23 10:38:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-test"  [ D:\Ian_Jung\workplace\PSpice\Electric_2-PSpiceFiles\SCHEMATIC1\test.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "test.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source ELECTRIC_2
+V_V1         N14452 0 1Vdc
+R_R1         N14452 N14459  R TC=0,0 
+------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TC' to double value. Token can be a constant or expression
+R_R2         N14463 N14459  R TC=0,0 
+------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TC' to double value. Token can be a constant or expression
+R_R3         N14463 N14467  R TC=0,0 
+------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TC' to double value. Token can be a constant or expression
+R_R4         N14467 N14471  R TC=0,0 
+------------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TC' to double value. Token can be a constant or expression
+R_R5         0 N14471  R TC=0,0 
+-------------------------$
+ERROR(ORPSIM-16152): Invalid number: Error while converting token 'TC' to double value. Token can be a constant or expression
+R_R6         0 N14467  2*R TC=0,0 
+R_R7         0 N14463  2*R TC=0,0 
+R_R8         0 N14459  2*R TC=0,0 
+.PARAM  r=1k
+
+**** RESUMING test.cir ****
+.END
+

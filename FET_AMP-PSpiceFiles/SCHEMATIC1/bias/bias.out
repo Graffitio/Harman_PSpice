@@ -1,0 +1,153 @@
+
+**** 08/02/23 11:12:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\fet_amp-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "bias.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source FET_AMP
+R_Rsi         IN N14527  0.1k TC=0,0 
+R_R1         N14560 N14611  49k TC=0,0 
+R_R2         0 N14560  27k TC=0,0 
+R_Rd         N14635 N14611  6k TC=0,0 
+R_Rs         0 N14639  0.2k TC=0,0 
+R_RL         0 N14672  10k TC=0,0 
+C_C1         N14527 N14560  3u  TC=0,0 
+C_C3         N14635 N14672  4u  TC=0,0 
+C_Cs         0 N14639  75u  TC=0,0 
+V_V2         N14611 0 5V
+V_V1         IN 0  AC 1
++SIN 0 1mV 10k 0 0 0
+M_M1         N14635 N14560 N14639 N14639 M2N7000
+V_CONST1         VGS 0 DC {1.776-0.8989}
+
+**** RESUMING bias.cir ****
+.END
+
+**** 08/02/23 11:12:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\fet_amp-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               M2N7000         
+               NMOS            
+       LEVEL    3            
+           L    2.000000E-06 
+           W     .12         
+         VTO    1.73         
+          KP    1.073000E-06 
+       GAMMA    0            
+         PHI     .6          
+      LAMBDA    0            
+          RD     .5489       
+          RS     .02         
+          RG  546.2          
+          RB    1.000000E-03 
+         RDS   48.000000E+06 
+          IS   10.000000E-15 
+          JS    0            
+          PB     .8          
+        PBSW     .8          
+         CBD   74.460000E-12 
+          CJ    0            
+        CJSW    0            
+        CGSO   73.610000E-12 
+        CGDO    6.487000E-12 
+        CGBO    0            
+         TOX    2.000000E-06 
+          XJ    0            
+       UCRIT   10.000000E+03 
+       DELTA    0            
+         ETA    0            
+      DIOMOD    1            
+         VFB    0            
+        LETA    0            
+        WETA    0            
+          U0    0            
+        TEMP    0            
+         VDD    5            
+       XPART    0            
+
+
+**** 08/02/23 11:12:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\fet_amp-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(   IN)    0.0000  (  VGS)     .8771  (N14527)    0.0000 (N14560)    1.7763     
+
+(N14611)    5.0000 (N14635)    4.7303 (N14639)     .0090 (N14672)    0.0000 
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V2        -1.107E-04
+    V_V1         0.000E+00
+    V_CONST1     0.000E+00
+
+    TOTAL POWER DISSIPATION   5.54E-04  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/02/23 11:12:43 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-bias"  [ D:\Ian_Jung\workplace\PSpice\fet_amp-pspicefiles\schematic1\bias.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .63
+  Total job time (using Solver 1)   =         .02
+

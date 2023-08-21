@@ -1,0 +1,4 @@
+* source FET_GM_CAL
+V_VGS         N14360 0 0Vdc
+V_VDS         N14391 0 3Vdc
+M_M1         N14391 N14360 0 0 M2N7000
