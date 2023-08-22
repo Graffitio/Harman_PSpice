@@ -1,7 +1,7 @@
+
+**** 08/22/23 18:42:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
 
-**** 08/22/23 18:43:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
-
- ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
 
  ****     CIRCUIT DESCRIPTION
@@ -12,7 +12,7 @@
 
 
 
-** Creating circuit file "Tran.cir" 
+** Creating circuit file "AC_sweep.cir" 
 ** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
 
 *Libraries: 
@@ -22,7 +22,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 6m 0 10u 
+.AC DEC 101 100 100k
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
@@ -53,12 +53,12 @@ V_V3         E2 0
 +SIN 2.5 1m 1k 0 0 0
 .PARAM  c=1500pf r=7.5k
 
-**** RESUMING Tran.cir ****
+**** RESUMING AC_sweep.cir ****
 .END
 
-**** 08/22/23 18:43:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+**** 08/22/23 18:42:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
 
- ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
 
  ****     Diode MODEL PARAMETERS
@@ -73,9 +73,9 @@ V_V3         E2 0
           IS  800.000000E-18  800.000000E-18  800.000000E-18 
 
 
-**** 08/22/23 18:43:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+**** 08/22/23 18:42:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
 
- ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
 
  ****     Junction FET MODEL PARAMETERS
@@ -93,12 +93,12 @@ V_V3         E2 0
           IS  350.000000E-15  350.000000E-15  350.000000E-15 
 
 
-**** 08/22/23 18:43:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+**** 08/22/23 18:42:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
 
- ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
 
- ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+ ****     SMALL SIGNAL BIAS SOLUTION       TEMPERATURE =   27.000 DEG C
 
 
 ******************************************************************************
@@ -189,12 +189,14 @@ V_V3         E2 0
     TOTAL POWER DISSIPATION   1.79E-03  WATTS
 
 
+WARNING(ORPSIM-15193): No AC sources -- AC Sweep ignored
+
 
           JOB CONCLUDED
 
-**** 08/22/23 18:43:12 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+**** 08/22/23 18:42:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
 
- ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
 
  ****     JOB STATISTICS SUMMARY
@@ -204,5 +206,5 @@ V_V3         E2 0
 
 
 
-  Total job time (using Solver 1)   =         .11
+  Total job time (using Solver 1)   =         .41
 

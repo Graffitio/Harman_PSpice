@@ -1,5 +1,6 @@
 (ExpressProject "7404_Oscillator"
   (ProjectVersion "19981106")
+  (SoftwareVersion "17.4-2019 P001 (3823098) [10/7/2019]-[08/22/23]")
   (ProjectType "Analog or A/D Mixed Mode")
   (Folder "Design Resources"
     (Folder "Library"
@@ -33,20 +34,42 @@
     (ANNOTATE_Action "1")
     (ANNOTATE_Reset_References_to_1 "FALSE")
     (ANNOTATE_No_Page_Number_Change "TRUE")
-    (ANNOTATE_Property_Combine "{Value}{Source Package}"))
-  (Folder "Outputs")
+    (ANNOTATE_Property_Combine "{Value}{Source Package}")
+    (PSPICE_Regenerate_Netlist_Flag "FALSE")
+    (DOCKED "TRUE")
+    (DOCKING_POSITION "59419"))
+  (Folder "Layout")
+  (Folder "Outputs"
+    (File ".\7404_oscillator-pspicefiles\schematic1\schematic1.net"
+      (Type "Report")))
   (Folder "PSpice Resources"
-    (Folder "Model Libraries")
-    (Folder "Stimulus Files")
-    (Folder "Include Files")
+    (Folder "Model Libraries"
+      (Sort User))
+    (Folder "Stimulus Files"
+      (Sort User))
+    (Folder "Include Files"
+      (Sort User))
     (Folder "Simulation Profiles"
-      (ActiveProfile ".\7404_oscillator-pspicefiles\schematic1\bias.sim")
       (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
          ".\7404_oscillator-pspicefiles\schematic1\bias.sim"
         (DisplayName "SCHEMATIC1-bias")
+        (Type "PSpice Profile"))
+      (ActiveProfile ".\7404_oscillator-pspicefiles\schematic1\tran.sim")
+      (File.PSpice.{09528990-3187-11D2-BC7B-00A0C90CBF91}
+         ".\7404_oscillator-pspicefiles\schematic1\tran.sim"
+        (DisplayName "SCHEMATIC1-Tran")
         (Type "PSpice Profile"))))
   (DefaultLibraryBrowseDirectory "library\PSpice")
   (PartMRUSelector
+    (IC1
+      (FullPartName "IC1.Normal")
+      (LibraryName
+         "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\SPECIAL.OLB")
+      (DeviceIndex "0"))
+    (7404
+      (FullPartName "7404.Normal")
+      (LibraryName "C:\CADENCE\SPB_17.4\TOOLS\CAPTURE\LIBRARY\PSPICE\7400.OLB")
+      (DeviceIndex "2"))
     (R
       (FullPartName "R.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\ANALOG.OLB")
@@ -67,5 +90,23 @@
       (FullPartName "VDC.Normal")
       (LibraryName "..\..\LIBRARY\PSPICE\SOURCE.OLB")
       (DeviceIndex "0")))
-  (LastUsedLibraryBrowseDirectory "LIBRARY\PSPICE")
-  (MPSSessionName "cadence"))
+  (LastUsedLibraryBrowseDirectory
+     "C:\Cadence\SPB_17.4\tools\capture\library\pspice")
+  (MPSSessionName "USER")
+  (Folder "Logs")
+  (GlobalState
+    (FileView
+      (Path "Design Resources")
+      (Path "Design Resources"
+         "D:\Ian_Jung\workplace\PSpice\7404_oscillator.dsn")
+      (Path "Design Resources"
+         "D:\Ian_Jung\workplace\PSpice\7404_oscillator.dsn" "SCHEMATIC1")
+      (Path "Outputs")
+      (Select "Design Resources"
+         "D:\Ian_Jung\workplace\PSpice\7404_oscillator.dsn" "SCHEMATIC1" "PAGE1"))
+    (HierarchyView)
+    (Doc
+      (Type "COrCapturePMDoc")
+      (Frame
+        (Placement "44 0 1 -1 -1 -1 -1 0 200 0 731"))
+      (Tab 0))))

@@ -1,6 +1,6 @@
-** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\mission_5_opamp-pspicefiles\schematic1\tran.sim ] 
+** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Mission_5_OPAMP-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
 
-** Creating circuit file "Tran.cir" 
+** Creating circuit file "AC_sweep.cir" 
 ** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
 
 *Libraries: 
@@ -10,7 +10,7 @@
 .lib "nom.lib" 
 
 *Analysis directives: 
-.TRAN  0 6m 0 10u 
+.AC DEC 101 100 100k
 .OPTIONS ADVCONV
 .PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
 .INC "..\SCHEMATIC1.net" 
