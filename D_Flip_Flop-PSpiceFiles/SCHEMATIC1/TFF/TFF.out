@@ -1,0 +1,332 @@
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "TFF.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 5u 0 1n 
+.OPTIONS NOPRBMSG
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 1
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source D_FLIP_FLOP
+X_U1A         VCC N14639 CLK VCC T_FF N14639 $G_DPWR $G_DGND 7474 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND CLK IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+V_V1         VCC 0 5Vdc
+
+**** RESUMING TFF.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node VCC
+*
+* Moving X_U1A.UFF1:CLRBAR from analog node VCC to new digital node VCC$AtoD
+X$VCC_AtoD1
++ VCC
++ VCC$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.UFF1:PREBAR from analog node VCC to new digital node VCC$AtoD2
+X$VCC_AtoD2
++ VCC
++ VCC$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         D74             
+          IS    1.000000E-15  100.000000E-18 
+          RS    2              25            
+         CJO    2.000000E-12    2.000000E-12 
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q74             
+               NPN             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF   49            
+          NF    1            
+         ISE  100.000000E-18 
+          BR     .03         
+          NR    1            
+         ISC  400.000000E-18 
+         ISS    0            
+          RB   50            
+          RE    0            
+          RC   20            
+         CJE    1.000000E-12 
+         VJE     .9          
+         MJE     .5          
+         CJC  500.000000E-15 
+         VJC     .8          
+         MJC     .33         
+        XCJC    1            
+         CJS    3.000000E-12 
+         VJS     .7          
+         MJS     .33         
+          TF  200.000000E-12 
+          TR   10.000000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     Digital Edge Triggered FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_74            
+  TPCLKQLHMN    5.600000E-09 
+  TPCLKQLHTY   14.000000E-09 
+  TPCLKQLHMX   25.000000E-09 
+  TPCLKQHLMN    8.000000E-09 
+  TPCLKQHLTY   20.000000E-09 
+  TPCLKQHLMX   40.000000E-09 
+   TPPCQLHMN    6.250000E-09 
+   TPPCQLHTY   15.625000E-09 
+   TPPCQLHMX   25.000000E-09 
+   TPPCQHLMN   10.000000E-09 
+   TPPCQHLTY   25.000000E-09 
+   TPPCQHLMX   40.000000E-09 
+    TWCLKLMN   37.000000E-09 
+    TWCLKLTY   37.000000E-09 
+    TWCLKLMX   37.000000E-09 
+    TWCLKHMN   30.000000E-09 
+    TWCLKHTY   30.000000E-09 
+    TWCLKHMX   30.000000E-09 
+     TWPCLMN   30.000000E-09 
+     TWPCLTY   30.000000E-09 
+     TWPCLMX   30.000000E-09 
+   TSUDCLKMN   20.000000E-09 
+   TSUDCLKTY   20.000000E-09 
+   TSUDCLKMX   20.000000E-09 
+ TSUPCCLKHMN    0            
+ TSUPCCLKHTY    0            
+ TSUPCCLKHMX    0            
+    THDCLKMN    5.000000E-09 
+    THDCLKTY    5.000000E-09 
+    THDCLKMX    5.000000E-09 
+  TSUCECLKMN    0            
+  TSUCECLKTY    0            
+  TSUCECLKMX    0            
+   THCECLKMN    0            
+   THCECLKTY    0            
+   THCECLKMX    0            
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(X$VCC_AtoD1.1)    1.5648             (X$VCC_AtoD1.2)     .7824                 
+
+(X$VCC_AtoD1.3)    2.2862             (X$VCC_AtoD2.1)    1.5648                 
+
+(X$VCC_AtoD2.2)     .7824             (X$VCC_AtoD2.3)    2.2862             
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(  N14639) : 0     (VCC$AtoD2) : 1    (    T_FF) : 1     (VCC$AtoD) : 1         
+
+(     CLK) : 0     
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -4.071E-05
+    X$DIGIFPWR.VDPWR  -1.362E-03
+    X$DIGIFPWR.VDGND   3.571E-05
+
+    TOTAL POWER DISSIPATION   7.01E-03  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/22/23 10:12:23 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-TFF"  [ D:\Ian_Jung\workplace\PSpice\D_Flip_Flop-PSpiceFiles\SCHEMATIC1\TFF.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =        7.27
+  Total job time (using Solver 1)   =         .09
+

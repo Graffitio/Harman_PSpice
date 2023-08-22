@@ -1,0 +1,47 @@
+
+**** 08/22/23 11:44:22 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-AC_sweep"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\AC_sweep.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "AC_sweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.AC DEC 0.5 1 10.0
+--------$
+ERROR(ORPSIM-16151): Invalid integer
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OSCILLATOR
+X_U1A         N14477 N14377 $G_DPWR $G_DGND 7414 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         N14377 N14506 $G_DPWR $G_DGND 7414 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R1         0 N14506  1k TC=0,0 
+R_R2         N14377 N14477  {R} TC=0,0 
+C_C1         0 N14477  {C} IC=0 TC=0,0 
+.PARAM  c=10n r=100
+
+**** RESUMING AC_sweep.cir ****
+.END
+

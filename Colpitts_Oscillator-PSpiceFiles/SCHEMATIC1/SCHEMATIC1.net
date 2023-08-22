@@ -1,0 +1,14 @@
+* source COLPITTS_OSCILLATOR
+R_R2         N15061 N15149  49k TC=0,0 
+C_C2         N15149 N15890  1u  TC=0,0 
+V_V1         N15061 0 5Vdc
+C_C1         OUT N15121  4u  TC=0,0 
+C_C3         0 N15215  75u  TC=0,0 
+R_R3         N15149 0  27k TC=0,0 
+R_R1         N15121 N15061  5k TC=0,0 
+R_R4         N15215 0  1.8k TC=0,0 
+C_C4         N15890 0  0.1u  TC=0,0 
+C_C5         0 N15121  0.1u  TC=0,0 
+L_L1         N15890 N15121  50uH  
+Q_Q2         N15121 N15149 N15215 Q2N2222
+R_R5         0 OUT  10k TC=0,0 

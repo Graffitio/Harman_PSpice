@@ -1,0 +1,340 @@
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Oscillator.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10u 0 10n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OSCILLATOR
+X_U1A         N14477 N14377 $G_DPWR $G_DGND 7414 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         N14377 N14506 $G_DPWR $G_DGND 7414 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+R_R1         0 N14506  1k TC=0,0 
+R_R2         N14377 N14477  {R} TC=0,0 
+C_C1         0 N14477  {C} IC=0 TC=0,0 
+.PARAM  c=10n r=100
+
+**** RESUMING Oscillator.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node N14506
+*
+* Moving X_U1B.U1:OUT1 from analog node N14506 to new digital node N14506$DtoA
+X$N14506_DtoA1
++ N14506$DtoA
++ N14506
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14377
+*
+* Moving X_U1B.U1:IN1 from analog node N14377 to new digital node N14377$AtoD
+X$N14377_AtoD1
++ N14377
++ N14377$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD_ST
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.U1:OUT1 from analog node N14377 to new digital node N14377$DtoA
+X$N14377_DtoA1
++ N14377$DtoA
++ N14377
++ $G_DPWR
++ $G_DGND
++ DtoA_STD
++       PARAMS: DRVH=  96.4   DRVL= 104    CAPACITANCE=   0     
+*
+* Analog/Digital interface for node N14477
+*
+* Moving X_U1A.U1:IN1 from analog node N14477 to new digital node N14477$AtoD
+X$N14477_AtoD1
++ N14477
++ N14477$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD_ST
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         D74             
+          IS    1.000000E-15  100.000000E-18 
+          RS    2              25            
+         CJO    2.000000E-12    2.000000E-12 
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q74             
+               NPN             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF   49            
+          NF    1            
+         ISE  100.000000E-18 
+          BR     .03         
+          NR    1            
+         ISC  400.000000E-18 
+         ISS    0            
+          RB   50            
+          RE    0            
+          RC   20            
+         CJE    1.000000E-12 
+         VJE     .9          
+         MJE     .5          
+         CJC  500.000000E-15 
+         VJC     .8          
+         MJC     .33         
+        XCJC    1            
+         CJS    3.000000E-12 
+         VJS     .7          
+         MJS     .33         
+          TF  200.000000E-12 
+          TR   10.000000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     Digital Input MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DIN74           
+      S0NAME 0               
+       S0TSW    3.500000E-09 
+       S0RLO    7.13         
+       S0RHI  389            
+      S1NAME 1               
+       S1TSW    5.500000E-09 
+       S1RLO  467            
+       S1RHI  200            
+      S2NAME X               
+       S2TSW    3.500000E-09 
+       S2RLO   42.9          
+       S2RHI  116            
+      S3NAME R               
+       S3TSW    3.500000E-09 
+       S3RLO   42.9          
+       S3RHI  116            
+      S4NAME F               
+       S4TSW    3.500000E-09 
+       S4RLO   42.9          
+       S4RHI  116            
+      S5NAME Z               
+       S5TSW    3.500000E-09 
+       S5RLO  200.000000E+03 
+       S5RHI  200.000000E+03 
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74_ST         
+    TIMESTEP  100.000000E-12 
+      S0NAME 0               
+       S0VHI    1.7          
+       S0VLO   -1.5          
+      S1NAME 1               
+       S1VHI    7            
+       S1VLO     .9          
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_14            
+      TPLHMN    6.000000E-09 
+      TPLHTY   15.000000E-09 
+      TPLHMX   22.000000E-09 
+      TPHLMN    6.000000E-09 
+      TPHLTY   15.000000E-09 
+      TPHLMX   22.000000E-09 
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STD_ST       IO_STD          
+        DRVL  104             104            
+        DRVH   96.4            96.4          
+       AtoD1 AtoD_STD_ST     AtoD_STD        
+       AtoD2 AtoD_STD_ST     AtoD_STD_NX     
+       AtoD3 AtoD_STD_ST     AtoD_STD        
+       AtoD4 AtoD_STD_ST     AtoD_STD_NX     
+       DtoA1 DtoA_STD        DtoA_STD        
+       DtoA2 DtoA_STD        DtoA_STD        
+       DtoA3 DtoA_STD        DtoA_STD        
+       DtoA4 DtoA_STD        DtoA_STD        
+      TSWHL1    1.511000E-09    1.511000E-09 
+      TSWHL2    1.487000E-09    1.487000E-09 
+      TSWHL3    1.511000E-09    1.511000E-09 
+      TSWHL4    1.487000E-09    1.487000E-09 
+      TSWLH1    3.517000E-09    3.517000E-09 
+      TSWLH2    3.564000E-09    3.564000E-09 
+      TSWLH3    3.517000E-09    3.517000E-09 
+      TSWLH4    3.564000E-09    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(N14377)    1.4726 (N14477) 31.54E-06 (N14506)    3.0708 ($G_DGND)    0.0000    
+
+($G_DPWR)    5.0000                   (X$N14377_AtoD1.1)    1.5291              
+
+(X$N14377_AtoD1.2)     .7645          (X$N14377_AtoD1.3)    2.2461              
+
+(X$N14477_AtoD1.1)     .0915          (X$N14477_AtoD1.2)     .0457              
+
+(X$N14477_AtoD1.3)     .8277          
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(N14506$DtoA) : 1  (N14377$DtoA) : 1  (N14377$AtoD) : 0  (N14477$AtoD) : 0  
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    X$DIGIFPWR.VDPWR  -2.902E-02
+    X$DIGIFPWR.VDGND  -1.884E-02
+
+    TOTAL POWER DISSIPATION   1.45E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/22/23 11:40:31 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Oscillator"  [ D:\Ian_Jung\workplace\PSpice\Oscillator-PSpiceFiles\SCHEMATIC1\Oscillator.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .08
+

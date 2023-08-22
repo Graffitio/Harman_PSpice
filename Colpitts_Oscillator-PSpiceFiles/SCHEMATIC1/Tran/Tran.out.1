@@ -1,0 +1,54 @@
+
+**** 08/22/23 14:30:40 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Colpitts_Oscillator-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10.1m 10m 1u 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source COLPITTS_OSCILLATOR
+R_R2         N15061 N15149  49k TC=0,0 
+C_C2         N15149 N15890  1u  TC=0,0 
+V_V1         N15061 0 5Vdc
+C_C1         OUT N15121  4u  TC=0,0 
+C_C3         0 N15215  75u  TC=0,0 
+R_R3         N15149 0  27k TC=0,0 
+R_R1         N15121 N15061  5k TC=0,0 
+R_R4         N15215 0  1.8k TC=0,0 
+C_C4         N15890 0  0.1u  TC=0,0 
+C_C5         0 N15121  0.1u  TC=0,0 
+L_L1         N15890 N15121  50uH  
+Q_Q2         N15121 N15149 N15215 Q2N2222
+R_R5         0 OUT  {r} TC=0,0 
+.PARAM  r=0
+
+**** RESUMING Tran.cir ****
+.END
+
+
+ERROR(ORPSIM-15152): Resistor R_R5 has zero value
+

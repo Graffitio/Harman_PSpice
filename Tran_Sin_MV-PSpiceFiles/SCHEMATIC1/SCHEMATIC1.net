@@ -1,0 +1,12 @@
+* source TRAN_SIN_MV
+Q_Q1         N14690 N14649 0 Q2N3904
+V_V1         N14727 0 5Vdc
+R_R1         N14690 N14727  2.2k TC=0,0 
+R_R2         N14690 N14649  470k TC=0,0 
+R_R3         N14586 0  {R} TC=0,0 
+R_R4         N14609 0  {R} TC=0,0 
+C_C1         N14586 N14609  {C}  TC=0,0 
+C_C2         N14586 N14649  {C}  TC=0,0 
+C_C3         N14609 N14690  {C}  TC=0,0 
+.IC         V(N14586 )=2.5
+.PARAM  c=10n r=5.6k

@@ -1,0 +1,470 @@
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Counter.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 10us 0 1n 
+.OPTIONS ADVCONV
+.OPTIONS DIGINITSTATE= 1
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source COUNTER
+X_U1A         N14535 VCC VCC VCC Q0 M_UN0001 $G_DPWR $G_DGND 7473 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U1B         Q0 VCC VCC VCC Q1 M_UN0002 $G_DPWR $G_DGND 7473 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+X_U2A         Q1 VCC VCC VCC Q2 M_UN0003 $G_DPWR $G_DGND 7473 PARAMS:
++ IO_LEVEL=0 MNTYMXDLY=0
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14535 IO_STM IO_LEVEL=0 
++ 0 0
++ +.5uS 1
++REPEAT FOREVER
++ +.5uS 0
++  +.5uS 1
++ ENDREPEAT
+V_V1         VCC 0 5Vdc
+
+**** RESUMING Counter.cir ****
+.END
+
+
+**** Generated AtoD and DtoA Interfaces ****
+
+*
+* Analog/Digital interface for node VCC
+*
+* Moving X_U2A.UIBUF:IN3 from analog node VCC to new digital node VCC$AtoD
+X$VCC_AtoD1
++ VCC
++ VCC$AtoD
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2A.UIBUF:IN2 from analog node VCC to new digital node VCC$AtoD2
+X$VCC_AtoD2
++ VCC
++ VCC$AtoD2
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U2A.UIBUF:IN1 from analog node VCC to new digital node VCC$AtoD3
+X$VCC_AtoD3
++ VCC
++ VCC$AtoD3
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1B.UIBUF:IN3 from analog node VCC to new digital node VCC$AtoD4
+X$VCC_AtoD4
++ VCC
++ VCC$AtoD4
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1B.UIBUF:IN2 from analog node VCC to new digital node VCC$AtoD5
+X$VCC_AtoD5
++ VCC
++ VCC$AtoD5
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1B.UIBUF:IN1 from analog node VCC to new digital node VCC$AtoD6
+X$VCC_AtoD6
++ VCC
++ VCC$AtoD6
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.UIBUF:IN3 from analog node VCC to new digital node VCC$AtoD7
+X$VCC_AtoD7
++ VCC
++ VCC$AtoD7
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.UIBUF:IN2 from analog node VCC to new digital node VCC$AtoD8
+X$VCC_AtoD8
++ VCC
++ VCC$AtoD8
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+* Moving X_U1A.UIBUF:IN1 from analog node VCC to new digital node VCC$AtoD9
+X$VCC_AtoD9
++ VCC
++ VCC$AtoD9
++ $G_DPWR
++ $G_DGND
++ AtoD_STD
++       PARAMS: CAPACITANCE=   0     
+*
+* Analog/Digital interface power supply subcircuits
+*
+X$DIGIFPWR 0 DIGIFPWR
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D74CLMP         D74             
+          IS    1.000000E-15  100.000000E-18 
+          RS    2              25            
+         CJO    2.000000E-12    2.000000E-12 
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q74             
+               NPN             
+       LEVEL    1            
+          IS  100.000000E-18 
+          BF   49            
+          NF    1            
+         ISE  100.000000E-18 
+          BR     .03         
+          NR    1            
+         ISC  400.000000E-18 
+         ISS    0            
+          RB   50            
+          RE    0            
+          RC   20            
+         CJE    1.000000E-12 
+         VJE     .9          
+         MJE     .5          
+         CJC  500.000000E-15 
+         VJC     .8          
+         MJC     .33         
+        XCJC    1            
+         CJS    3.000000E-12 
+         VJS     .7          
+         MJS     .33         
+          TF  200.000000E-12 
+          TR   10.000000E-09 
+          KF    0            
+          AF    1            
+          CN    2.42         
+           D     .87         
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     Digital Output MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               DO74            
+    TIMESTEP  100.000000E-12 
+      S0NAME X               
+       S0VHI    2            
+       S0VLO     .8          
+      S1NAME 0               
+       S1VHI     .8          
+       S1VLO   -1.5          
+      S2NAME R               
+       S2VHI    1.4          
+       S2VLO     .8          
+      S3NAME R               
+       S3VHI    2            
+       S3VLO    1.3          
+      S4NAME X               
+       S4VHI    2            
+       S4VLO     .8          
+      S5NAME 1               
+       S5VHI    7            
+       S5VLO    2            
+      S6NAME F               
+       S6VHI    2            
+       S6VLO    1.3          
+      S7NAME F               
+       S7VHI    1.4          
+       S7VLO     .8          
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     Digital Gate MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D0_GATE         D_73_4          D_73_3          
+      TPLHMN    0               6.000000E-09    2.400000E-09 
+      TPLHTY    0               6.000000E-09    6.000000E-09 
+      TPLHMX    0               6.000000E-09    6.000000E-09 
+      TPHLMN    0               0               2.400000E-09 
+      TPHLTY    0               0               6.000000E-09 
+      TPHLMX    0               0               6.000000E-09 
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     Digital Gated FF MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D_73_1          D_73_2          
+    TPDQLHMN    0               0            
+    TPDQLHTY    0               0            
+    TPDQLHMX    0               0            
+    TPDQHLMN    0               0            
+    TPDQHLTY    0               0            
+    TPDQHLMX    0               0            
+    TPGQLHMN    0               4.000000E-09 
+    TPGQLHTY    0              10.000000E-09 
+    TPGQLHMX    0              19.000000E-09 
+    TPGQHLMN    0               7.600000E-09 
+    TPGQHLTY    0              19.000000E-09 
+    TPGQHLMX    0              34.000000E-09 
+   TPPCQLHMN    0               4.000000E-09 
+   TPPCQLHTY    0              10.000000E-09 
+   TPPCQLHMX    0              19.000000E-09 
+   TPPCQHLMN    0               7.600000E-09 
+   TPPCQHLTY    0              19.000000E-09 
+   TPPCQHLMX    0              34.000000E-09 
+      TWGHMN    0               0            
+      TWGHTY   14.000000E-09   47.000000E-09 
+      TWGHMX   14.000000E-09   47.000000E-09 
+     TWPCLMN    0               0            
+     TWPCLTY   25.000000E-09   25.000000E-09 
+     TWPCLMX   25.000000E-09   25.000000E-09 
+     TSUDGMN    0               0            
+     TSUDGTY    0               0            
+     TSUDGMX    0               0            
+   TSUPCGHMN    0               0            
+   TSUPCGHTY    0               0            
+   TSUPCGHMX    0               0            
+      THDGMN    0               0            
+      THDGTY    0               0            
+      THDGMX    0               0            
+TIMING_SRDEL    0               0            
+TIMING_CLKDEL    0               0            
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     Digital IO  MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               IO_STM          IO_STD          
+        DRVL    0             104            
+        DRVH    0              96.4          
+       AtoD1                 AtoD_STD        
+       AtoD2                 AtoD_STD_NX     
+       AtoD3                 AtoD_STD        
+       AtoD4                 AtoD_STD_NX     
+       DtoA1 DtoA_STM        DtoA_STD        
+       DtoA2 DtoA_STM        DtoA_STD        
+       DtoA3 DtoA_STM        DtoA_STD        
+       DtoA4 DtoA_STM        DtoA_STD        
+      TSWHL1                    1.511000E-09 
+      TSWHL2                    1.487000E-09 
+      TSWHL3                    1.511000E-09 
+      TSWHL4                    1.487000E-09 
+      TSWLH1                    3.517000E-09 
+      TSWLH2                    3.564000E-09 
+      TSWLH3                    3.517000E-09 
+      TSWLH4                    3.564000E-09 
+       TPWRT  100.000000E+03  100.000000E+03 
+
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  ($G_DGND)    0.0000                   ($G_DPWR)    5.0000    
+
+(X$VCC_AtoD1.1)    1.5648             (X$VCC_AtoD1.2)     .7824                 
+
+(X$VCC_AtoD1.3)    2.2862             (X$VCC_AtoD2.1)    1.5648                 
+
+(X$VCC_AtoD2.2)     .7824             (X$VCC_AtoD2.3)    2.2862                 
+
+(X$VCC_AtoD3.1)    1.5648             (X$VCC_AtoD3.2)     .7824                 
+
+(X$VCC_AtoD3.3)    2.2862             (X$VCC_AtoD4.1)    1.5648                 
+
+(X$VCC_AtoD4.2)     .7824             (X$VCC_AtoD4.3)    2.2862                 
+
+(X$VCC_AtoD5.1)    1.5648             (X$VCC_AtoD5.2)     .7824                 
+
+(X$VCC_AtoD5.3)    2.2862             (X$VCC_AtoD6.1)    1.5648                 
+
+(X$VCC_AtoD6.2)     .7824             (X$VCC_AtoD6.3)    2.2862                 
+
+(X$VCC_AtoD7.1)    1.5648             (X$VCC_AtoD7.2)     .7824                 
+
+(X$VCC_AtoD7.3)    2.2862             (X$VCC_AtoD8.1)    1.5648                 
+
+(X$VCC_AtoD8.2)     .7824             (X$VCC_AtoD8.3)    2.2862                 
+
+(X$VCC_AtoD9.1)    1.5648             (X$VCC_AtoD9.2)     .7824                 
+
+(X$VCC_AtoD9.3)    2.2862             
+
+
+
+ DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE  DGTL NODE : STATE
+
+
+(X_U2A.YB) : 0     (X_U1A.QBAR_BUF) : 0                  (X_U2A.K_BUF) : 1      
+
+(M_UN0003) : 0     (X_U1A.CLKBAR) : 1                    (      Q1) : 1         
+
+(X_U1A.YB) : 0     (X_U2A.W1) : 0     ( X_U2A.Y) : 1     (X_U2A.QBAR_BUFD) : 0  
+
+(X_U1B.QBUF) : 1   (X_U1B.Q_BUFD) : 1                    (X_U2A.Q_BUFD) : 1     
+
+(VCC$AtoD5) : 1    (   $D_HI) : 1     (X_U1B.W1) : 0     (X_U1B.JB) : 0         
+
+(VCC$AtoD6) : 1    (X_U1B.CLRBAR_BUF) : 1                (X_U1B.W2) : 1         
+
+(X_U1A.QBAR_BUFD) : 0                 (X_U1B.CLKBAR) : 0                        
+
+(X_U2A.CLKBAR) : 0                    (X_U2A.CLK_BUF) : 1                       
+
+(X_U1B.QBAR_BUF) : 0                  (X_U1A.CLK_BUF) : 0                       
+
+(      Q2) : 1     (X_U1A.J_BUF) : 1  ( X_U1A.Y) : 1     (M_UN0001) : 0         
+
+(X_U1B.KB) : 0     (X_U2A.JB) : 0     (X_U2A.W2) : 1     (X_U1A.QBUF) : 1       
+
+(X_U1A.W1) : 0     (X_U1A.JB) : 0     (X_U1A.W2) : 1     (VCC$AtoD2) : 1        
+
+(X_U1B.J_BUF) : 1  (X_U2A.QBAR_BUF) : 0                  (X_U2A.KB) : 0         
+
+(VCC$AtoD7) : 1    (VCC$AtoD8) : 1    (X_U1A.KB) : 0     (X_U1B.CLK_BUF) : 1    
+
+(  N14535) : 0     (X_U2A.J_BUF) : 1  (M_UN0002) : 0     (      Q0) : 1         
+
+(VCC$AtoD) : 1     (X_U1A.K_BUF) : 1  (X_U2A.CLRBAR_BUF) : 1                    
+
+( X_U1B.Y) : 1     (X_U1B.YB) : 0     (X_U1A.CLRBAR_BUF) : 1                    
+
+(X_U1B.QBAR_BUFD) : 0                 (VCC$AtoD3) : 1    (VCC$AtoD4) : 1        
+
+(X_U1B.K_BUF) : 1  (X_U1A.Q_BUFD) : 1                    (X_U2A.QBUF) : 1       
+
+(VCC$AtoD9) : 1    
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1        -1.832E-04
+    X$DIGIFPWR.VDPWR  -6.111E-03
+    X$DIGIFPWR.VDGND   1.782E-04
+
+    TOTAL POWER DISSIPATION   3.15E-02  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 08/22/23 10:48:55 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Counter"  [ D:\Ian_Jung\workplace\PSpice\Counter-PSpiceFiles\SCHEMATIC1\Counter.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .74
+  Total job time (using Solver 1)   =         .56
+
