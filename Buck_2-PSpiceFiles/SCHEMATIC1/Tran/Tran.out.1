@@ -1,0 +1,350 @@
+
+**** 08/29/23 14:37:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Buck_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Tran.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1m 0 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source BUCK_2
+I_I2         N15817 0 DC 0.5Adc  
+R_R1         PULSE N15569  100 TC=0,0 
+V_V1         N15499 0 5Vdc
+C_C1         0 N15531  {C}  TC=0,0 
+L_L1         N15499 N15799  {L}  
+I_I1         N15531 0 DC 0.5Adc  
+C_C2         0 N15817  {C}  TC=0,0 
+X_M1         N15517 N15569 N15499 Si2301BDS
+R_R2         PULSE N158411  100 TC=0,0 
+L_L2         N15517 N15531  {L}  
+X_M2         N15799 N158411 0 SI2302ADS
+X_M3         N16653 N16439 N15499 Si2301BDS
+R_R3         PULSE N16439  100 TC=0,0 
+L_L3         0 N16653  {L}  
+C_C3         0 N16661  {C}  TC=0,0 
+I_I3         N16661 0 DC 0.5Adc  
+R_R4         N17031 N17461  30k TC=0,0 
+R_R5         N17058 N17031  150k TC=0,0 
+C_C4         0 N17058  10p  TC=0,0 
+V_V2         N17461 0 5Vdc
+C_C5         0 N18723  0.1u  TC=0,0 
+X_U4         0 N17058 PULSE N17461 N18723 N17058 N17031 N17461 555B
+D_D1         N15799 N15817 Dbreak 
+D_D2         N16661 N16653 Dbreak 
+D_D3         0 N15517 Dbreak 
+.PARAM  l=6.8uh c=10uf duty=0.5
+
+**** RESUMING Tran.cir ****
+.END
+
+**** 08/29/23 14:37:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Buck_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Dbreak          X_M1.DBD        X_M2.DBD        X_M3.DBD        
+          IS   10.000000E-15    1.000000E-12    1.000000E-12    1.000000E-12 
+          BV                   20.5            20.3            20.5          
+          RS     .1                              .1                          
+          TT                   50.000000E-09   50.000000E-09   50.000000E-09 
+         CJO  100.000000E-15   40.000000E-12   90.000000E-12   40.000000E-12 
+          VJ                     .38             .38             .38         
+           M                     .22             .2              .22         
+
+
+**** 08/29/23 14:37:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Buck_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U4.qnpn555    X_U4.qpnp555    
+               NPN             PNP             
+       LEVEL    1               1            
+          IS   14.340000E-15  650.600000E-18 
+          BF   65.62           70.35         
+          NF    1               1            
+         VAF   74.03          115.7          
+         IKF     .02             .02         
+         ISE   19.480000E-15  180.500000E-15 
+          NE    1.208           1.829        
+          BR    9.715           4.146        
+          NR    1               1            
+         ISS    0               0            
+          RB   10              10            
+          RE    0               0            
+          RC    1                .715        
+         CJE   40.000000E-12   40.000000E-12 
+         VJE     .75             .75         
+         MJE     .377            .3357       
+         CJC   40.000000E-12   40.000000E-12 
+         VJC     .75             .75         
+         MJC     .3416           .5383       
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF    1.000000E-09    1.000000E-09 
+         XTF    3               1.7          
+         VTF    1.7             5            
+         ITF     .6              .65         
+          TR   58.980000E-09  119.900000E-09 
+         XTB    1.5             1.5          
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 08/29/23 14:37:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Buck_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     MOSFET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.PMOS       X_M1.NMOS       X_M2.NMOS       X_M2.PMOS       
+               PMOS            NMOS            NMOS            PMOS            
+       LEVEL    3               3               3               3            
+         TPG   -1              -1                              -1            
+           L  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06  100.000000E-06  100.000000E-06 
+         VTO   -1.091295        1.774342        1.903763       -2.810764     
+          KP   20.000000E-06  121.875700E-06   23.000000E-06   69.062880E-06 
+       GAMMA     .237314         .896963        2.210366        2.002197     
+         PHI     .676983         .814542         .849088         .838855     
+      LAMBDA    0               0               0               0            
+          RS     .04                             .022                        
+          IS    0              10.000000E-15    0              10.000000E-15 
+          JS    0               0               0               0            
+          PB     .8              .8              .8              .8          
+        PBSW     .8              .8              .8              .8          
+          CJ  269.472400E-06    1.018510E-03    1.422272E-03    1.288324E-03 
+        CJSW    0               0               0               0            
+        CGSO    0               0               0               0            
+        CGDO    0               0               0               0            
+        CGBO    0               0               0               0            
+        NSUB    7.000000E+15  100.000000E+15  195.000000E+15  160.000000E+15 
+         NFS  800.000000E+09                  800.000000E+09                 
+         TOX   17.000000E-09   17.000000E-09   30.000000E-09   30.000000E-09 
+          XJ  500.000000E-09    0             500.000000E-09    0            
+          UO  400                             650                            
+       UCRIT   10.000000E+03   10.000000E+03   10.000000E+03   10.000000E+03 
+       DELTA     .1                              .1                          
+         ETA  100.000000E-06                  100.000000E-06                 
+       KAPPA    4.000000E-03                     .05                         
+      DIOMOD    1               1               1               1            
+         VFB    0               0               0               0            
+        LETA    0               0               0               0            
+        WETA    0               0               0               0            
+          U0    0               0               0               0            
+        TEMP    0               0               0               0            
+         VDD    5               5               5               5            
+       XPART    0               0               0               0            
+
+
+               X_M3.PMOS       X_M3.NMOS       
+               PMOS            NMOS            
+       LEVEL    3               3            
+         TPG   -1              -1            
+           L  100.000000E-06  100.000000E-06 
+           W  100.000000E-06  100.000000E-06 
+         VTO   -1.091295        1.774342     
+          KP   20.000000E-06  121.875700E-06 
+       GAMMA     .237314         .896963     
+         PHI     .676983         .814542     
+      LAMBDA    0               0            
+          RS     .04                         
+          IS    0              10.000000E-15 
+          JS    0               0            
+          PB     .8              .8          
+        PBSW     .8              .8          
+          CJ  269.472400E-06    1.018510E-03 
+        CJSW    0               0            
+        CGSO    0               0            
+        CGDO    0               0            
+        CGBO    0               0            
+        NSUB    7.000000E+15  100.000000E+15 
+         NFS  800.000000E+09                 
+         TOX   17.000000E-09   17.000000E-09 
+          XJ  500.000000E-09    0            
+          UO  400                            
+       UCRIT   10.000000E+03   10.000000E+03 
+       DELTA     .1                          
+         ETA  100.000000E-06                 
+       KAPPA    4.000000E-03                 
+      DIOMOD    1               1            
+         VFB    0               0            
+        LETA    0               0            
+        WETA    0               0            
+          U0    0               0            
+        TEMP    0               0            
+         VDD    5               5            
+       XPART    0               0            
+
+
+**** 08/29/23 14:37:51 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Tran"  [ D:\Ian_Jung\workplace\PSpice\Buck_2-PSpiceFiles\SCHEMATIC1\Tran.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_M1.RTEMP      X_M2.RTEMP      X_M3.RTEMP      
+           R    1               1               1            
+         TC1    6.500000E-03     .01            6.500000E-03 
+         TC2    5.500000E-06    5.500000E-06    5.500000E-06 
+
+
+Starting pseudo-transient algorithm.
+
+ERROR -- Convergence problem in transient bias point calculation
+
+
+  Last node voltages tried were:
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(PULSE)    1.2163  (N15499)    5.0000 (N15517)    4.9944 (N15531)    4.1345     
+
+(N15569)    1.3542 (N15799)   21.0480 (N15817)   19.0890 (N16439)    1.3512     
+
+(N16653)    4.9653 (N16661)  -69.0590 (N17031)     .0046 (N17058)    3.3371     
+
+(N17461)    5.0000 (N18723)    3.2198 (X_M1.3)    4.9964 (X_M2.3)   21.0430     
+
+(X_M3.3)    4.9777 (X_U4.9)    4.2932 (N158411)    1.2797                       
+
+(X_U4.10)    1.4181                   (X_U4.11)     .7442                       
+
+(X_U4.12)     .0203                   (X_U4.13)     .6597                       
+
+(X_U4.14)     .6579                   (X_U4.15)    1.3133                       
+
+(X_U4.16)     .5207                   (X_U4.17)    4.4021                       
+
+(X_U4.18)    4.3147                   (X_U4.19)    2.8003                       
+
+(X_U4.20)    4.9438                   (X_U4.21)     .0017                       
+
+(X_U4.22)     .5641                   (X_U4.23)    2.6319                       
+
+(X_U4.24)    2.1520                   (X_U4.25)    1.6100                       
+
+(X_U4.26)     .7287                   (X_U4.27)     .6848                       
+
+(X_U4.28)    1.6192                   (X_U4.29)     .7081                       
+
+(X_U4.30)    2.7744                   (X_U4.31)    2.8419                       
+
+(X_U4.32)    2.2386                   
+
+
+  These voltages failed to converge:
+
+    V(N15817)                 =   -10.00GV  \     19.09V
+    V(PULSE)                  =   -100.65V  \     1.216V
+    V(N15569)                 =   -100.65V  \     1.354V
+    V(N15531)                 =   -94.30mV  \     4.135V
+    V(N15799)                 =     5.000V  \     21.05V
+    V(N158411)                =   -100.65V  \     1.280V
+    V(N15517)                 =   -94.31mV  \     4.994V
+    V(N16439)                 =   -100.65V  \     1.351V
+    V(N16653)                 =         0V  \     4.965V
+    V(N16661)                 =   -10.00GV  \    -69.06V
+    V(N17031)                 =    4.253mV  \    4.642mV
+    V(N17058)                 =   205.68mV  \     3.337V
+    V(N18723)                 =     3.326V  \     3.220V
+    V(X_M1.3)                 =   -76.81mV  \     4.996V
+    V(X_M2.3)                 =     7.226V  \     21.04V
+    V(X_M3.3)                 =   179.64fV  \     4.978V
+    V(X_U4.18)                =     4.434V  \     4.315V
+    V(X_U4.31)                =   -54.09mV  \     2.842V
+    V(X_U4.32)                =  -531.65mV  \     2.239V
+    V(X_U4.17)                =     1.953V  \     4.402V
+    V(X_U4.30)                =     1.188V  \     2.774V
+    V(X_U4.15)                =     1.006V  \     1.313V
+    V(X_U4.16)                =     2.578V  \   520.66mV
+    V(X_U4.19)                =     2.858V  \     2.800V
+    V(X_U4.22)                =   566.33mV  \   564.09mV
+    V(X_U4.24)                =     2.208V  \     2.152V
+    V(X_U4.25)                =     1.663V  \     1.610V
+    V(X_U4.21)                =    2.616mV  \    1.719mV
+    V(X_U4.23)                =     2.711V  \     2.632V
+    V(X_U4.14)                =   599.47mV  \   657.89mV
+    V(X_U4.13)                =   611.25mV  \   659.75mV
+    V(X_U4.12)                =    13.24mV  \    20.30mV
+    V(X_U4.10)                =     1.450V  \     1.418V
+    V(X_U4.11)                =   757.52mV  \   744.20mV
+    V(X_U4.26)                =   747.31mV  \   728.66mV
+    V(X_U4.29)                =   722.91mV  \   708.12mV
+    V(X_U4.27)                =   692.07mV  \   684.78mV
+    V(X_U4.28)                =   -100.65V  \     1.619V
+
+  These supply currents failed to converge:
+
+    I(L_L1)                   =   -246.86A  \     12.61A
+    I(L_L2)                   =   500.00mA  \    56.55mA
+    I(L_L3)                   =   249.98mA  \  -352.70mA
+    I(V_V1)                   =    246.86A  \    -13.02A
+    I(V_V2)                   =   -2.114mA  \   -2.719mA
+
+  These devices failed to converge:
+    D_D1      X_M1.DBD  X_M2.DBD  X_M3.DBD  X_M1.M1   X_M1.M2   X_M2.M1   
+    X_M3.M1   X_U4.q_q2 X_U4.q_q1 X_U4.q_q4 X_U4.q_q3 X_U4.q_q5d X_U4.q_q5 
+    X_U4.q_q6d X_U4.q_q6 X_U4.q_q9 X_U4.q_q10 X_U4.q_q7 X_U4.q_q12 X_U4.q_q13 
+    X_U4.q_q16 X_U4.q_q15 X_U4.q_q17 X_U4.q_q19 X_U4.q_q21 X_U4.q_q23 
+    X_U4.q_q26 X_U4.q_q27 X_U4.q_q28 X_U4.q_q24 X_U4.q_q14 
+
+**** Interrupt ****

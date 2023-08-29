@@ -1,0 +1,103 @@
+
+**** 08/29/23 11:00:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO_3-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DC_V.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "C:/Cadence/SPB_17.4/tools/capture/library/pspice/NCP1117 Model Library.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 0 12 10m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LDO_3
+V_V1         N14335 0 12V
+R_R1         0 N14435  {R2} TC=0,0 
+R_R2         N14435 N14457  {R1} TC=0,0 
+I_I1         N14457 0 DC 1A  
+X_U2         N14335 N14435 N14457 NCP1117_ADJ1-X 
+.PARAM  vref=1.25v r2=150 r1=180 ladj=5.2ma
+
+**** RESUMING DC_V.cir ****
+.END
+
+INFO(ORPSIM-15423): Unable to find index file "NCP1117 Model Library.ind" for library file "NCP1117 Model Library.lib".
+
+INFO(ORPSIM-15422): Making new index file "NCP1117 Model Library.ind" for library file "NCP1117 Model Library.lib".
+
+Index has 9 entries from 1 file(s).
+
+**** 08/29/23 11:00:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO_3-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.DMOD1      
+          IS   10.000000E-15 
+
+
+**** 08/29/23 11:00:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO_3-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U2.RQIX       X_U2.RSET       X_U2.RISC       
+           R    1               1               1            
+         TC1                   80.000000E-06                 
+         TC2                  528.000000E-09                 
+
+
+
+          JOB CONCLUDED
+
+**** 08/29/23 11:00:38 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO_3-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .45
+

@@ -1,0 +1,15 @@
+.ALIASES
+X_U1A           U1A(+=VZ -=VREF V+=N14536 V-=0 OUT=N14558 ) CN @LDO.SCHEMATIC1(sch_1):INS14305@OPAMP.LM358.Normal(chips)
+R_R1            R1(1=VZ 2=N14536 ) CN @LDO.SCHEMATIC1(sch_1):INS14355@ANALOG.R.Normal(chips)
+R_R2            R2(1=N14558 2=N14554 ) CN @LDO.SCHEMATIC1(sch_1):INS14371@ANALOG.R.Normal(chips)
+R_R3            R3(1=VREF 2=VOUT ) CN @LDO.SCHEMATIC1(sch_1):INS14387@ANALOG.R.Normal(chips)
+R_R4            R4(1=0 2=VREF ) CN @LDO.SCHEMATIC1(sch_1):INS14403@ANALOG.R.Normal(chips)
+I_I1            I1(+=VOUT -=0 ) CN @LDO.SCHEMATIC1(sch_1):INS14428@SOURCE.IDC.Normal(chips)
+Q_Q1            Q1(c=N14536 b=N14554 e=VOUT ) CN @LDO.SCHEMATIC1(sch_1):INS14455@BIPOLAR.Q2N3904.Normal(chips)
+V_V1            V1(+=N14536 -=0 ) CN @LDO.SCHEMATIC1(sch_1):INS14482@SOURCE.VDC.Normal(chips)
+D_D1            D1(1=0 2=VZ ) CN @LDO.SCHEMATIC1(sch_1):INS14514@DIODE.D1N750.Normal(chips)
+V_CONST1          CONST1(OUT=N14860 ) CN @LDO.SCHEMATIC1(sch_1):INS14850@ABM.CONST.Normal(chips)
+_    _(Vout=VOUT)
+_    _(Vref=VREF)
+_    _(Vz=VZ)
+.ENDALIASES

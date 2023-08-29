@@ -1,0 +1,29 @@
+* source BUCK
+X_M1         N15023 N14795 N14788 Si2301BDS
+R_R1         N14799 N14795  100 TC=0,0 
+D_D1         0 N15023 Dbreak 
+D_D2         N14826 N14853 Dbreak 
+R_R2         N14849 N14845  100 TC=0,0 
+X_M2         N14826 N14845 0 SI2302ADS
+U_DSTM1         STIM(1,1) $G_DPWR $G_DGND N14799 IO_STM IO_LEVEL=0 
++ 0 0
++ +1uS 1
++REPEAT FOREVER
++ +1uS 0
++  +1uS 1
++ ENDREPEAT
+U_DSTM2         STIM(1,1) $G_DPWR $G_DGND N14849 IO_STM IO_LEVEL=0 
++ 0 0
++ +1uS 1
++REPEAT FOREVER
++ +1uS 0
++  +1uS 1
++ ENDREPEAT
+V_V1         N14788 0 5Vdc
+C_C1         0 N15037  {C}  TC=0,0 
+I_I1         N15037 0 DC 0.5Adc  
+C_C2         0 N14853  {C}  TC=0,0 
+I_I2         N14853 0 DC 0.5Adc  
+L_L1         N14788 N14826  10uH  
+L_L2         N15023 N15037  {L}  
+.PARAM  l=6.8uh c=10uf duty=0.5

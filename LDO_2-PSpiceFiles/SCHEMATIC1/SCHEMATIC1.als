@@ -1,0 +1,7 @@
+.ALIASES
+R_R1            R1(1=0 2=N14495 ) CN @LDO_2.SCHEMATIC1(sch_1):INS14373@ANALOG.R.Normal(chips)
+R_R2            R2(1=N14495 2=N14518 ) CN @LDO_2.SCHEMATIC1(sch_1):INS14389@ANALOG.R.Normal(chips)
+V_V1            V1(+=N14565 -=0 ) CN @LDO_2.SCHEMATIC1(sch_1):INS14414@SOURCE.VDC.Normal(chips)
+I_I1            I1(+=N14518 -=0 ) CN @LDO_2.SCHEMATIC1(sch_1):INS14439@SOURCE.IDC.Normal(chips)
+X_U3            U3() CN @LDO_2.SCHEMATIC1(sch_1):INS15140@LDO_2.NCP1117_ADJ1-X_5.Normal(chips)
+.ENDALIASES

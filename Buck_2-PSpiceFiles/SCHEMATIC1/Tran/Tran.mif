@@ -1,0 +1,4 @@
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\breakout.lib, offset=431, size=44
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\siliconix.lib, offset=1228814, size=1355
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\siliconix.lib, offset=103456, size=1222
+ lib=C:\Cadence\SPB_17.4\tools\pspice\library\anl_misc.lib, offset=11693, size=2688

@@ -1,0 +1,49 @@
+
+**** 08/29/23 09:42:53 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DC.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN I_I1 0 0.5A 10m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LDO
+X_U1A         VZ VREF N14536 0 N14558 LM358
+R_R1         VZ N14536  1k TC=0,0 
+R_R2         N14558 N14554  1k TC=0,0 
+R_R3         VREF VOUT  {R1} TC=0,0 
+R_R4         0 VREF  {R2} TC=0,0 
+I_I1         VOUT 0 DC 100mA  
+Q_Q1         N14536 N14554 VOUT Q2N3904
+V_V1         N14536 0 12v
+D_D1         0 VZ D1N750 
+.PARAM  vref=4.646v r2=39k r1=470k r=
+-------------------------------------$
+ERROR(ORPSIM-16470): Missing value for param
+
+**** RESUMING DC.cir ****
+.END
+

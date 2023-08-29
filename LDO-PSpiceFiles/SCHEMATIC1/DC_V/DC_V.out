@@ -1,0 +1,191 @@
+
+**** 08/29/23 09:51:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "DC_V.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpice\17.4.0\PSpice.ini file:
+.lib "nom.lib" 
+
+*Analysis directives: 
+.DC LIN V_V1 5 12 10m 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source LDO
+X_U1A         VZ VREF N14536 0 N14558 LM358
+R_R1         VZ N14536  1k TC=0,0 
+R_R2         N14558 N14554  1k TC=0,0 
+R_R3         VREF VOUT  {R2} TC=0,0 
+R_R4         0 VREF  {R1} TC=0,0 
+I_I1         VOUT 0 DC 100mA  
+Q_Q1         N14536 N14554 VOUT Q2N3904
+V_V1         N14536 0 12v
+D_D1         0 VZ D1N750 
+V_CONST1         N14860 0 DC {Vref*(1+R2/R1)}
+.PARAM  vref=4.646v r2=39k r1=470k
+
+**** RESUMING DC_V.cir ****
+.END
+
+**** 08/29/23 09:51:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               D1N750          X_U1A.x_lm358.dx 
+          IS  880.500000E-18  800.000000E-18 
+         ISR    1.859000E-09                 
+          BV    4.7                          
+         IBV     .020245                     
+         NBV    1.6989                       
+        IBVL    1.955600E-03                 
+        NBVL   14.976                        
+          RS     .25            1            
+         CJO  175.000000E-12                 
+          VJ     .75                         
+           M     .5516                       
+        TBV1  -21.277000E-06                 
+
+
+               X_U1A.x_lm358.dy 
+          IS  800.000000E-18 
+          RS    1.000000E-03 
+         CJO   10.000000E-12 
+
+
+**** 08/29/23 09:51:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     BJT MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               Q2N3904         X_U1A.x_lm358.qx 
+               NPN             PNP             
+       LEVEL    1               1            
+          IS    6.734000E-15  800.000000E-18 
+          BF  416.4           166.7          
+          NF    1               1            
+         VAF   74.03                         
+         IKF     .06678                      
+         ISE    6.734000E-15                 
+          NE    1.259                        
+          BR     .7371          1            
+          NR    1               1            
+         ISS    0               0            
+          RB   10                            
+          RE    0               0            
+          RC    1               0            
+         CJE    4.493000E-12    0            
+         VJE     .75             .75         
+         MJE     .2593                       
+         CJC    3.638000E-12    0            
+         VJC     .75             .75         
+         MJC     .3085           .33         
+        XCJC    1               1            
+         CJS    0               0            
+         VJS     .75             .75         
+          TF  301.200000E-12                 
+         XTF    2                            
+         VTF    4                            
+         ITF     .4                          
+          TR  239.500000E-09                 
+         XTB    1.5                          
+          KF    0               0            
+          AF    1               1            
+          CN    2.42            2.2          
+           D     .87             .52         
+
+
+**** 08/29/23 09:51:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     Current Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1A.x_lm358.sw2 
+         RON    1            
+        ROFF   10.000000E+06 
+         ION    0            
+        IOFF   -1.000000E-06 
+
+
+               X_U1A.x_lm358.sw1 
+         RON    1            
+        ROFF   10.000000E+06 
+         ION   -1.000000E-06 
+        IOFF    0            
+
+
+               X_U1A.x_lm358.sw3 
+         RON    1            
+        ROFF   10.000000E+06 
+         ION   -1.000000E-06 
+        IOFF    0            
+
+
+               X_U1A.x_lm358.sw4 
+         RON    1            
+        ROFF   10.000000E+06 
+         ION    0            
+        IOFF   -1.000000E-06 
+
+
+
+          JOB CONCLUDED
+
+**** 08/29/23 09:51:16 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-DC_V"  [ D:\Ian_Jung\workplace\PSpice\LDO-PSpiceFiles\SCHEMATIC1\DC_V.sim ] 
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  License check-out time            =         .66
+  Total job time (using Solver 1)   =         .05
+

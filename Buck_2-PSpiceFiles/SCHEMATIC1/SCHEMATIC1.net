@@ -1,0 +1,25 @@
+* source BUCK_2
+I_I2         BOOST 0 DC 0.5Adc  
+R_R1         PULSE N15569  100 TC=0,0 
+V_V1         N15499 0 5Vdc
+C_C1         N20881 N20877  {C}  TC=0,0 
+L_L1         N15499 N15799  {L}  
+I_I1         BUCK 0 DC 0.5Adc  
+X_M1         N15517 N15569 N15499 Si2301BDS
+R_R2         PULSE N158411  100 TC=0,0 
+L_L2         N15517 BUCK  {L}  
+X_M2         N15799 N158411 0 SI2302ADS
+R_R4         N17031 N17461  30k TC=0,0 
+R_R5         N17058 N17031  150k TC=0,0 
+C_C4         0 N17058  10p  TC=0,0 
+V_V2         N17461 0 5Vdc
+C_C5         0 N18723  0.1u  TC=0,0 
+X_U4         0 N17058 PULSE N17461 N18723 N17058 N17031 N17461 555B
+D_D1         N15799 BOOST Dbreak 
+D_D3         0 N15517 Dbreak 
+L_L4         N20877 BUCK  1nH  
+R_R6         0 N20881  1m TC=0,0 
+C_C6         N21049 N21029  {C}  TC=0,0 
+R_R7         0 N21049  1m TC=0,0 
+L_L5         N21029 BOOST  1nH  
+.PARAM  l=6.8uh c=10uf duty=0.5

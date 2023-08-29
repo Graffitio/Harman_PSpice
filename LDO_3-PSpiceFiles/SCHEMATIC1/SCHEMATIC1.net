@@ -1,0 +1,7 @@
+* source LDO_3
+V_V1         N14335 0 12V
+R_R1         0 N14435  {R2} TC=0,0 
+R_R2         N14435 N14457  {R1} TC=0,0 
+I_I1         N14457 0 DC 1A  
+X_U2         N14335 N14435 N14457 NCP1117_ADJ1-X 
+.PARAM  vref=1.25v r2=150 r1=180 ladj=5.2ma

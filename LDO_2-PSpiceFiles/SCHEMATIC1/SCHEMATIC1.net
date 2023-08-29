@@ -1,0 +1,6 @@
+* source LDO_2
+R_R1         0 N14495  {R2} TC=0,0 
+R_R2         N14495 N14518  {R1} TC=0,0 
+V_V1         N14565 0 12V
+I_I1         N14518 0 DC 1A  
+X_U3         NCP1117_ADJ1-X
